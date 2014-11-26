@@ -113,12 +113,13 @@ namespace TATSim
             
         }
 
-        public double[] travel(int speed, int distance, double mpg)
+        public double[] travel(int speed, int distance, int fuelRange)
         {
             double gallons = gasTank.Gallons;
-            double totalDistOnThisTank = mpg * gallons;
-            totalDistOnThisTank -= distance;
-            totalDistOnThisTank *= (((weight + range + performance) / 300) / 100);
+            double totalDistOnThisTank = fuelRange - distance;
+            double percent =(double) ((weight + range + performance) / 3);
+            percent = percent / 100;
+            totalDistOnThisTank *= (1 + percent);
             tires.travel(speed, distance);
             double[] numbers = { totalDistOnThisTank, tires.Wear };
             return numbers;

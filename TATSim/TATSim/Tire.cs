@@ -24,9 +24,9 @@ namespace TATSim
             set { performance = value; }
         }
 
-        private float wear;
+        private double wear;
 
-        public float Wear
+        public double Wear
         {
             get { return wear; }
             set { wear = value; }
@@ -48,7 +48,7 @@ namespace TATSim
             set { weight = value; }
         }
 
-        public Tire(string newName, int newPerformance, float newWear, int newCost, int newWeight)
+        public Tire(string newName, int newPerformance, double newWear, int newCost, int newWeight)
         {
             name = newName;
             performance = newPerformance;
@@ -63,7 +63,9 @@ namespace TATSim
 
         internal void travel(int speed, int distance)
         {
-            wear += (((speed + distance + weight) / 3) / 100);
+           double percent =(double) ((speed + distance + weight) / 30);
+           percent = percent / 100;
+           wear += percent;
         }
     }
 }

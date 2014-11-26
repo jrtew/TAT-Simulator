@@ -146,7 +146,8 @@ namespace TATSim
             //Checks to make sure the random event has been dealt with
             if (!grpbxRandomEvent.Visible && checkMileage() && checkDailyChoices())
             {
-                int todaysMileage = Convert.ToInt32(mileageTextBox.Text);                
+                int todaysMileage = Convert.ToInt32(mileageTextBox.Text);
+                int fuelRange = Convert.ToInt32(fuelRangeTB.Text); 
                 int speed = 0;
                 foreach (RadioButton rb in grpbxSpeed.Controls)
                 {
@@ -156,14 +157,15 @@ namespace TATSim
                         break;
                     }
                 }
-                double[] array = playersMotoObj.travel(speed, todaysMileage, mpg);
-                fuelRangeTB.Text = array[0].ToString();
+                double[] array = playersMotoObj.travel(speed, todaysMileage, fuelRange);
+                fuelRangeTB.Text = array[0].ToString().Substring(0, array[0].ToString().IndexOf("."));
                 tireStatTB.Text = array[1].ToString();
                 int nextDistance = movePlayer();
                 mileageTextBox.Text = nextDistance.ToString();
                 int daysIntoTrip = Convert.ToInt32(dayNumTextBox.Text);
                 daysIntoTrip++;
                 dayNumTextBox.Text = daysIntoTrip.ToString();
+
                 MessageBox.Show("A day has passed.");
             }
         }
