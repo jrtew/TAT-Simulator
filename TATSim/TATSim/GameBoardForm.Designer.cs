@@ -30,32 +30,32 @@
         {
             this.gameBoardPanel = new System.Windows.Forms.Panel();
             this.btnFillUp = new System.Windows.Forms.Button();
-            this.grpbxRandomEvent = new System.Windows.Forms.GroupBox();
-            this.btnIgnore = new System.Windows.Forms.Button();
-            this.btnLowPricedFix = new System.Windows.Forms.Button();
-            this.btnHighPriceFix = new System.Windows.Forms.Button();
-            this.rtbxRandomEventDescription = new System.Windows.Forms.RichTextBox();
-            this.lblRandomEventTitle = new System.Windows.Forms.Label();
             this.mileageTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.nextDayBtn = new System.Windows.Forms.Button();
             this.eatPanel = new System.Windows.Forms.Panel();
             this.steakRadBut = new System.Windows.Forms.RadioButton();
             this.ramenRadBut = new System.Windows.Forms.RadioButton();
+            this.steakPB = new System.Windows.Forms.PictureBox();
+            this.ramenPB = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.sleepPanel = new System.Windows.Forms.Panel();
             this.hotelRadBut = new System.Windows.Forms.RadioButton();
             this.campRadBut = new System.Windows.Forms.RadioButton();
+            this.hotelPB = new System.Windows.Forms.PictureBox();
+            this.campingPB = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.playerPicPB = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.fuelRangeTB = new System.Windows.Forms.TextBox();
             this.tireStatTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.playersMotoPB = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cashTextBox = new System.Windows.Forms.TextBox();
             this.dayNumTextBox = new System.Windows.Forms.TextBox();
@@ -63,35 +63,34 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.tatMapPB = new System.Windows.Forms.PictureBox();
+            this.grpbxRandomEvent = new System.Windows.Forms.GroupBox();
+            this.btnIgnore = new System.Windows.Forms.Button();
+            this.btnLowPricedFix = new System.Windows.Forms.Button();
+            this.btnHighPriceFix = new System.Windows.Forms.Button();
+            this.rtbxRandomEventDescription = new System.Windows.Forms.RichTextBox();
+            this.lblRandomEventTitle = new System.Windows.Forms.Label();
             this.routeSelectPanel1 = new System.Windows.Forms.Panel();
             this.routeStartBtn1 = new System.Windows.Forms.Button();
             this.capeHRouteRadBut = new System.Windows.Forms.RadioButton();
             this.nyRouteRadBut = new System.Windows.Forms.RadioButton();
-            this.steakPB = new System.Windows.Forms.PictureBox();
-            this.ramenPB = new System.Windows.Forms.PictureBox();
-            this.hotelPB = new System.Windows.Forms.PictureBox();
-            this.campingPB = new System.Windows.Forms.PictureBox();
-            this.playerPicPB = new System.Windows.Forms.PictureBox();
-            this.playersMotoPB = new System.Windows.Forms.PictureBox();
-            this.tatMapPB = new System.Windows.Forms.PictureBox();
             this.gameBoardPanel.SuspendLayout();
-            this.grpbxRandomEvent.SuspendLayout();
             this.eatPanel.SuspendLayout();
-            this.sleepPanel.SuspendLayout();
-            this.routeSelectPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.steakPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ramenPB)).BeginInit();
+            this.sleepPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hotelPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campingPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersMotoPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tatMapPB)).BeginInit();
+            this.grpbxRandomEvent.SuspendLayout();
+            this.routeSelectPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gameBoardPanel
             // 
             this.gameBoardPanel.Controls.Add(this.btnFillUp);
-            this.gameBoardPanel.Controls.Add(this.grpbxRandomEvent);
             this.gameBoardPanel.Controls.Add(this.mileageTextBox);
             this.gameBoardPanel.Controls.Add(this.label14);
             this.gameBoardPanel.Controls.Add(this.nextDayBtn);
@@ -114,8 +113,9 @@
             this.gameBoardPanel.Controls.Add(this.label3);
             this.gameBoardPanel.Controls.Add(this.label2);
             this.gameBoardPanel.Controls.Add(this.label1);
-            this.gameBoardPanel.Controls.Add(this.tatMapPB);
             this.gameBoardPanel.Controls.Add(this.lblTitle);
+            this.gameBoardPanel.Controls.Add(this.tatMapPB);
+            this.gameBoardPanel.Controls.Add(this.grpbxRandomEvent);
             this.gameBoardPanel.Location = new System.Drawing.Point(12, 12);
             this.gameBoardPanel.Name = "gameBoardPanel";
             this.gameBoardPanel.Size = new System.Drawing.Size(1326, 705);
@@ -130,69 +130,6 @@
             this.btnFillUp.Text = "Fill up!";
             this.btnFillUp.UseVisualStyleBackColor = true;
             this.btnFillUp.Visible = false;
-            // 
-            // grpbxRandomEvent
-            // 
-            this.grpbxRandomEvent.Controls.Add(this.btnIgnore);
-            this.grpbxRandomEvent.Controls.Add(this.btnLowPricedFix);
-            this.grpbxRandomEvent.Controls.Add(this.btnHighPriceFix);
-            this.grpbxRandomEvent.Controls.Add(this.rtbxRandomEventDescription);
-            this.grpbxRandomEvent.Controls.Add(this.lblRandomEventTitle);
-            this.grpbxRandomEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpbxRandomEvent.Location = new System.Drawing.Point(42, 48);
-            this.grpbxRandomEvent.Name = "grpbxRandomEvent";
-            this.grpbxRandomEvent.Size = new System.Drawing.Size(742, 394);
-            this.grpbxRandomEvent.TabIndex = 45;
-            this.grpbxRandomEvent.TabStop = false;
-            this.grpbxRandomEvent.Text = "Random Event";
-            this.grpbxRandomEvent.Visible = false;
-            // 
-            // btnIgnore
-            // 
-            this.btnIgnore.Location = new System.Drawing.Point(532, 304);
-            this.btnIgnore.Name = "btnIgnore";
-            this.btnIgnore.Size = new System.Drawing.Size(128, 45);
-            this.btnIgnore.TabIndex = 4;
-            this.btnIgnore.Text = "Ignore";
-            this.btnIgnore.UseVisualStyleBackColor = true;
-            // 
-            // btnLowPricedFix
-            // 
-            this.btnLowPricedFix.Location = new System.Drawing.Point(307, 304);
-            this.btnLowPricedFix.Name = "btnLowPricedFix";
-            this.btnLowPricedFix.Size = new System.Drawing.Size(128, 45);
-            this.btnLowPricedFix.TabIndex = 3;
-            this.btnLowPricedFix.Text = "Low Priced Fix";
-            this.btnLowPricedFix.UseVisualStyleBackColor = true;
-            this.btnLowPricedFix.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnHighPriceFix
-            // 
-            this.btnHighPriceFix.Location = new System.Drawing.Point(82, 304);
-            this.btnHighPriceFix.Name = "btnHighPriceFix";
-            this.btnHighPriceFix.Size = new System.Drawing.Size(128, 45);
-            this.btnHighPriceFix.TabIndex = 2;
-            this.btnHighPriceFix.Text = "High Priced Fix";
-            this.btnHighPriceFix.UseVisualStyleBackColor = true;
-            // 
-            // rtbxRandomEventDescription
-            // 
-            this.rtbxRandomEventDescription.Location = new System.Drawing.Point(29, 73);
-            this.rtbxRandomEventDescription.Name = "rtbxRandomEventDescription";
-            this.rtbxRandomEventDescription.Size = new System.Drawing.Size(685, 143);
-            this.rtbxRandomEventDescription.TabIndex = 1;
-            this.rtbxRandomEventDescription.Text = "";
-            // 
-            // lblRandomEventTitle
-            // 
-            this.lblRandomEventTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblRandomEventTitle.AutoSize = true;
-            this.lblRandomEventTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRandomEventTitle.Location = new System.Drawing.Point(325, 20);
-            this.lblRandomEventTitle.Name = "lblRandomEventTitle";
-            this.lblRandomEventTitle.Size = new System.Drawing.Size(92, 29);
-            this.lblRandomEventTitle.TabIndex = 0;
-            this.lblRandomEventTitle.Text = "label15";
             // 
             // mileageTextBox
             // 
@@ -263,6 +200,26 @@
             this.ramenRadBut.Text = "Soup - $1";
             this.ramenRadBut.UseVisualStyleBackColor = true;
             // 
+            // steakPB
+            // 
+            this.steakPB.Image = global::TATSim.Properties.Resources.steak_dinner;
+            this.steakPB.Location = new System.Drawing.Point(17, 122);
+            this.steakPB.Name = "steakPB";
+            this.steakPB.Size = new System.Drawing.Size(114, 59);
+            this.steakPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.steakPB.TabIndex = 30;
+            this.steakPB.TabStop = false;
+            // 
+            // ramenPB
+            // 
+            this.ramenPB.Image = global::TATSim.Properties.Resources.ramsoup;
+            this.ramenPB.Location = new System.Drawing.Point(17, 38);
+            this.ramenPB.Name = "ramenPB";
+            this.ramenPB.Size = new System.Drawing.Size(114, 59);
+            this.ramenPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ramenPB.TabIndex = 29;
+            this.ramenPB.TabStop = false;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -309,6 +266,26 @@
             this.campRadBut.TabStop = true;
             this.campRadBut.Text = "Camping - $5";
             this.campRadBut.UseVisualStyleBackColor = true;
+            // 
+            // hotelPB
+            // 
+            this.hotelPB.Image = global::TATSim.Properties.Resources.hotelroom;
+            this.hotelPB.Location = new System.Drawing.Point(14, 123);
+            this.hotelPB.Name = "hotelPB";
+            this.hotelPB.Size = new System.Drawing.Size(114, 59);
+            this.hotelPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hotelPB.TabIndex = 28;
+            this.hotelPB.TabStop = false;
+            // 
+            // campingPB
+            // 
+            this.campingPB.Image = global::TATSim.Properties.Resources.tent;
+            this.campingPB.Location = new System.Drawing.Point(14, 39);
+            this.campingPB.Name = "campingPB";
+            this.campingPB.Size = new System.Drawing.Size(114, 59);
+            this.campingPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.campingPB.TabIndex = 27;
+            this.campingPB.TabStop = false;
             // 
             // label12
             // 
@@ -365,6 +342,16 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "Enjoyment:";
             // 
+            // playerPicPB
+            // 
+            this.playerPicPB.Image = global::TATSim.Properties.Resources.Dick;
+            this.playerPicPB.Location = new System.Drawing.Point(1189, 373);
+            this.playerPicPB.Name = "playerPicPB";
+            this.playerPicPB.Size = new System.Drawing.Size(98, 237);
+            this.playerPicPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.playerPicPB.TabIndex = 20;
+            this.playerPicPB.TabStop = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -417,6 +404,15 @@
             this.label5.Size = new System.Drawing.Size(75, 29);
             this.label5.TabIndex = 15;
             this.label5.Text = "Tires:";
+            // 
+            // playersMotoPB
+            // 
+            this.playersMotoPB.Location = new System.Drawing.Point(909, 212);
+            this.playersMotoPB.Name = "playersMotoPB";
+            this.playersMotoPB.Size = new System.Drawing.Size(173, 149);
+            this.playersMotoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.playersMotoPB.TabIndex = 14;
+            this.playersMotoPB.TabStop = false;
             // 
             // label4
             // 
@@ -493,6 +489,80 @@
             this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "TAT Progress";
             // 
+            // tatMapPB
+            // 
+            this.tatMapPB.Image = global::TATSim.Properties.Resources.TATMapMultiRoute1;
+            this.tatMapPB.Location = new System.Drawing.Point(42, 48);
+            this.tatMapPB.Name = "tatMapPB";
+            this.tatMapPB.Size = new System.Drawing.Size(741, 395);
+            this.tatMapPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tatMapPB.TabIndex = 7;
+            this.tatMapPB.TabStop = false;
+            this.tatMapPB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tatMapPB_MouseClick);
+            // 
+            // grpbxRandomEvent
+            // 
+            this.grpbxRandomEvent.Controls.Add(this.btnIgnore);
+            this.grpbxRandomEvent.Controls.Add(this.btnLowPricedFix);
+            this.grpbxRandomEvent.Controls.Add(this.btnHighPriceFix);
+            this.grpbxRandomEvent.Controls.Add(this.rtbxRandomEventDescription);
+            this.grpbxRandomEvent.Controls.Add(this.lblRandomEventTitle);
+            this.grpbxRandomEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpbxRandomEvent.Location = new System.Drawing.Point(42, 48);
+            this.grpbxRandomEvent.Name = "grpbxRandomEvent";
+            this.grpbxRandomEvent.Size = new System.Drawing.Size(742, 394);
+            this.grpbxRandomEvent.TabIndex = 45;
+            this.grpbxRandomEvent.TabStop = false;
+            this.grpbxRandomEvent.Text = "Random Event";
+            this.grpbxRandomEvent.Visible = false;
+            // 
+            // btnIgnore
+            // 
+            this.btnIgnore.Location = new System.Drawing.Point(532, 304);
+            this.btnIgnore.Name = "btnIgnore";
+            this.btnIgnore.Size = new System.Drawing.Size(128, 45);
+            this.btnIgnore.TabIndex = 4;
+            this.btnIgnore.Text = "Ignore";
+            this.btnIgnore.UseVisualStyleBackColor = true;
+            // 
+            // btnLowPricedFix
+            // 
+            this.btnLowPricedFix.Location = new System.Drawing.Point(307, 304);
+            this.btnLowPricedFix.Name = "btnLowPricedFix";
+            this.btnLowPricedFix.Size = new System.Drawing.Size(128, 45);
+            this.btnLowPricedFix.TabIndex = 3;
+            this.btnLowPricedFix.Text = "Low Priced Fix";
+            this.btnLowPricedFix.UseVisualStyleBackColor = true;
+            this.btnLowPricedFix.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnHighPriceFix
+            // 
+            this.btnHighPriceFix.Location = new System.Drawing.Point(82, 304);
+            this.btnHighPriceFix.Name = "btnHighPriceFix";
+            this.btnHighPriceFix.Size = new System.Drawing.Size(128, 45);
+            this.btnHighPriceFix.TabIndex = 2;
+            this.btnHighPriceFix.Text = "High Priced Fix";
+            this.btnHighPriceFix.UseVisualStyleBackColor = true;
+            // 
+            // rtbxRandomEventDescription
+            // 
+            this.rtbxRandomEventDescription.Location = new System.Drawing.Point(29, 73);
+            this.rtbxRandomEventDescription.Name = "rtbxRandomEventDescription";
+            this.rtbxRandomEventDescription.Size = new System.Drawing.Size(685, 143);
+            this.rtbxRandomEventDescription.TabIndex = 1;
+            this.rtbxRandomEventDescription.Text = "";
+            // 
+            // lblRandomEventTitle
+            // 
+            this.lblRandomEventTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblRandomEventTitle.AutoSize = true;
+            this.lblRandomEventTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRandomEventTitle.Location = new System.Drawing.Point(325, 20);
+            this.lblRandomEventTitle.Name = "lblRandomEventTitle";
+            this.lblRandomEventTitle.Size = new System.Drawing.Size(92, 29);
+            this.lblRandomEventTitle.TabIndex = 0;
+            this.lblRandomEventTitle.Text = "label15";
+            // 
             // routeSelectPanel1
             // 
             this.routeSelectPanel1.Controls.Add(this.routeStartBtn1);
@@ -539,75 +609,6 @@
             this.nyRouteRadBut.Text = "Start in New York!";
             this.nyRouteRadBut.UseVisualStyleBackColor = true;
             // 
-            // steakPB
-            // 
-            this.steakPB.Image = global::TATSim.Properties.Resources.steak_dinner;
-            this.steakPB.Location = new System.Drawing.Point(17, 122);
-            this.steakPB.Name = "steakPB";
-            this.steakPB.Size = new System.Drawing.Size(114, 59);
-            this.steakPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.steakPB.TabIndex = 30;
-            this.steakPB.TabStop = false;
-            // 
-            // ramenPB
-            // 
-            this.ramenPB.Image = global::TATSim.Properties.Resources.ramsoup;
-            this.ramenPB.Location = new System.Drawing.Point(17, 38);
-            this.ramenPB.Name = "ramenPB";
-            this.ramenPB.Size = new System.Drawing.Size(114, 59);
-            this.ramenPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ramenPB.TabIndex = 29;
-            this.ramenPB.TabStop = false;
-            // 
-            // hotelPB
-            // 
-            this.hotelPB.Image = global::TATSim.Properties.Resources.hotelroom;
-            this.hotelPB.Location = new System.Drawing.Point(14, 123);
-            this.hotelPB.Name = "hotelPB";
-            this.hotelPB.Size = new System.Drawing.Size(114, 59);
-            this.hotelPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.hotelPB.TabIndex = 28;
-            this.hotelPB.TabStop = false;
-            // 
-            // campingPB
-            // 
-            this.campingPB.Image = global::TATSim.Properties.Resources.tent;
-            this.campingPB.Location = new System.Drawing.Point(14, 39);
-            this.campingPB.Name = "campingPB";
-            this.campingPB.Size = new System.Drawing.Size(114, 59);
-            this.campingPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.campingPB.TabIndex = 27;
-            this.campingPB.TabStop = false;
-            // 
-            // playerPicPB
-            // 
-            this.playerPicPB.Image = global::TATSim.Properties.Resources.Dick;
-            this.playerPicPB.Location = new System.Drawing.Point(1189, 373);
-            this.playerPicPB.Name = "playerPicPB";
-            this.playerPicPB.Size = new System.Drawing.Size(98, 237);
-            this.playerPicPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.playerPicPB.TabIndex = 20;
-            this.playerPicPB.TabStop = false;
-            // 
-            // playersMotoPB
-            // 
-            this.playersMotoPB.Location = new System.Drawing.Point(909, 212);
-            this.playersMotoPB.Name = "playersMotoPB";
-            this.playersMotoPB.Size = new System.Drawing.Size(173, 149);
-            this.playersMotoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.playersMotoPB.TabIndex = 14;
-            this.playersMotoPB.TabStop = false;
-            // 
-            // tatMapPB
-            // 
-            this.tatMapPB.Image = global::TATSim.Properties.Resources.TATMapMultiRoute1;
-            this.tatMapPB.Location = new System.Drawing.Point(42, 48);
-            this.tatMapPB.Name = "tatMapPB";
-            this.tatMapPB.Size = new System.Drawing.Size(741, 395);
-            this.tatMapPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.tatMapPB.TabIndex = 7;
-            this.tatMapPB.TabStop = false;
-            // 
             // GameBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -622,21 +623,21 @@
             this.Load += new System.EventHandler(this.GameBoardForm_Load);
             this.gameBoardPanel.ResumeLayout(false);
             this.gameBoardPanel.PerformLayout();
-            this.grpbxRandomEvent.ResumeLayout(false);
-            this.grpbxRandomEvent.PerformLayout();
             this.eatPanel.ResumeLayout(false);
             this.eatPanel.PerformLayout();
-            this.sleepPanel.ResumeLayout(false);
-            this.sleepPanel.PerformLayout();
-            this.routeSelectPanel1.ResumeLayout(false);
-            this.routeSelectPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.steakPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ramenPB)).EndInit();
+            this.sleepPanel.ResumeLayout(false);
+            this.sleepPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hotelPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campingPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersMotoPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tatMapPB)).EndInit();
+            this.grpbxRandomEvent.ResumeLayout(false);
+            this.grpbxRandomEvent.PerformLayout();
+            this.routeSelectPanel1.ResumeLayout(false);
+            this.routeSelectPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }

@@ -20,3 +20,13 @@ D:\Desktop\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.Properties.Resources.res
 D:\Desktop\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.csproj.GenerateResource.Cache
 D:\Desktop\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.exe
 D:\Desktop\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.pdb
+D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\bin\Debug\TATSim.exe.config
+D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\bin\Debug\TATSim.exe
+D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\bin\Debug\TATSim.pdb
+D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.TATSimForm.resources
+D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.GameBoardForm.resources
+D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.InstructionsForm.resources
+D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.Properties.Resources.resources
+D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.csproj.GenerateResource.Cache
+D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.exe
+D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.pdb
