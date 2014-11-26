@@ -1,0 +1,22 @@
+C:\Users\Jordon\Documents\CPSC 6148- Simulation and Gaming\TAT Sim\TATSim\TATSim\bin\Debug\TATSim.exe.config
+C:\Users\Jordon\Source\Repos\TATSimV11.20J\TATSim\TATSim\bin\Debug\TATSim.exe.config
+C:\Users\Jordon\Source\Repos\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.exe
+C:\Users\Jordon\Source\Repos\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.pdb
+C:\Users\Jordon\Source\Repos\TATSimV11.20J\TATSim\TATSim\bin\Debug\TATSim.exe
+C:\Users\Jordon\Source\Repos\TATSimV11.20J\TATSim\TATSim\bin\Debug\TATSim.pdb
+C:\Users\Jordon\Source\Repos\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.csprojResolveAssemblyReference.cache
+C:\Users\Jordon\Source\Repos\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.TATSimForm.resources
+C:\Users\Jordon\Source\Repos\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.GameBoardForm.resources
+C:\Users\Jordon\Source\Repos\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.InstructionsForm.resources
+C:\Users\Jordon\Source\Repos\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.Properties.Resources.resources
+C:\Users\Jordon\Source\Repos\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.csproj.GenerateResource.Cache
+D:\Desktop\TATSimV11.20J\TATSim\TATSim\bin\Debug\TATSim.exe.config
+D:\Desktop\TATSimV11.20J\TATSim\TATSim\bin\Debug\TATSim.exe
+D:\Desktop\TATSimV11.20J\TATSim\TATSim\bin\Debug\TATSim.pdb
+D:\Desktop\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.TATSimForm.resources
+D:\Desktop\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.GameBoardForm.resources
+D:\Desktop\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.InstructionsForm.resources
+D:\Desktop\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.Properties.Resources.resources
+D:\Desktop\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.csproj.GenerateResource.Cache
+D:\Desktop\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.exe
+D:\Desktop\TATSimV11.20J\TATSim\TATSim\obj\Debug\TATSim.pdb
