@@ -72,6 +72,7 @@
     <Compile Include="RandonEvent.cs" />
     <Compile Include="Tank.cs" />
     <Compile Include="Tire.cs" />
+    <Compile Include="Trail.cs" />
     <EmbeddedResource Include="BeginningForm.resx">
       <DependentUpon>BeginningForm.cs</DependentUpon>
     </EmbeddedResource>

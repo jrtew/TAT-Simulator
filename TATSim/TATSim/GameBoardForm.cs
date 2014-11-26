@@ -19,6 +19,7 @@ namespace TATSim
         public int cash;
         public int miles;
         Dictionary<string, RandomEvent> randomEvents;
+        Dictionary<string, Trail> trails;
         public GameBoardForm(TATSimForm incomingForm)
         {
             // Links the two forms together so we can 
@@ -50,13 +51,14 @@ namespace TATSim
             dayNumTextBox.Text = day.ToString();
 
             Mechanics.CalcRangeofMoto(playersMotoObj);
-            fuelRangeTB.Text = playersMotoObj.Range.ToString() + " miles";
+            fuelRangeTB.Text = playersMotoObj.Range.ToString();
             miles = Mechanics.CaclDaysMileage();
 
             mileageTextBox.Text = miles.ToString();
 
             randomEvents = RandomEvent.createEvents();
-            checkMileage();
+            trails = Trail.createTrials();
+            //checkMileage();
 
             //Console.WriteLine(originalForm.playersMoto.Name.ToString());
             //Console.WriteLine(originalForm.playersMoto.Performance.ToString());
@@ -156,17 +158,17 @@ namespace TATSim
         private bool checkMileage()
         {
             int todaysMileage = Convert.ToInt32(mileageTextBox.Text);
-            int fuelRange = Convert.ToInt32(fuelRangeTB.Text.Replace(" miles", ""));
+            int fuelRange = Convert.ToInt32(fuelRangeTB.Text);
 
             if (fuelRange < todaysMileage)
             {
                 btnFillUp.Visible = true;
-                return true;
+                return false;
             }
             else
             {
                 btnFillUp.Visible = false;
-                return false;
+                return true;
             }
         }
 

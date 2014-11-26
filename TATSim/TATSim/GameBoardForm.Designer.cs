@@ -42,50 +42,50 @@
             this.eatPanel = new System.Windows.Forms.Panel();
             this.steakRadBut = new System.Windows.Forms.RadioButton();
             this.ramenRadBut = new System.Windows.Forms.RadioButton();
+            this.steakPB = new System.Windows.Forms.PictureBox();
+            this.ramenPB = new System.Windows.Forms.PictureBox();
             this.label13 = new System.Windows.Forms.Label();
             this.sleepPanel = new System.Windows.Forms.Panel();
             this.hotelRadBut = new System.Windows.Forms.RadioButton();
             this.campRadBut = new System.Windows.Forms.RadioButton();
+            this.hotelPB = new System.Windows.Forms.PictureBox();
+            this.campingPB = new System.Windows.Forms.PictureBox();
             this.label12 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
+            this.playerPicPB = new System.Windows.Forms.PictureBox();
             this.label7 = new System.Windows.Forms.Label();
             this.fuelRangeTB = new System.Windows.Forms.TextBox();
             this.tireStatTB = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
+            this.playersMotoPB = new System.Windows.Forms.PictureBox();
             this.label4 = new System.Windows.Forms.Label();
             this.cashTextBox = new System.Windows.Forms.TextBox();
             this.dayNumTextBox = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.tatMapPB = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
             this.routeSelectPanel1 = new System.Windows.Forms.Panel();
             this.routeStartBtn1 = new System.Windows.Forms.Button();
             this.capeHRouteRadBut = new System.Windows.Forms.RadioButton();
             this.nyRouteRadBut = new System.Windows.Forms.RadioButton();
-            this.steakPB = new System.Windows.Forms.PictureBox();
-            this.ramenPB = new System.Windows.Forms.PictureBox();
-            this.hotelPB = new System.Windows.Forms.PictureBox();
-            this.campingPB = new System.Windows.Forms.PictureBox();
-            this.playerPicPB = new System.Windows.Forms.PictureBox();
-            this.playersMotoPB = new System.Windows.Forms.PictureBox();
-            this.tatMapPB = new System.Windows.Forms.PictureBox();
             this.gameBoardPanel.SuspendLayout();
             this.grpbxRandomEvent.SuspendLayout();
             this.eatPanel.SuspendLayout();
-            this.sleepPanel.SuspendLayout();
-            this.routeSelectPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.steakPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ramenPB)).BeginInit();
+            this.sleepPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hotelPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.campingPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersMotoPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tatMapPB)).BeginInit();
+            this.routeSelectPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gameBoardPanel
@@ -263,6 +263,26 @@
             this.ramenRadBut.Text = "Soup - $1";
             this.ramenRadBut.UseVisualStyleBackColor = true;
             // 
+            // steakPB
+            // 
+            this.steakPB.Image = global::TATSim.Properties.Resources.steak_dinner;
+            this.steakPB.Location = new System.Drawing.Point(17, 122);
+            this.steakPB.Name = "steakPB";
+            this.steakPB.Size = new System.Drawing.Size(114, 59);
+            this.steakPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.steakPB.TabIndex = 30;
+            this.steakPB.TabStop = false;
+            // 
+            // ramenPB
+            // 
+            this.ramenPB.Image = global::TATSim.Properties.Resources.ramsoup;
+            this.ramenPB.Location = new System.Drawing.Point(17, 38);
+            this.ramenPB.Name = "ramenPB";
+            this.ramenPB.Size = new System.Drawing.Size(114, 59);
+            this.ramenPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.ramenPB.TabIndex = 29;
+            this.ramenPB.TabStop = false;
+            // 
             // label13
             // 
             this.label13.AutoSize = true;
@@ -309,6 +329,26 @@
             this.campRadBut.TabStop = true;
             this.campRadBut.Text = "Camping - $5";
             this.campRadBut.UseVisualStyleBackColor = true;
+            // 
+            // hotelPB
+            // 
+            this.hotelPB.Image = global::TATSim.Properties.Resources.hotelroom;
+            this.hotelPB.Location = new System.Drawing.Point(14, 123);
+            this.hotelPB.Name = "hotelPB";
+            this.hotelPB.Size = new System.Drawing.Size(114, 59);
+            this.hotelPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.hotelPB.TabIndex = 28;
+            this.hotelPB.TabStop = false;
+            // 
+            // campingPB
+            // 
+            this.campingPB.Image = global::TATSim.Properties.Resources.tent;
+            this.campingPB.Location = new System.Drawing.Point(14, 39);
+            this.campingPB.Name = "campingPB";
+            this.campingPB.Size = new System.Drawing.Size(114, 59);
+            this.campingPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.campingPB.TabIndex = 27;
+            this.campingPB.TabStop = false;
             // 
             // label12
             // 
@@ -365,6 +405,16 @@
             this.label8.TabIndex = 21;
             this.label8.Text = "Enjoyment:";
             // 
+            // playerPicPB
+            // 
+            this.playerPicPB.Image = global::TATSim.Properties.Resources.Dick;
+            this.playerPicPB.Location = new System.Drawing.Point(1189, 373);
+            this.playerPicPB.Name = "playerPicPB";
+            this.playerPicPB.Size = new System.Drawing.Size(98, 237);
+            this.playerPicPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.playerPicPB.TabIndex = 20;
+            this.playerPicPB.TabStop = false;
+            // 
             // label7
             // 
             this.label7.AutoSize = true;
@@ -403,9 +453,9 @@
             this.label6.ForeColor = System.Drawing.Color.Black;
             this.label6.Location = new System.Drawing.Point(1095, 280);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(144, 29);
+            this.label6.Size = new System.Drawing.Size(249, 29);
             this.label6.TabIndex = 16;
-            this.label6.Text = "Fuel Range:";
+            this.label6.Text = "Fuel Range (in Miles):";
             // 
             // label5
             // 
@@ -417,6 +467,15 @@
             this.label5.Size = new System.Drawing.Size(75, 29);
             this.label5.TabIndex = 15;
             this.label5.Text = "Tires:";
+            // 
+            // playersMotoPB
+            // 
+            this.playersMotoPB.Location = new System.Drawing.Point(909, 212);
+            this.playersMotoPB.Name = "playersMotoPB";
+            this.playersMotoPB.Size = new System.Drawing.Size(173, 149);
+            this.playersMotoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.playersMotoPB.TabIndex = 14;
+            this.playersMotoPB.TabStop = false;
             // 
             // label4
             // 
@@ -482,6 +541,16 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Day Number:";
             // 
+            // tatMapPB
+            // 
+            this.tatMapPB.Image = global::TATSim.Properties.Resources.TATMapMultiRoute1;
+            this.tatMapPB.Location = new System.Drawing.Point(42, 48);
+            this.tatMapPB.Name = "tatMapPB";
+            this.tatMapPB.Size = new System.Drawing.Size(741, 395);
+            this.tatMapPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tatMapPB.TabIndex = 7;
+            this.tatMapPB.TabStop = false;
+            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -539,75 +608,6 @@
             this.nyRouteRadBut.Text = "Start in New York!";
             this.nyRouteRadBut.UseVisualStyleBackColor = true;
             // 
-            // steakPB
-            // 
-            this.steakPB.Image = global::TATSim.Properties.Resources.steak_dinner;
-            this.steakPB.Location = new System.Drawing.Point(17, 122);
-            this.steakPB.Name = "steakPB";
-            this.steakPB.Size = new System.Drawing.Size(114, 59);
-            this.steakPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.steakPB.TabIndex = 30;
-            this.steakPB.TabStop = false;
-            // 
-            // ramenPB
-            // 
-            this.ramenPB.Image = global::TATSim.Properties.Resources.ramsoup;
-            this.ramenPB.Location = new System.Drawing.Point(17, 38);
-            this.ramenPB.Name = "ramenPB";
-            this.ramenPB.Size = new System.Drawing.Size(114, 59);
-            this.ramenPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.ramenPB.TabIndex = 29;
-            this.ramenPB.TabStop = false;
-            // 
-            // hotelPB
-            // 
-            this.hotelPB.Image = global::TATSim.Properties.Resources.hotelroom;
-            this.hotelPB.Location = new System.Drawing.Point(14, 123);
-            this.hotelPB.Name = "hotelPB";
-            this.hotelPB.Size = new System.Drawing.Size(114, 59);
-            this.hotelPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.hotelPB.TabIndex = 28;
-            this.hotelPB.TabStop = false;
-            // 
-            // campingPB
-            // 
-            this.campingPB.Image = global::TATSim.Properties.Resources.tent;
-            this.campingPB.Location = new System.Drawing.Point(14, 39);
-            this.campingPB.Name = "campingPB";
-            this.campingPB.Size = new System.Drawing.Size(114, 59);
-            this.campingPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.campingPB.TabIndex = 27;
-            this.campingPB.TabStop = false;
-            // 
-            // playerPicPB
-            // 
-            this.playerPicPB.Image = global::TATSim.Properties.Resources.Dick;
-            this.playerPicPB.Location = new System.Drawing.Point(1189, 373);
-            this.playerPicPB.Name = "playerPicPB";
-            this.playerPicPB.Size = new System.Drawing.Size(98, 237);
-            this.playerPicPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.playerPicPB.TabIndex = 20;
-            this.playerPicPB.TabStop = false;
-            // 
-            // playersMotoPB
-            // 
-            this.playersMotoPB.Location = new System.Drawing.Point(909, 212);
-            this.playersMotoPB.Name = "playersMotoPB";
-            this.playersMotoPB.Size = new System.Drawing.Size(173, 149);
-            this.playersMotoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.playersMotoPB.TabIndex = 14;
-            this.playersMotoPB.TabStop = false;
-            // 
-            // tatMapPB
-            // 
-            this.tatMapPB.Image = global::TATSim.Properties.Resources.TATMapMultiRoute1;
-            this.tatMapPB.Location = new System.Drawing.Point(42, 48);
-            this.tatMapPB.Name = "tatMapPB";
-            this.tatMapPB.Size = new System.Drawing.Size(741, 395);
-            this.tatMapPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.tatMapPB.TabIndex = 7;
-            this.tatMapPB.TabStop = false;
-            // 
             // GameBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -626,17 +626,17 @@
             this.grpbxRandomEvent.PerformLayout();
             this.eatPanel.ResumeLayout(false);
             this.eatPanel.PerformLayout();
-            this.sleepPanel.ResumeLayout(false);
-            this.sleepPanel.PerformLayout();
-            this.routeSelectPanel1.ResumeLayout(false);
-            this.routeSelectPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.steakPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.ramenPB)).EndInit();
+            this.sleepPanel.ResumeLayout(false);
+            this.sleepPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.hotelPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.campingPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersMotoPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tatMapPB)).EndInit();
+            this.routeSelectPanel1.ResumeLayout(false);
+            this.routeSelectPanel1.PerformLayout();
             this.ResumeLayout(false);
 
         }
