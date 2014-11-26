@@ -40,11 +40,30 @@ namespace TATSim
             set { cost = value; }
         }
 
-        public Tank(int newRange, int newWeight, int newCost)
+        private double gallons;
+        private double maxGallons;
+
+        public double Gallons
+        {
+            get { return gallons; }
+            set
+            { 
+                gallons = value;
+                maxGallons = gallons;
+            }
+        }
+
+        public double MaxGallons
+        {
+            get { return maxGallons; }
+        }
+
+        public Tank(int newRange, int newWeight, int newCost, double newGallons)
         {
             range = newRange;
             weight = newWeight;
             cost = newCost;
+            gallons = newGallons;
         }
 
         public Tank()

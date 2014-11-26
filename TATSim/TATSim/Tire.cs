@@ -60,5 +60,10 @@ namespace TATSim
         {
 
         }
+
+        internal void travel(int speed, int distance)
+        {
+            wear += (((speed + distance + weight) / 3) / 100);
+        }
     }
 }

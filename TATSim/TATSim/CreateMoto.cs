@@ -85,6 +85,7 @@ namespace TATSim
                 tank.Cost = 350;
                 tank.Range = 3;
                 tank.Weight = -2;
+                tank.Gallons = 3.5;//Ross neds to verify
                 moto.Range += tank.Range;
                 moto.Weight += tank.Weight;
             }
@@ -94,6 +95,7 @@ namespace TATSim
                 tank.Cost = 300;
                 tank.Range = 2;
                 tank.Weight = -1;
+                tank.Gallons = 2.8; //Ross need to verify
                 moto.Range += tank.Range;
                 moto.Weight += tank.Weight;
             }
@@ -103,6 +105,7 @@ namespace TATSim
                 tank.Cost = 250;
                 tank.Range = 1;
                 tank.Weight = 0;
+                tank.Gallons = 3.2; //Ross needs to verify
                 moto.Range += tank.Range;
                 moto.Weight += tank.Weight;
             }

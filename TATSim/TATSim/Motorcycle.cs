@@ -110,7 +110,18 @@ namespace TATSim
 
         public Motorcycle()
         {
+            
+        }
 
+        public double[] travel(int speed, int distance, double mpg)
+        {
+            double gallons = gasTank.Gallons;
+            double totalDistOnThisTank = mpg * gallons;
+            totalDistOnThisTank -= distance;
+            totalDistOnThisTank *= (((weight + range + performance) / 300) / 100);
+            tires.travel(speed, distance);
+            double[] numbers = { totalDistOnThisTank, tires.Wear };
+            return numbers;
         }
     }
 }
