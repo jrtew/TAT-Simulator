@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 
 namespace TATSim
 {
@@ -261,6 +262,16 @@ namespace TATSim
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void tatMapPB_MouseClick(object sender, MouseEventArgs e)
+        {
+            int x = e.X;
+            int y = e.Y;
+
+            string position = "X = " + x + "\nY = " + y;
+
+            MessageBox.Show(position, "Mouse Position", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
