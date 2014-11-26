@@ -20,6 +20,15 @@ namespace TATSim
         public int miles;
         Dictionary<string, RandomEvent> randomEvents;
         Dictionary<string, Trail> trails;
+        Trail currentTrail;
+        int trailSelectionState = 0;
+        string selection1 = "";
+        string selection2 = "";
+
+        //Constants
+        const double mpg = 50.0;
+        const double pricePerGallon = 2.8;
+
         public GameBoardForm(TATSimForm incomingForm)
         {
             // Links the two forms together so we can 
@@ -58,6 +67,7 @@ namespace TATSim
 
             randomEvents = RandomEvent.createEvents();
             trails = Trail.createTrials();
+            checkTrailState();
             //checkMileage();
 
             //Console.WriteLine(originalForm.playersMoto.Name.ToString());
@@ -72,19 +82,54 @@ namespace TATSim
             //Console.WriteLine(originalForm.playersMoto.TheExhaust.Cost.ToString());
         }
 
+        private void checkTrailState()
+        {
+            gameBoardPanel.Visible = false;
+            routeSelectPanel1.Visible = true;
+
+            if(trailSelectionState == 0)
+            {
+                selection1 = "Cape Hatteras";
+                selection2 = "New York";
+
+            }
+            else if (trailSelectionState == 1)
+            {
+                selection1 = "Ross Needs to Put the Name Here";
+                selection2 = "Ross Needs to Put the Name Here";
+            }
+            else
+            {
+                selection1 = "Ross Needs to Put the Name Here";
+                selection2 = "Ross Needs to Put the Name Here";
+            }
+
+            radbtnSelection1.Text = "Travel on " + selection1;
+            radbtnSelection2.Text = "Travel on " + selection2;
+        }
+
         private void routeStartBtn1_Click(object sender, EventArgs e)
         {
-            if (!capeHRouteRadBut.Checked && !nyRouteRadBut.Checked)
+            if (!radbtnSelection1.Checked && !radbtnSelection2.Checked)
                 MessageBox.Show("Please select a route!", "Message", MessageBoxButtons.OK);
             else
             {
-                if (capeHRouteRadBut.Checked)
-                    player.Route = "cape hatteras";
+                if (radbtnSelection1.Checked)
+                {
+                    player.Route = selection1;
+                    currentTrail = trails[selection1];
+                    trails.Remove(selection2);
+                }
                 else
-                    player.Route = "new york";
+                {
+                    player.Route = selection2;
+                    currentTrail = trails[selection2];
+                    trails.Remove(selection1);
+                }
 
                 routeSelectPanel1.Visible = false;
                 gameBoardPanel.Visible = true;
+                gameBoardPanel.BringToFront();
             }
         }
 
@@ -99,16 +144,55 @@ namespace TATSim
             }
 
             //Checks to make sure the random event has been dealt with
-            if (!grpbxRandomEvent.Visible && checkMileage())
+            if (!grpbxRandomEvent.Visible && checkMileage() && checkDailyChoices())
             {
-                int todaysMileage = Convert.ToInt32(mileageTextBox.Text);
-                int fuelRange = Convert.ToInt32(fuelRangeTB.Text);
-                fuelRange -= todaysMileage;
-                mileageTextBox.Text = todaysMileage.ToString();
+                int todaysMileage = Convert.ToInt32(mileageTextBox.Text);                
+                int speed = 0;
+                foreach (RadioButton rb in grpbxSpeed.Controls)
+                {
+                    if (rb.Checked)
+                    {
+                        speed = Convert.ToInt32(rb.Tag);
+                        break;
+                    }
+                }
+                double[] array = playersMotoObj.travel(speed, todaysMileage, mpg);
+                fuelRangeTB.Text = array[0].ToString();
+                tireStatTB.Text = array[1].ToString();
+                int nextDistance = movePlayer();
+                mileageTextBox.Text = nextDistance.ToString();
                 int daysIntoTrip = Convert.ToInt32(dayNumTextBox.Text);
                 daysIntoTrip++;
                 dayNumTextBox.Text = daysIntoTrip.ToString();
                 MessageBox.Show("A day has passed.");
+            }
+        }
+
+        private int movePlayer()
+        {
+            Stop currentStop = currentTrail.NextStop;
+            if (currentStop == null)
+            {
+                trails.Remove(currentTrail.Name);
+                trailSelectionState++;
+                checkTrailState();
+                currentStop = currentTrail.NextStop;
+            }
+
+            return currentStop.Distance;
+
+        }
+
+        private bool checkDailyChoices()
+        {
+            if ((campRadBut.Checked || hotelRadBut.Checked) && (ramenRadBut.Checked || steakRadBut.Checked))
+            {
+                return true;
+            }
+            else
+            {
+                MessageBox.Show("Error - Please select one sleeping choice and one eating choice.");
+                return false;
             }
         }
 

@@ -29,6 +29,11 @@
         private void InitializeComponent()
         {
             this.gameBoardPanel = new System.Windows.Forms.Panel();
+            this.grpbxSpeed = new System.Windows.Forms.GroupBox();
+            this.radbtnFast = new System.Windows.Forms.RadioButton();
+            this.radbtnMedium = new System.Windows.Forms.RadioButton();
+            this.radbtnSlow = new System.Windows.Forms.RadioButton();
+            this.label15 = new System.Windows.Forms.Label();
             this.btnFillUp = new System.Windows.Forms.Button();
             this.grpbxRandomEvent = new System.Windows.Forms.GroupBox();
             this.btnIgnore = new System.Windows.Forms.Button();
@@ -72,9 +77,10 @@
             this.lblTitle = new System.Windows.Forms.Label();
             this.routeSelectPanel1 = new System.Windows.Forms.Panel();
             this.routeStartBtn1 = new System.Windows.Forms.Button();
-            this.capeHRouteRadBut = new System.Windows.Forms.RadioButton();
-            this.nyRouteRadBut = new System.Windows.Forms.RadioButton();
+            this.radbtnSelection1 = new System.Windows.Forms.RadioButton();
+            this.radbtnSelection2 = new System.Windows.Forms.RadioButton();
             this.gameBoardPanel.SuspendLayout();
+            this.grpbxSpeed.SuspendLayout();
             this.grpbxRandomEvent.SuspendLayout();
             this.eatPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.steakPB)).BeginInit();
@@ -90,6 +96,8 @@
             // 
             // gameBoardPanel
             // 
+            this.gameBoardPanel.Controls.Add(this.grpbxSpeed);
+            this.gameBoardPanel.Controls.Add(this.label15);
             this.gameBoardPanel.Controls.Add(this.btnFillUp);
             this.gameBoardPanel.Controls.Add(this.grpbxRandomEvent);
             this.gameBoardPanel.Controls.Add(this.mileageTextBox);
@@ -116,14 +124,72 @@
             this.gameBoardPanel.Controls.Add(this.label1);
             this.gameBoardPanel.Controls.Add(this.tatMapPB);
             this.gameBoardPanel.Controls.Add(this.lblTitle);
-            this.gameBoardPanel.Location = new System.Drawing.Point(12, 12);
+            this.gameBoardPanel.Location = new System.Drawing.Point(9, 9);
             this.gameBoardPanel.Name = "gameBoardPanel";
             this.gameBoardPanel.Size = new System.Drawing.Size(1326, 705);
             this.gameBoardPanel.TabIndex = 0;
+            this.gameBoardPanel.Visible = false;
+            // 
+            // grpbxSpeed
+            // 
+            this.grpbxSpeed.Controls.Add(this.radbtnFast);
+            this.grpbxSpeed.Controls.Add(this.radbtnMedium);
+            this.grpbxSpeed.Controls.Add(this.radbtnSlow);
+            this.grpbxSpeed.Location = new System.Drawing.Point(1127, 244);
+            this.grpbxSpeed.Name = "grpbxSpeed";
+            this.grpbxSpeed.Size = new System.Drawing.Size(196, 52);
+            this.grpbxSpeed.TabIndex = 48;
+            this.grpbxSpeed.TabStop = false;
+            // 
+            // radbtnFast
+            // 
+            this.radbtnFast.AutoSize = true;
+            this.radbtnFast.Location = new System.Drawing.Point(7, 34);
+            this.radbtnFast.Name = "radbtnFast";
+            this.radbtnFast.Size = new System.Drawing.Size(45, 17);
+            this.radbtnFast.TabIndex = 2;
+            this.radbtnFast.Tag = "55";
+            this.radbtnFast.Text = "Fast";
+            this.radbtnFast.UseVisualStyleBackColor = true;
+            // 
+            // radbtnMedium
+            // 
+            this.radbtnMedium.AutoSize = true;
+            this.radbtnMedium.Location = new System.Drawing.Point(98, 10);
+            this.radbtnMedium.Name = "radbtnMedium";
+            this.radbtnMedium.Size = new System.Drawing.Size(62, 17);
+            this.radbtnMedium.TabIndex = 1;
+            this.radbtnMedium.Tag = "40";
+            this.radbtnMedium.Text = "Medium";
+            this.radbtnMedium.UseVisualStyleBackColor = true;
+            // 
+            // radbtnSlow
+            // 
+            this.radbtnSlow.AutoSize = true;
+            this.radbtnSlow.Checked = true;
+            this.radbtnSlow.Location = new System.Drawing.Point(7, 12);
+            this.radbtnSlow.Name = "radbtnSlow";
+            this.radbtnSlow.Size = new System.Drawing.Size(48, 17);
+            this.radbtnSlow.TabIndex = 0;
+            this.radbtnSlow.TabStop = true;
+            this.radbtnSlow.Tag = "25";
+            this.radbtnSlow.Text = "Slow";
+            this.radbtnSlow.UseVisualStyleBackColor = true;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.ForeColor = System.Drawing.Color.Black;
+            this.label15.Location = new System.Drawing.Point(1122, 212);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(91, 29);
+            this.label15.TabIndex = 47;
+            this.label15.Text = "Speed:";
             // 
             // btnFillUp
             // 
-            this.btnFillUp.Location = new System.Drawing.Point(1263, 313);
+            this.btnFillUp.Location = new System.Drawing.Point(1127, 331);
             this.btnFillUp.Name = "btnFillUp";
             this.btnFillUp.Size = new System.Drawing.Size(59, 30);
             this.btnFillUp.TabIndex = 46;
@@ -377,7 +443,7 @@
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label10.ForeColor = System.Drawing.Color.Black;
-            this.label10.Location = new System.Drawing.Point(983, 529);
+            this.label10.Location = new System.Drawing.Point(867, 529);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(89, 26);
             this.label10.TabIndex = 23;
@@ -388,7 +454,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.Black;
-            this.label9.Location = new System.Drawing.Point(961, 470);
+            this.label9.Location = new System.Drawing.Point(830, 470);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(126, 26);
             this.label9.TabIndex = 22;
@@ -399,7 +465,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.Black;
-            this.label8.Location = new System.Drawing.Point(961, 408);
+            this.label8.Location = new System.Drawing.Point(834, 408);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(122, 26);
             this.label8.TabIndex = 21;
@@ -429,7 +495,7 @@
             // fuelRangeTB
             // 
             this.fuelRangeTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.fuelRangeTB.Location = new System.Drawing.Point(1136, 313);
+            this.fuelRangeTB.Location = new System.Drawing.Point(988, 331);
             this.fuelRangeTB.Name = "fuelRangeTB";
             this.fuelRangeTB.ReadOnly = true;
             this.fuelRangeTB.Size = new System.Drawing.Size(121, 30);
@@ -439,7 +505,7 @@
             // tireStatTB
             // 
             this.tireStatTB.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tireStatTB.Location = new System.Drawing.Point(1136, 241);
+            this.tireStatTB.Location = new System.Drawing.Point(988, 244);
             this.tireStatTB.Name = "tireStatTB";
             this.tireStatTB.ReadOnly = true;
             this.tireStatTB.Size = new System.Drawing.Size(121, 30);
@@ -451,7 +517,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.Black;
-            this.label6.Location = new System.Drawing.Point(1095, 280);
+            this.label6.Location = new System.Drawing.Point(983, 299);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(249, 29);
             this.label6.TabIndex = 16;
@@ -462,7 +528,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(1095, 212);
+            this.label5.Location = new System.Drawing.Point(983, 212);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(75, 29);
             this.label5.TabIndex = 15;
@@ -470,7 +536,7 @@
             // 
             // playersMotoPB
             // 
-            this.playersMotoPB.Location = new System.Drawing.Point(909, 212);
+            this.playersMotoPB.Location = new System.Drawing.Point(799, 212);
             this.playersMotoPB.Name = "playersMotoPB";
             this.playersMotoPB.Size = new System.Drawing.Size(173, 149);
             this.playersMotoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -482,7 +548,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label4.Location = new System.Drawing.Point(1031, 168);
+            this.label4.Location = new System.Drawing.Point(1022, 168);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(110, 31);
             this.label4.TabIndex = 13;
@@ -565,8 +631,8 @@
             // routeSelectPanel1
             // 
             this.routeSelectPanel1.Controls.Add(this.routeStartBtn1);
-            this.routeSelectPanel1.Controls.Add(this.capeHRouteRadBut);
-            this.routeSelectPanel1.Controls.Add(this.nyRouteRadBut);
+            this.routeSelectPanel1.Controls.Add(this.radbtnSelection1);
+            this.routeSelectPanel1.Controls.Add(this.radbtnSelection2);
             this.routeSelectPanel1.Location = new System.Drawing.Point(12, 12);
             this.routeSelectPanel1.Name = "routeSelectPanel1";
             this.routeSelectPanel1.Size = new System.Drawing.Size(1326, 705);
@@ -584,29 +650,29 @@
             this.routeStartBtn1.UseVisualStyleBackColor = true;
             this.routeStartBtn1.Click += new System.EventHandler(this.routeStartBtn1_Click);
             // 
-            // capeHRouteRadBut
+            // radbtnSelection1
             // 
-            this.capeHRouteRadBut.AutoSize = true;
-            this.capeHRouteRadBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.capeHRouteRadBut.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.capeHRouteRadBut.Location = new System.Drawing.Point(194, 564);
-            this.capeHRouteRadBut.Name = "capeHRouteRadBut";
-            this.capeHRouteRadBut.Size = new System.Drawing.Size(270, 33);
-            this.capeHRouteRadBut.TabIndex = 1;
-            this.capeHRouteRadBut.Text = "Start in Cape Hatteras!";
-            this.capeHRouteRadBut.UseVisualStyleBackColor = true;
+            this.radbtnSelection1.AutoSize = true;
+            this.radbtnSelection1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radbtnSelection1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.radbtnSelection1.Location = new System.Drawing.Point(194, 564);
+            this.radbtnSelection1.Name = "radbtnSelection1";
+            this.radbtnSelection1.Size = new System.Drawing.Size(270, 33);
+            this.radbtnSelection1.TabIndex = 1;
+            this.radbtnSelection1.Text = "Start in Cape Hatteras!";
+            this.radbtnSelection1.UseVisualStyleBackColor = true;
             // 
-            // nyRouteRadBut
+            // radbtnSelection2
             // 
-            this.nyRouteRadBut.AutoSize = true;
-            this.nyRouteRadBut.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nyRouteRadBut.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.nyRouteRadBut.Location = new System.Drawing.Point(909, 564);
-            this.nyRouteRadBut.Name = "nyRouteRadBut";
-            this.nyRouteRadBut.Size = new System.Drawing.Size(223, 33);
-            this.nyRouteRadBut.TabIndex = 0;
-            this.nyRouteRadBut.Text = "Start in New York!";
-            this.nyRouteRadBut.UseVisualStyleBackColor = true;
+            this.radbtnSelection2.AutoSize = true;
+            this.radbtnSelection2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.radbtnSelection2.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.radbtnSelection2.Location = new System.Drawing.Point(909, 564);
+            this.radbtnSelection2.Name = "radbtnSelection2";
+            this.radbtnSelection2.Size = new System.Drawing.Size(223, 33);
+            this.radbtnSelection2.TabIndex = 0;
+            this.radbtnSelection2.Text = "Start in New York!";
+            this.radbtnSelection2.UseVisualStyleBackColor = true;
             // 
             // GameBoardForm
             // 
@@ -622,6 +688,8 @@
             this.Load += new System.EventHandler(this.GameBoardForm_Load);
             this.gameBoardPanel.ResumeLayout(false);
             this.gameBoardPanel.PerformLayout();
+            this.grpbxSpeed.ResumeLayout(false);
+            this.grpbxSpeed.PerformLayout();
             this.grpbxRandomEvent.ResumeLayout(false);
             this.grpbxRandomEvent.PerformLayout();
             this.eatPanel.ResumeLayout(false);
@@ -674,8 +742,8 @@
         private System.Windows.Forms.Label label12;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Panel routeSelectPanel1;
-        private System.Windows.Forms.RadioButton capeHRouteRadBut;
-        private System.Windows.Forms.RadioButton nyRouteRadBut;
+        private System.Windows.Forms.RadioButton radbtnSelection1;
+        private System.Windows.Forms.RadioButton radbtnSelection2;
         private System.Windows.Forms.Button routeStartBtn1;
         private System.Windows.Forms.Panel eatPanel;
         private System.Windows.Forms.Panel sleepPanel;
@@ -689,6 +757,11 @@
         private System.Windows.Forms.RichTextBox rtbxRandomEventDescription;
         private System.Windows.Forms.Button btnIgnore;
         private System.Windows.Forms.Button btnFillUp;
+        private System.Windows.Forms.GroupBox grpbxSpeed;
+        private System.Windows.Forms.RadioButton radbtnFast;
+        private System.Windows.Forms.RadioButton radbtnMedium;
+        private System.Windows.Forms.RadioButton radbtnSlow;
+        private System.Windows.Forms.Label label15;
 
     }
 }
