@@ -115,7 +115,7 @@ namespace TATSim
 
         public double[] travel(int speed, int distance, int fuelRange)
         {
-            double gallons = gasTank.Gallons;
+            //double gallons = gasTank.Gallons;
             double totalDistOnThisTank = fuelRange - distance;
             double percent =(double) ((weight + range + performance) / 3);
             percent = percent / 100;

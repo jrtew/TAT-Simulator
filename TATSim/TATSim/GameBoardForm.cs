@@ -166,7 +166,8 @@ namespace TATSim
                 int daysIntoTrip = Convert.ToInt32(dayNumTextBox.Text);
                 daysIntoTrip++;
                 dayNumTextBox.Text = daysIntoTrip.ToString();
-
+                updateMoneyFromDailyChoices();
+                checkMileage();
                 MessageBox.Show("A day has passed.");
             }
         }
@@ -197,6 +198,31 @@ namespace TATSim
                 MessageBox.Show("Error - Please select one sleeping choice and one eating choice.");
                 return false;
             }
+        }
+
+        private void updateMoneyFromDailyChoices()
+        {
+            double sleep = 0.0;
+            double food = 0.0;
+            if (campRadBut.Checked)
+            {
+                sleep = 5.0;
+            }
+            else
+            {
+                sleep = 30.0;
+            }
+            if (ramenRadBut.Checked)
+            {
+                food = 1.0;
+            }
+            else
+            {
+                food = 15.0;
+            }
+
+            double wallet = Convert.ToDouble(cashTextBox.Text.ToString().Substring(1));
+            cashTextBox.Text = "$" + (wallet - (sleep + food));
         }
 
         private void changeToRandomEventScreen()
@@ -272,6 +298,21 @@ namespace TATSim
             string position = "X = " + x + "\nY = " + y;
 
             MessageBox.Show(position, "Mouse Position", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void btnFillUp_Click(object sender, EventArgs e)
+        {
+            int rangeDiff = playersMotoObj.Range - Convert.ToInt32(fuelRangeTB.Text);
+            double cost = 0.0;
+            while ((rangeDiff - 50) > 0)
+            {
+                cost += Math.Round(( 50 / 2.8), 2);
+                rangeDiff -= 50;
+            }
+            cost += Math.Round((rangeDiff / 2.8), 2);
+            double wallet = Convert.ToDouble(cashTextBox.Text.ToString().Substring(1));
+            cashTextBox.Text = "$" + (wallet - cost);
+            fuelRangeTB.Text = playersMotoObj.Range.ToString();
         }
     }
 }
