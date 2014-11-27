@@ -25,7 +25,9 @@ namespace TATSim
         int trailSelectionState = 0;
         string selection1 = "";
         string selection2 = "";
-
+        bool nextStateSelected = false;
+        bool needToRunMove = false;
+       
         //Constants
         const double mpg = 50.0;
         const double pricePerGallon = 2.8;
@@ -71,6 +73,8 @@ namespace TATSim
             randomEvents = RandomEvent.createEvents();
             trails = Trail.createTrials();
             checkTrailState();
+
+            
             //checkMileage();
 
             enjymntProgBar.Value = 10;
@@ -94,14 +98,26 @@ namespace TATSim
                 selection1 = "Southern";
                 selection2 = "Great Plains";
             }
-            else
+            else if (trailSelectionState == 2)
             {
                 selection1 = "Oregon Coast";
                 selection2 = "Los Angeles";
             }
+            else
+            {
+                if (Convert.ToInt32(dayNumTextBox.Text) <= 28)
+                {
+                    //You win!!
+                }
+                else
+                {
+                    //You lose!!
+                }
+            }
 
             radbtnSelection1.Text = "Take the " + selection1 + " trail";
             radbtnSelection2.Text = "Take the " + selection2 + " trail";
+            nextStateSelected = false;
         }
 
         private void routeStartBtn1_Click(object sender, EventArgs e)
@@ -126,11 +142,21 @@ namespace TATSim
                 routeSelectPanel1.Visible = false;
                 gameBoardPanel.Visible = true;
                 //gameBoardPanel.BringToFront();
-                playerIcon.Image = playersMotoObj.Image;
-                playerIcon.Location = new Point(currentTrail.ThisStop.Point.X - 25, currentTrail.ThisStop.Point.Y - 25);
+                if (!needToRunMove)
+                {
+                    playerIcon.Image = playersMotoObj.Image;
+                    playerIcon.Location = new Point(currentTrail.ThisStop.Point.X - 25, currentTrail.ThisStop.Point.Y - 25);                    
+                }
+                else
+                {
+                    checkMileage();
+                    needToRunMove = false;
+                }
+                nextStateSelected = true;
             }
         }
 
+       
         private void nextDayBtn_Click(object sender, EventArgs e)
         {
             //Get a possible random event
@@ -144,42 +170,73 @@ namespace TATSim
             //Checks to make sure the random event has been dealt with
             if (!grpbxRandomEvent.Visible && checkMileage() && checkDailyChoices())
             {
-                int todaysMileage = Convert.ToInt32(mileageTextBox.Text);
-                int fuelRange = Convert.ToInt32(fuelRangeTB.Text); 
-                int speed = 0;
-                foreach (RadioButton rb in grpbxSpeed.Controls)
-                {
-                    if (rb.Checked)
-                    {
-                        speed = Convert.ToInt32(rb.Tag);
-                        break;
-                    }
-                }
-                double[] array = playersMotoObj.travel(speed, todaysMileage, fuelRange);
-                fuelRangeTB.Text = array[0].ToString().Substring(0, array[0].ToString().IndexOf("."));
-                tireStatTB.Text = array[1].ToString();
                 int nextDistance = movePlayer();
                 mileageTextBox.Text = nextDistance.ToString();
-                int daysIntoTrip = Convert.ToInt32(dayNumTextBox.Text);
-                daysIntoTrip++;
-                dayNumTextBox.Text = daysIntoTrip.ToString();
-
-                MessageBox.Show("A day has passed.");
+                if (nextStateSelected)
+                {
+                    int todaysMileage = Convert.ToInt32(mileageTextBox.Text);
+                    int fuelRange = Convert.ToInt32(fuelRangeTB.Text);
+                    int speed = 0;
+                    foreach (RadioButton rb in grpbxSpeed.Controls)
+                    {
+                        if (rb.Checked)
+                        {
+                            speed = Convert.ToInt32(rb.Tag);
+                            break;
+                        }
+                    }
+                    double[] array = playersMotoObj.travel(speed, todaysMileage, fuelRange);
+                    fuelRangeTB.Text = array[0].ToString().Substring(0, array[0].ToString().IndexOf("."));
+                    tireStatTB.Text = array[1].ToString();
+                    int daysIntoTrip = Convert.ToInt32(dayNumTextBox.Text);
+                    daysIntoTrip++;
+                    dayNumTextBox.Text = daysIntoTrip.ToString();
+                    updateMoneyFromDailyChoices();
+                    checkMileage();
+                    //MessageBox.Show("A day has passed.");
+                }
             }
+        }
+
+        private void updateMoneyFromDailyChoices()
+        {
+            double sleep = 0.0;
+            double food = 0.0;
+            if (campRadBut.Checked)
+            {
+                sleep = 5.0;
+            }
+            else
+            {
+                sleep = 30.0;
+            }
+            if (ramenRadBut.Checked)
+            {
+                food = 1.0;
+            }
+            else
+            {
+                food = 15.0;
+            }
+
+            double wallet = Convert.ToDouble(cashTextBox.Text.ToString().Substring(1));
+            cashTextBox.Text = "$" + (wallet - (sleep + food));
         }
 
         private int movePlayer()
         {
+            int lastDistance = Convert.ToInt32(mileageTextBox.Text);
             Stop currentStop = currentTrail.NextStop;
             if (currentStop == null)
             {
                 trails.Remove(currentTrail.Name);
                 trailSelectionState++;
                 checkTrailState();
-                currentStop = currentTrail.NextStop;
+                needToRunMove = true;
+                return lastDistance;                
             }
-            
-            playerIcon.Location = new Point(currentTrail.ThisStop.Point.X - 25, currentTrail.ThisStop.Point.Y - 25);
+
+            playerIcon.Location = new Point(currentStop.Point.X - 25, currentStop.Point.Y - 25);            
 
             return currentStop.Distance;
         }
@@ -260,6 +317,21 @@ namespace TATSim
         private void button1_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnFillUp_Click(object sender, EventArgs e)
+        {
+            int rangeDiff = playersMotoObj.Range - Convert.ToInt32(fuelRangeTB.Text);
+            double cost = 0.0;
+            while ((rangeDiff - 50) > 0)
+            {
+                cost += Math.Round((50 / 2.8), 2);
+                rangeDiff -= 50;
+            }
+            cost += Math.Round((rangeDiff / 2.8), 2);
+            double wallet = Convert.ToDouble(cashTextBox.Text.ToString().Substring(1));
+            cashTextBox.Text = "$" + (wallet - cost);
+            fuelRangeTB.Text = playersMotoObj.Range.ToString();
         }
 
         //private void tatMapPB_MouseClick(object sender, MouseEventArgs e)

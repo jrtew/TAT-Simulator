@@ -218,6 +218,7 @@
             this.btnFillUp.Text = "Fill up!";
             this.btnFillUp.UseVisualStyleBackColor = true;
             this.btnFillUp.Visible = false;
+            this.btnFillUp.Click += new System.EventHandler(this.btnFillUp_Click);
             // 
             // mileageTextBox
             // 
@@ -469,6 +470,7 @@
             this.tireStatTB.ReadOnly = true;
             this.tireStatTB.Size = new System.Drawing.Size(121, 30);
             this.tireStatTB.TabIndex = 17;
+            this.tireStatTB.Text = "0.0";
             this.tireStatTB.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label6

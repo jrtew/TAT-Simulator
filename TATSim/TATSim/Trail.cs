@@ -202,7 +202,7 @@ namespace TATSim
             Trail NYTrail = new Trail("New York", NewYork);
             Trail CapeHat = new Trail("Cape Hatteras", CapeHattteras);
             Trail GreatP = new Trail("Great Plains", GreatPlains);
-            Trail South = new Trail("The South", TheSouth);
+            Trail South = new Trail("Southern", TheSouth);
             Trail OregCoast = new Trail("Oregon Coast", OregonCoast);
             Trail LA = new Trail("Los Angeles", LosAngeles);
 

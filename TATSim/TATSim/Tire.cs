@@ -63,7 +63,7 @@ namespace TATSim
 
         internal void travel(int speed, int distance)
         {
-           double percent =(double) ((speed + distance + weight) / 30);
+           double percent =(double) ((speed + distance + (10 - weight)) / 30);
            percent = percent / 100;
            wear += percent;
         }
