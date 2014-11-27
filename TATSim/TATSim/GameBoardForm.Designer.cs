@@ -80,6 +80,9 @@
             this.routeStartBtn1 = new System.Windows.Forms.Button();
             this.radbtnSelection1 = new System.Windows.Forms.RadioButton();
             this.radbtnSelection2 = new System.Windows.Forms.RadioButton();
+            this.hungerProgBar = new System.Windows.Forms.ProgressBar();
+            this.exhaustProgBar = new System.Windows.Forms.ProgressBar();
+            this.enjymntProgBar = new System.Windows.Forms.ProgressBar();
             this.gameBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerIcon)).BeginInit();
             this.grpbxSpeed.SuspendLayout();
@@ -98,6 +101,9 @@
             // 
             // gameBoardPanel
             // 
+            this.gameBoardPanel.Controls.Add(this.hungerProgBar);
+            this.gameBoardPanel.Controls.Add(this.exhaustProgBar);
+            this.gameBoardPanel.Controls.Add(this.enjymntProgBar);
             this.gameBoardPanel.Controls.Add(this.playerIcon);
             this.gameBoardPanel.Controls.Add(this.grpbxSpeed);
             this.gameBoardPanel.Controls.Add(this.label15);
@@ -690,6 +696,36 @@
             this.radbtnSelection2.Text = "Start in New York!";
             this.radbtnSelection2.UseVisualStyleBackColor = true;
             // 
+            // hungerProgBar
+            // 
+            this.hungerProgBar.Location = new System.Drawing.Point(888, 560);
+            this.hungerProgBar.Maximum = 10;
+            this.hungerProgBar.Name = "hungerProgBar";
+            this.hungerProgBar.Size = new System.Drawing.Size(275, 23);
+            this.hungerProgBar.Step = 1;
+            this.hungerProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.hungerProgBar.TabIndex = 51;
+            // 
+            // exhaustProgBar
+            // 
+            this.exhaustProgBar.Location = new System.Drawing.Point(888, 502);
+            this.exhaustProgBar.Maximum = 10;
+            this.exhaustProgBar.Name = "exhaustProgBar";
+            this.exhaustProgBar.Size = new System.Drawing.Size(275, 23);
+            this.exhaustProgBar.Step = 1;
+            this.exhaustProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.exhaustProgBar.TabIndex = 50;
+            // 
+            // enjymntProgBar
+            // 
+            this.enjymntProgBar.Location = new System.Drawing.Point(888, 441);
+            this.enjymntProgBar.Maximum = 10;
+            this.enjymntProgBar.Name = "enjymntProgBar";
+            this.enjymntProgBar.Size = new System.Drawing.Size(275, 23);
+            this.enjymntProgBar.Step = 1;
+            this.enjymntProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.enjymntProgBar.TabIndex = 49;
+            // 
             // GameBoardForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -780,6 +816,9 @@
         private System.Windows.Forms.RadioButton radbtnSlow;
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.PictureBox playerIcon;
+        private System.Windows.Forms.ProgressBar hungerProgBar;
+        private System.Windows.Forms.ProgressBar exhaustProgBar;
+        private System.Windows.Forms.ProgressBar enjymntProgBar;
 
     }
 }

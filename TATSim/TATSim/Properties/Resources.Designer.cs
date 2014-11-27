@@ -203,6 +203,16 @@ namespace TATSim.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap TATMapIntro {
+            get {
+                object obj = ResourceManager.GetObject("TATMapIntro", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap TATMapMultiRoute {
             get {
                 object obj = ResourceManager.GetObject("TATMapMultiRoute", resourceCulture);

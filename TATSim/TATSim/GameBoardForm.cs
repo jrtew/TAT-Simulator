@@ -73,16 +73,9 @@ namespace TATSim
             checkTrailState();
             //checkMileage();
 
-            //Console.WriteLine(originalForm.playersMoto.Name.ToString());
-            //Console.WriteLine(originalForm.playersMoto.Performance.ToString());
-            //Console.WriteLine(originalForm.playersMoto.Range.ToString());
-            //Console.WriteLine(originalForm.playersMoto.Weight.ToString());
-            //Console.WriteLine(originalForm.playersMoto.Tires.Cost.ToString());
-            //Console.WriteLine(originalForm.playersMoto.Tires.Name.ToString());
-            //Console.WriteLine(originalForm.playersMoto.GasTank.Name.ToString());
-            //Console.WriteLine(originalForm.playersMoto.GasTank.Cost.ToString());
-            //Console.WriteLine(originalForm.playersMoto.TheExhaust.Name.ToString());
-            //Console.WriteLine(originalForm.playersMoto.TheExhaust.Cost.ToString());
+            enjymntProgBar.Value = 10;
+            exhaustProgBar.Value = 10;
+            hungerProgBar.Value = 10;
         }
 
         private void checkTrailState()

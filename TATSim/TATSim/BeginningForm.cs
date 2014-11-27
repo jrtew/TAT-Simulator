@@ -14,9 +14,17 @@ namespace TATSim
     {
         public Motorcycle playersMoto = new Motorcycle();
         public int startCash = 5000;
-        //public Tire playersTire = new Tire();
-        //public Tank playersTank = new Tank();
-        //public Exhaust playersExhaust = new Exhaust();
+        int tireCost = 0;
+        int tankCost = 0;
+        int exhCost = 0;
+        int walletAmt = 1800;
+        int tirePerf = 0;
+        int tireWeight = 0;
+        int tankWeight = 0;
+        int tankRange = 0;
+        int exhPerf = 0;
+        int exhWeight = 0;
+        int exhRange = 0;
 
         public TATSimForm()
         {
@@ -66,6 +74,11 @@ namespace TATSim
                 motoSelectPanel.Visible = false;
                 gearSelectPanel.Visible = true;
                 gearSelectMotoPB.Image = playersMoto.Image;
+
+                performProgBar.Value = playersMoto.Performance;
+                weightProgBar.Value = playersMoto.Weight;
+                rangeProgBar.Value = playersMoto.Range;
+                walletTB.Text = "$1800";
             }
         }
 
@@ -118,6 +131,124 @@ namespace TATSim
                 gbForm.Show();
                 this.Hide();
             }
+        }
+
+        private void drRadBut_CheckedChanged(object sender, EventArgs e)
+        {
+            perfromProgBar2.Value = 5;
+            weightProgBar2.Value = 4;
+            rangeProgBar2.Value = 5;
+        }
+
+        private void klrRadBut_CheckedChanged(object sender, EventArgs e)
+        {
+            perfromProgBar2.Value = 5;
+            weightProgBar2.Value = 3;
+            rangeProgBar2.Value = 6;
+        }
+
+        private void xrRadBut_CheckedChanged(object sender, EventArgs e)
+        {
+            perfromProgBar2.Value = 6;
+            weightProgBar2.Value = 5;
+            rangeProgBar2.Value = 3;
+        }
+
+        private void scoutTireRB_CheckedChanged(object sender, EventArgs e)
+        {
+            tirePerf = 1;
+            tireWeight = 0;
+            UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
+            tireCost = 75;
+            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+        }
+
+        private void s244TireRB_CheckedChanged(object sender, EventArgs e)
+        {
+            tirePerf = 0;
+            tireWeight = 1;
+            UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
+            tireCost = 50;
+            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+        }
+
+        private void explrTireRB_CheckedChanged(object sender, EventArgs e)
+        {
+            tirePerf = 2;
+            tireWeight = -1;
+            UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
+            tireCost = 100;
+            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+        }
+
+        private void expdTankRB_CheckedChanged(object sender, EventArgs e)
+        {
+            tankWeight = -2;
+            tankRange = 3;
+            UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
+            tankCost = 350;
+            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+        }
+
+        private void italTankRB_CheckedChanged(object sender, EventArgs e)
+        {
+            tankWeight = -1;
+            tankRange = 2;
+            UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
+            tankCost = 300;
+            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+        }
+
+        private void resinTankRB_CheckedChanged(object sender, EventArgs e)
+        {
+            tankWeight = 0;
+            tankRange = 1;
+            UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
+            tankCost = 250;
+            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+        }
+
+        private void standExhaRB_CheckedChanged(object sender, EventArgs e)
+        {
+            exhPerf = -1;
+            exhWeight = 0;
+            exhRange = 1;
+            UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
+            exhCost = 150;
+            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+        }
+
+        private void nightStalkExhaRB_CheckedChanged(object sender, EventArgs e)
+        {
+            exhPerf = 1;
+            exhWeight = 0;
+            exhRange = 0;
+            UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
+            exhCost = 200;
+            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+        }
+
+        private void yoshiExhaRB_CheckedChanged(object sender, EventArgs e)
+        {
+            exhPerf = 2;
+            exhWeight = -1;
+            exhRange = 1;
+            UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
+            exhCost = 250;
+            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+        }
+
+        private void UpdateWallet(int tireAmt, int tankAmt, int exhAmt, int walletAmt)
+        {
+            walletAmt = (walletAmt - tireAmt - tankAmt - exhAmt);
+            walletTB.Text = "$" + walletAmt.ToString();
+        }
+
+        private void UpdateStatusBars(int tirePerf, int tireWeight, int tankWeight, int tankRange, int exhPerf, int exhWeight, int exhRange)
+        {
+            performProgBar.Value = playersMoto.Performance + tirePerf + exhPerf;
+            weightProgBar.Value = playersMoto.Weight + tireWeight + tankWeight + exhWeight;
+            rangeProgBar.Value = playersMoto.Range + tankRange + exhRange;
         }
     }
 }
