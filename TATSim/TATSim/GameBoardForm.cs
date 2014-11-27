@@ -115,11 +115,17 @@ namespace TATSim
                 if (Convert.ToInt32(dayNumTextBox.Text) <= 28)
                 {
                     //You win!!
+
+                    MessageBox.Show("You win!!!");
                 }
                 else
                 {
                     //You lose!!
+                    MessageBox.Show("You lose!!!");
                 }
+                radbtnSelection1.Visible = false;
+                radbtnSelection2.Visible = false;
+                routeStartBtn1.Visible = false;
             }
 
             radbtnSelection1.Text = "Take the " + selection1 + " trail";
