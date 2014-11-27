@@ -123,9 +123,6 @@ namespace TATSim
                     //You lose!!
                     MessageBox.Show("You lose!!!");
                 }
-                radbtnSelection1.Visible = false;
-                radbtnSelection2.Visible = false;
-                routeStartBtn1.Visible = false;
             }
 
             radbtnSelection1.Text = "Take the " + selection1 + " trail";
