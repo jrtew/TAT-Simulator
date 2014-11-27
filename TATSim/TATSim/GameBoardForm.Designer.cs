@@ -582,7 +582,6 @@
             this.tatMapPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.tatMapPB.TabIndex = 7;
             this.tatMapPB.TabStop = false;
-            this.tatMapPB.MouseClick += new System.Windows.Forms.MouseEventHandler(this.tatMapPB_MouseClick);
             // 
             // grpbxRandomEvent
             // 
