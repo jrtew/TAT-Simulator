@@ -29,18 +29,13 @@
         private void InitializeComponent()
         {
             this.gameBoardPanel = new System.Windows.Forms.Panel();
+            this.playerIcon = new System.Windows.Forms.PictureBox();
             this.grpbxSpeed = new System.Windows.Forms.GroupBox();
             this.radbtnFast = new System.Windows.Forms.RadioButton();
             this.radbtnMedium = new System.Windows.Forms.RadioButton();
             this.radbtnSlow = new System.Windows.Forms.RadioButton();
             this.label15 = new System.Windows.Forms.Label();
             this.btnFillUp = new System.Windows.Forms.Button();
-            this.grpbxRandomEvent = new System.Windows.Forms.GroupBox();
-            this.btnIgnore = new System.Windows.Forms.Button();
-            this.btnLowPricedFix = new System.Windows.Forms.Button();
-            this.btnHighPriceFix = new System.Windows.Forms.Button();
-            this.rtbxRandomEventDescription = new System.Windows.Forms.RichTextBox();
-            this.lblRandomEventTitle = new System.Windows.Forms.Label();
             this.mileageTextBox = new System.Windows.Forms.TextBox();
             this.label14 = new System.Windows.Forms.Label();
             this.nextDayBtn = new System.Windows.Forms.Button();
@@ -73,15 +68,21 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.tatMapPB = new System.Windows.Forms.PictureBox();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.tatMapPB = new System.Windows.Forms.PictureBox();
+            this.grpbxRandomEvent = new System.Windows.Forms.GroupBox();
+            this.btnIgnore = new System.Windows.Forms.Button();
+            this.btnLowPricedFix = new System.Windows.Forms.Button();
+            this.btnHighPriceFix = new System.Windows.Forms.Button();
+            this.rtbxRandomEventDescription = new System.Windows.Forms.RichTextBox();
+            this.lblRandomEventTitle = new System.Windows.Forms.Label();
             this.routeSelectPanel1 = new System.Windows.Forms.Panel();
             this.routeStartBtn1 = new System.Windows.Forms.Button();
             this.radbtnSelection1 = new System.Windows.Forms.RadioButton();
             this.radbtnSelection2 = new System.Windows.Forms.RadioButton();
             this.gameBoardPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.playerIcon)).BeginInit();
             this.grpbxSpeed.SuspendLayout();
-            this.grpbxRandomEvent.SuspendLayout();
             this.eatPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.steakPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.ramenPB)).BeginInit();
@@ -91,15 +92,16 @@
             ((System.ComponentModel.ISupportInitialize)(this.playerPicPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersMotoPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.tatMapPB)).BeginInit();
+            this.grpbxRandomEvent.SuspendLayout();
             this.routeSelectPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // gameBoardPanel
             // 
+            this.gameBoardPanel.Controls.Add(this.playerIcon);
             this.gameBoardPanel.Controls.Add(this.grpbxSpeed);
             this.gameBoardPanel.Controls.Add(this.label15);
             this.gameBoardPanel.Controls.Add(this.btnFillUp);
-            this.gameBoardPanel.Controls.Add(this.grpbxRandomEvent);
             this.gameBoardPanel.Controls.Add(this.mileageTextBox);
             this.gameBoardPanel.Controls.Add(this.label14);
             this.gameBoardPanel.Controls.Add(this.nextDayBtn);
@@ -122,13 +124,27 @@
             this.gameBoardPanel.Controls.Add(this.label3);
             this.gameBoardPanel.Controls.Add(this.label2);
             this.gameBoardPanel.Controls.Add(this.label1);
-            this.gameBoardPanel.Controls.Add(this.tatMapPB);
             this.gameBoardPanel.Controls.Add(this.lblTitle);
+            this.gameBoardPanel.Controls.Add(this.tatMapPB);
+            this.gameBoardPanel.Controls.Add(this.grpbxRandomEvent);
             this.gameBoardPanel.Location = new System.Drawing.Point(9, 9);
             this.gameBoardPanel.Name = "gameBoardPanel";
             this.gameBoardPanel.Size = new System.Drawing.Size(1326, 705);
             this.gameBoardPanel.TabIndex = 0;
             this.gameBoardPanel.Visible = false;
+            // 
+            // playerIcon
+            // 
+            this.playerIcon.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.playerIcon.BackColor = System.Drawing.Color.Transparent;
+            this.playerIcon.Location = new System.Drawing.Point(815, 46);
+            this.playerIcon.Name = "playerIcon";
+            this.playerIcon.Size = new System.Drawing.Size(50, 50);
+            this.playerIcon.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.playerIcon.TabIndex = 5;
+            this.playerIcon.TabStop = false;
             // 
             // grpbxSpeed
             // 
@@ -196,69 +212,6 @@
             this.btnFillUp.Text = "Fill up!";
             this.btnFillUp.UseVisualStyleBackColor = true;
             this.btnFillUp.Visible = false;
-            // 
-            // grpbxRandomEvent
-            // 
-            this.grpbxRandomEvent.Controls.Add(this.btnIgnore);
-            this.grpbxRandomEvent.Controls.Add(this.btnLowPricedFix);
-            this.grpbxRandomEvent.Controls.Add(this.btnHighPriceFix);
-            this.grpbxRandomEvent.Controls.Add(this.rtbxRandomEventDescription);
-            this.grpbxRandomEvent.Controls.Add(this.lblRandomEventTitle);
-            this.grpbxRandomEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.grpbxRandomEvent.Location = new System.Drawing.Point(42, 48);
-            this.grpbxRandomEvent.Name = "grpbxRandomEvent";
-            this.grpbxRandomEvent.Size = new System.Drawing.Size(742, 394);
-            this.grpbxRandomEvent.TabIndex = 45;
-            this.grpbxRandomEvent.TabStop = false;
-            this.grpbxRandomEvent.Text = "Random Event";
-            this.grpbxRandomEvent.Visible = false;
-            // 
-            // btnIgnore
-            // 
-            this.btnIgnore.Location = new System.Drawing.Point(532, 304);
-            this.btnIgnore.Name = "btnIgnore";
-            this.btnIgnore.Size = new System.Drawing.Size(128, 45);
-            this.btnIgnore.TabIndex = 4;
-            this.btnIgnore.Text = "Ignore";
-            this.btnIgnore.UseVisualStyleBackColor = true;
-            // 
-            // btnLowPricedFix
-            // 
-            this.btnLowPricedFix.Location = new System.Drawing.Point(307, 304);
-            this.btnLowPricedFix.Name = "btnLowPricedFix";
-            this.btnLowPricedFix.Size = new System.Drawing.Size(128, 45);
-            this.btnLowPricedFix.TabIndex = 3;
-            this.btnLowPricedFix.Text = "Low Priced Fix";
-            this.btnLowPricedFix.UseVisualStyleBackColor = true;
-            this.btnLowPricedFix.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // btnHighPriceFix
-            // 
-            this.btnHighPriceFix.Location = new System.Drawing.Point(82, 304);
-            this.btnHighPriceFix.Name = "btnHighPriceFix";
-            this.btnHighPriceFix.Size = new System.Drawing.Size(128, 45);
-            this.btnHighPriceFix.TabIndex = 2;
-            this.btnHighPriceFix.Text = "High Priced Fix";
-            this.btnHighPriceFix.UseVisualStyleBackColor = true;
-            // 
-            // rtbxRandomEventDescription
-            // 
-            this.rtbxRandomEventDescription.Location = new System.Drawing.Point(29, 73);
-            this.rtbxRandomEventDescription.Name = "rtbxRandomEventDescription";
-            this.rtbxRandomEventDescription.Size = new System.Drawing.Size(685, 143);
-            this.rtbxRandomEventDescription.TabIndex = 1;
-            this.rtbxRandomEventDescription.Text = "";
-            // 
-            // lblRandomEventTitle
-            // 
-            this.lblRandomEventTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
-            this.lblRandomEventTitle.AutoSize = true;
-            this.lblRandomEventTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblRandomEventTitle.Location = new System.Drawing.Point(325, 20);
-            this.lblRandomEventTitle.Name = "lblRandomEventTitle";
-            this.lblRandomEventTitle.Size = new System.Drawing.Size(92, 29);
-            this.lblRandomEventTitle.TabIndex = 0;
-            this.lblRandomEventTitle.Text = "label15";
             // 
             // mileageTextBox
             // 
@@ -607,16 +560,6 @@
             this.label1.TabIndex = 8;
             this.label1.Text = "Day Number:";
             // 
-            // tatMapPB
-            // 
-            this.tatMapPB.Image = global::TATSim.Properties.Resources.TATMapMultiRoute1;
-            this.tatMapPB.Location = new System.Drawing.Point(42, 48);
-            this.tatMapPB.Name = "tatMapPB";
-            this.tatMapPB.Size = new System.Drawing.Size(741, 395);
-            this.tatMapPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.tatMapPB.TabIndex = 7;
-            this.tatMapPB.TabStop = false;
-            // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
@@ -627,6 +570,79 @@
             this.lblTitle.Size = new System.Drawing.Size(253, 44);
             this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "TAT Progress";
+            // 
+            // tatMapPB
+            // 
+            this.tatMapPB.Image = global::TATSim.Properties.Resources.TATMapMultiRoute1;
+            this.tatMapPB.Location = new System.Drawing.Point(42, 48);
+            this.tatMapPB.Name = "tatMapPB";
+            this.tatMapPB.Size = new System.Drawing.Size(741, 395);
+            this.tatMapPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tatMapPB.TabIndex = 7;
+            this.tatMapPB.TabStop = false;
+            // 
+            // grpbxRandomEvent
+            // 
+            this.grpbxRandomEvent.Controls.Add(this.btnIgnore);
+            this.grpbxRandomEvent.Controls.Add(this.btnLowPricedFix);
+            this.grpbxRandomEvent.Controls.Add(this.btnHighPriceFix);
+            this.grpbxRandomEvent.Controls.Add(this.rtbxRandomEventDescription);
+            this.grpbxRandomEvent.Controls.Add(this.lblRandomEventTitle);
+            this.grpbxRandomEvent.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.grpbxRandomEvent.Location = new System.Drawing.Point(42, 48);
+            this.grpbxRandomEvent.Name = "grpbxRandomEvent";
+            this.grpbxRandomEvent.Size = new System.Drawing.Size(742, 394);
+            this.grpbxRandomEvent.TabIndex = 45;
+            this.grpbxRandomEvent.TabStop = false;
+            this.grpbxRandomEvent.Text = "Random Event";
+            this.grpbxRandomEvent.Visible = false;
+            // 
+            // btnIgnore
+            // 
+            this.btnIgnore.Location = new System.Drawing.Point(532, 304);
+            this.btnIgnore.Name = "btnIgnore";
+            this.btnIgnore.Size = new System.Drawing.Size(128, 45);
+            this.btnIgnore.TabIndex = 4;
+            this.btnIgnore.Text = "Ignore";
+            this.btnIgnore.UseVisualStyleBackColor = true;
+            // 
+            // btnLowPricedFix
+            // 
+            this.btnLowPricedFix.Location = new System.Drawing.Point(307, 304);
+            this.btnLowPricedFix.Name = "btnLowPricedFix";
+            this.btnLowPricedFix.Size = new System.Drawing.Size(128, 45);
+            this.btnLowPricedFix.TabIndex = 3;
+            this.btnLowPricedFix.Text = "Low Priced Fix";
+            this.btnLowPricedFix.UseVisualStyleBackColor = true;
+            this.btnLowPricedFix.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // btnHighPriceFix
+            // 
+            this.btnHighPriceFix.Location = new System.Drawing.Point(82, 304);
+            this.btnHighPriceFix.Name = "btnHighPriceFix";
+            this.btnHighPriceFix.Size = new System.Drawing.Size(128, 45);
+            this.btnHighPriceFix.TabIndex = 2;
+            this.btnHighPriceFix.Text = "High Priced Fix";
+            this.btnHighPriceFix.UseVisualStyleBackColor = true;
+            // 
+            // rtbxRandomEventDescription
+            // 
+            this.rtbxRandomEventDescription.Location = new System.Drawing.Point(29, 73);
+            this.rtbxRandomEventDescription.Name = "rtbxRandomEventDescription";
+            this.rtbxRandomEventDescription.Size = new System.Drawing.Size(685, 143);
+            this.rtbxRandomEventDescription.TabIndex = 1;
+            this.rtbxRandomEventDescription.Text = "";
+            // 
+            // lblRandomEventTitle
+            // 
+            this.lblRandomEventTitle.Anchor = System.Windows.Forms.AnchorStyles.Top;
+            this.lblRandomEventTitle.AutoSize = true;
+            this.lblRandomEventTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblRandomEventTitle.Location = new System.Drawing.Point(325, 20);
+            this.lblRandomEventTitle.Name = "lblRandomEventTitle";
+            this.lblRandomEventTitle.Size = new System.Drawing.Size(92, 29);
+            this.lblRandomEventTitle.TabIndex = 0;
+            this.lblRandomEventTitle.Text = "label15";
             // 
             // routeSelectPanel1
             // 
@@ -688,10 +704,9 @@
             this.Load += new System.EventHandler(this.GameBoardForm_Load);
             this.gameBoardPanel.ResumeLayout(false);
             this.gameBoardPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.playerIcon)).EndInit();
             this.grpbxSpeed.ResumeLayout(false);
             this.grpbxSpeed.PerformLayout();
-            this.grpbxRandomEvent.ResumeLayout(false);
-            this.grpbxRandomEvent.PerformLayout();
             this.eatPanel.ResumeLayout(false);
             this.eatPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.steakPB)).EndInit();
@@ -703,6 +718,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.playerPicPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersMotoPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.tatMapPB)).EndInit();
+            this.grpbxRandomEvent.ResumeLayout(false);
+            this.grpbxRandomEvent.PerformLayout();
             this.routeSelectPanel1.ResumeLayout(false);
             this.routeSelectPanel1.PerformLayout();
             this.ResumeLayout(false);
@@ -762,6 +779,7 @@
         private System.Windows.Forms.RadioButton radbtnMedium;
         private System.Windows.Forms.RadioButton radbtnSlow;
         private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.PictureBox playerIcon;
 
     }
 }

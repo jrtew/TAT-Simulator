@@ -36,6 +36,8 @@ namespace TATSim
             // carry over the players moto object
             originalForm = incomingForm;
             InitializeComponent();
+            playerIcon.Parent = tatMapPB;
+            playerIcon.BackColor = Color.Transparent;
         }
 
         //to make sure program closes completely if X is used to close program
@@ -96,17 +98,17 @@ namespace TATSim
             }
             else if (trailSelectionState == 1)
             {
-                selection1 = "Ross Needs to Put the Name Here";
-                selection2 = "Ross Needs to Put the Name Here";
+                selection1 = "Southern";
+                selection2 = "Great Plains";
             }
             else
             {
-                selection1 = "Ross Needs to Put the Name Here";
-                selection2 = "Ross Needs to Put the Name Here";
+                selection1 = "Oregon Coast";
+                selection2 = "Los Angeles";
             }
 
-            radbtnSelection1.Text = "Travel on " + selection1;
-            radbtnSelection2.Text = "Travel on " + selection2;
+            radbtnSelection1.Text = "Take the " + selection1 + " trail";
+            radbtnSelection2.Text = "Take the " + selection2 + " trail";
         }
 
         private void routeStartBtn1_Click(object sender, EventArgs e)
@@ -130,7 +132,9 @@ namespace TATSim
 
                 routeSelectPanel1.Visible = false;
                 gameBoardPanel.Visible = true;
-                gameBoardPanel.BringToFront();
+                //gameBoardPanel.BringToFront();
+                playerIcon.Image = playersMotoObj.Image;
+                playerIcon.Location = new Point(currentTrail.ThisStop.Point.X - 25, currentTrail.ThisStop.Point.Y - 25);
             }
         }
 
@@ -181,9 +185,10 @@ namespace TATSim
                 checkTrailState();
                 currentStop = currentTrail.NextStop;
             }
+            
+            playerIcon.Location = new Point(currentTrail.ThisStop.Point.X - 25, currentTrail.ThisStop.Point.Y - 25);
 
             return currentStop.Distance;
-
         }
 
         private bool checkDailyChoices()
@@ -264,14 +269,14 @@ namespace TATSim
 
         }
 
-        private void tatMapPB_MouseClick(object sender, MouseEventArgs e)
-        {
-            int x = e.X;
-            int y = e.Y;
+        //private void tatMapPB_MouseClick(object sender, MouseEventArgs e)
+        //{
+        //    int x = e.X;
+        //    int y = e.Y;
 
-            string position = "X = " + x + "\nY = " + y;
+        //    string position = "X = " + x + "\nY = " + y;
 
-            MessageBox.Show(position, "Mouse Position", MessageBoxButtons.OK, MessageBoxIcon.Information);
-        }
+        //    MessageBox.Show(position, "Mouse Position", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        //}
     }
 }
