@@ -113,8 +113,12 @@
     <Content Include="Images\hotelroom.jpg" />
     <Content Include="Images\italyTank.png" />
     <Content Include="Images\KLRCutOut.png" />
+    <Content Include="Images\losePic.png" />
     <Content Include="Images\ramsoup.jpg" />
     <Content Include="Images\resinTank.png" />
+    <Content Include="Images\Route1Map.png" />
+    <Content Include="Images\Route2Map.png" />
+    <Content Include="Images\Route3Map.png" />
     <Content Include="Images\s244.png" />
     <Content Include="Images\safariTank.png" />
     <Content Include="Images\scoutTires.png" />
@@ -124,6 +128,7 @@
     <Content Include="Images\TATMapIntro.png" />
     <Content Include="Images\TATMapMultiRoute.png" />
     <Content Include="Images\tent.jpg" />
+    <Content Include="Images\winPic.png" />
     <Content Include="Images\XRLCutOut.png" />
     <Content Include="Images\yoshiExh.png" />
   </ItemGroup>
