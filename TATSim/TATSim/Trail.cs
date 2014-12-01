@@ -178,25 +178,25 @@ namespace TATSim
 
             // Create the LinkedList and add those Points to the list
             LinkedList<Stop> OregonCoast = new LinkedList<Stop>();
-            OregonCoast.AddLast(s25);
-            OregonCoast.AddLast(s26);
-            OregonCoast.AddLast(s27);
-            OregonCoast.AddLast(s28);
-            OregonCoast.AddLast(s29);
-            OregonCoast.AddLast(s30);
-            OregonCoast.AddLast(s31);
-            OregonCoast.AddLast(s32);
+            OregonCoast.AddLast(s33);
+            OregonCoast.AddLast(s34);
+            OregonCoast.AddLast(s35);
+            OregonCoast.AddLast(s36);
+            OregonCoast.AddLast(s37);
+            OregonCoast.AddLast(s38);
+            OregonCoast.AddLast(s39);
+            OregonCoast.AddLast(s40);
 
             // Create the LinkedList and add those Points to the list
             LinkedList<Stop> LosAngeles = new LinkedList<Stop>();
-            LosAngeles.AddLast(s25);
-            LosAngeles.AddLast(s26);
-            LosAngeles.AddLast(s27);
-            LosAngeles.AddLast(s28);
-            LosAngeles.AddLast(s29);
-            LosAngeles.AddLast(s30);
-            LosAngeles.AddLast(s31);
-            LosAngeles.AddLast(s32);
+            LosAngeles.AddLast(s41);
+            LosAngeles.AddLast(s42);
+            LosAngeles.AddLast(s43);
+            LosAngeles.AddLast(s44);
+            LosAngeles.AddLast(s45);
+            LosAngeles.AddLast(s46);
+            LosAngeles.AddLast(s47);
+            LosAngeles.AddLast(s48);
 
             //Create a trail with that LinkedList of Points
             Trail NYTrail = new Trail("New York", NewYork);

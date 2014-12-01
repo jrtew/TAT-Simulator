@@ -13,11 +13,10 @@ namespace TATSim
     public partial class TATSimForm : Form
     {
         public Motorcycle playersMoto = new Motorcycle();
-        public int startCash = 5000;
+        public int startCash = 1800;
         int tireCost = 0;
         int tankCost = 0;
         int exhCost = 0;
-        int walletAmt = 1800;
         int tirePerf = 0;
         int tireWeight = 0;
         int tankWeight = 0;
@@ -119,13 +118,15 @@ namespace TATSim
                 CreateMoto.CreateTankObj(playersMoto, tankType);
                 CreateMoto.CreateExhaustObj(playersMoto, exhaustType);
 
-                startCash -= playersMoto.Tires.Cost;
-                startCash -= playersMoto.GasTank.Cost;
-                startCash -= playersMoto.TheExhaust.Cost;
+                //startCash -= playersMoto.Tires.Cost;
+                //startCash -= playersMoto.GasTank.Cost;
+                //startCash -= playersMoto.TheExhaust.Cost;
 
                 //playersMoto.Tires = playersTire;
                 //playersMoto.GasTank = playersTank;
                 //playersMoto.TheExhaust = playersExhaust;
+
+                startCash = Convert.ToInt32(walletTB.Text.Replace("$", ""));
 
                 GameBoardForm gbForm = new GameBoardForm(this);
                 gbForm.Show();
@@ -160,7 +161,7 @@ namespace TATSim
             tireWeight = 0;
             UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
             tireCost = 75;
-            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+            UpdateWallet(tireCost, tankCost, exhCost, startCash);
         }
 
         private void s244TireRB_CheckedChanged(object sender, EventArgs e)
@@ -169,7 +170,7 @@ namespace TATSim
             tireWeight = 1;
             UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
             tireCost = 50;
-            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+            UpdateWallet(tireCost, tankCost, exhCost, startCash);
         }
 
         private void explrTireRB_CheckedChanged(object sender, EventArgs e)
@@ -178,7 +179,7 @@ namespace TATSim
             tireWeight = -1;
             UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
             tireCost = 100;
-            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+            UpdateWallet(tireCost, tankCost, exhCost, startCash);
         }
 
         private void expdTankRB_CheckedChanged(object sender, EventArgs e)
@@ -187,7 +188,7 @@ namespace TATSim
             tankRange = 3;
             UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
             tankCost = 350;
-            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+            UpdateWallet(tireCost, tankCost, exhCost, startCash);
         }
 
         private void italTankRB_CheckedChanged(object sender, EventArgs e)
@@ -196,7 +197,7 @@ namespace TATSim
             tankRange = 2;
             UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
             tankCost = 300;
-            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+            UpdateWallet(tireCost, tankCost, exhCost, startCash);
         }
 
         private void resinTankRB_CheckedChanged(object sender, EventArgs e)
@@ -205,7 +206,7 @@ namespace TATSim
             tankRange = 1;
             UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
             tankCost = 250;
-            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+            UpdateWallet(tireCost, tankCost, exhCost, startCash);
         }
 
         private void standExhaRB_CheckedChanged(object sender, EventArgs e)
@@ -215,7 +216,7 @@ namespace TATSim
             exhRange = 1;
             UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
             exhCost = 150;
-            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+            UpdateWallet(tireCost, tankCost, exhCost, startCash);
         }
 
         private void nightStalkExhaRB_CheckedChanged(object sender, EventArgs e)
@@ -225,7 +226,7 @@ namespace TATSim
             exhRange = 0;
             UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
             exhCost = 200;
-            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+            UpdateWallet(tireCost, tankCost, exhCost, startCash);
         }
 
         private void yoshiExhaRB_CheckedChanged(object sender, EventArgs e)
@@ -235,7 +236,7 @@ namespace TATSim
             exhRange = 1;
             UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
             exhCost = 250;
-            UpdateWallet(tireCost, tankCost, exhCost, walletAmt);
+            UpdateWallet(tireCost, tankCost, exhCost, startCash);
         }
 
         private void UpdateWallet(int tireAmt, int tankAmt, int exhAmt, int walletAmt)
