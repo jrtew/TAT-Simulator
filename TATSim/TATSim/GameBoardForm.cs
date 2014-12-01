@@ -106,6 +106,9 @@ namespace TATSim
             }
             else
             {
+                radbtnSelection1.Visible = false;
+                radbtnSelection2.Visible = false;
+                routeStartBtn1.Visible = false;
                 if (Convert.ToInt32(dayNumTextBox.Text) <= 28 && !statAtZero)
                 {
                     //You win!!
@@ -117,6 +120,7 @@ namespace TATSim
                     //You lose!!
                     MessageBox.Show("You lose!!!");
                 }
+                Application.Exit();
             }
 
             radbtnSelection1.Text = "Take the " + selection1 + " trail";
@@ -187,8 +191,7 @@ namespace TATSim
                             break;
                         }
                     }
-                    int nextDistance = movePlayer();
-                    mileageTextBox.Text = nextDistance.ToString();
+                    movePlayer();                    
                     double[] array = playersMotoObj.travel(speed, todaysMileage, fuelRange);
                     updateCharacterStats();
                     fuelRangeTB.Text = array[0].ToString().Substring(0, array[0].ToString().IndexOf("."));
@@ -315,22 +318,21 @@ namespace TATSim
             cashTextBox.Text = "$" + (wallet - (sleep + food));
         }
 
-        private int movePlayer()
+        private void movePlayer()
         {
             int lastDistance = Convert.ToInt32(mileageTextBox.Text);
-            Stop currentStop = currentTrail.NextStop;
+            Stop currentStop = currentTrail.NextStop();
             if (currentStop == null)
             {
                 trails.Remove(currentTrail.Name);
                 trailSelectionState++;
                 checkTrailState();
                 needToRunMove = true;
-                return lastDistance;                
+                return;                
             }
 
-            playerIcon.Location = new Point(currentStop.Point.X - 25, currentStop.Point.Y - 25);            
-
-            return currentStop.Distance;
+            playerIcon.Location = new Point(currentStop.Point.X - 25, currentStop.Point.Y - 25);
+            mileageTextBox.Text = currentStop.Distance.ToString();
         }
 
         private bool checkDailyChoices()

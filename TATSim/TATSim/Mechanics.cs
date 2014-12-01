@@ -8,19 +8,7 @@ namespace TATSim
 {
     class Mechanics
     {
-        public static void NextDay(int cash, int day, Player player, Motorcycle moto)
-        {
-            if (player.Route.Equals("cape hatteras"))
-            {
-                //Test fo Ross
-                // Test for Jordon
-            }
-            else if (player.Route.Equals("new york"))
-            {
-
-            }
-        }
-
+       
         public static int CaclDaysMileage()
         {
             Random randy = new Random();
