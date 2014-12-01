@@ -31,6 +31,7 @@ namespace TATSim
             startScreenPanel.Visible = true;
             motoSelectPanel.Visible = false;
             gearSelectPanel.Visible = false;
+
         }
 
         //to make sure program closes completely if X is used to close program
@@ -232,8 +233,8 @@ namespace TATSim
         private void yoshiExhaRB_CheckedChanged(object sender, EventArgs e)
         {
             exhPerf = 2;
-            exhWeight = -1;
-            exhRange = 1;
+            exhWeight = 1;
+            exhRange = -1;
             UpdateStatusBars(tirePerf, tireWeight, tankWeight, tankRange, exhPerf, exhWeight, exhRange);
             exhCost = 250;
             UpdateWallet(tireCost, tankCost, exhCost, startCash);

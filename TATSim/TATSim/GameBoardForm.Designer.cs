@@ -29,6 +29,9 @@
         private void InitializeComponent()
         {
             this.gameBoardPanel = new System.Windows.Forms.Panel();
+            this.hungerProgBar = new System.Windows.Forms.ProgressBar();
+            this.exhaustProgBar = new System.Windows.Forms.ProgressBar();
+            this.enjymntProgBar = new System.Windows.Forms.ProgressBar();
             this.playerIcon = new System.Windows.Forms.PictureBox();
             this.grpbxSpeed = new System.Windows.Forms.GroupBox();
             this.radbtnFast = new System.Windows.Forms.RadioButton();
@@ -80,9 +83,10 @@
             this.routeStartBtn1 = new System.Windows.Forms.Button();
             this.radbtnSelection1 = new System.Windows.Forms.RadioButton();
             this.radbtnSelection2 = new System.Windows.Forms.RadioButton();
-            this.hungerProgBar = new System.Windows.Forms.ProgressBar();
-            this.exhaustProgBar = new System.Windows.Forms.ProgressBar();
-            this.enjymntProgBar = new System.Windows.Forms.ProgressBar();
+            this.routePicBox = new System.Windows.Forms.PictureBox();
+            this.winLosePanel = new System.Windows.Forms.Panel();
+            this.winLosePicBox = new System.Windows.Forms.PictureBox();
+            this.button1 = new System.Windows.Forms.Button();
             this.gameBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerIcon)).BeginInit();
             this.grpbxSpeed.SuspendLayout();
@@ -97,6 +101,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.tatMapPB)).BeginInit();
             this.grpbxRandomEvent.SuspendLayout();
             this.routeSelectPanel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.routePicBox)).BeginInit();
+            this.winLosePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.winLosePicBox)).BeginInit();
             this.SuspendLayout();
             // 
             // gameBoardPanel
@@ -133,11 +140,41 @@
             this.gameBoardPanel.Controls.Add(this.lblTitle);
             this.gameBoardPanel.Controls.Add(this.tatMapPB);
             this.gameBoardPanel.Controls.Add(this.grpbxRandomEvent);
-            this.gameBoardPanel.Location = new System.Drawing.Point(9, 9);
+            this.gameBoardPanel.Location = new System.Drawing.Point(12, 12);
             this.gameBoardPanel.Name = "gameBoardPanel";
             this.gameBoardPanel.Size = new System.Drawing.Size(1326, 705);
             this.gameBoardPanel.TabIndex = 0;
             this.gameBoardPanel.Visible = false;
+            // 
+            // hungerProgBar
+            // 
+            this.hungerProgBar.Location = new System.Drawing.Point(888, 560);
+            this.hungerProgBar.Maximum = 10;
+            this.hungerProgBar.Name = "hungerProgBar";
+            this.hungerProgBar.Size = new System.Drawing.Size(275, 23);
+            this.hungerProgBar.Step = 1;
+            this.hungerProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.hungerProgBar.TabIndex = 51;
+            // 
+            // exhaustProgBar
+            // 
+            this.exhaustProgBar.Location = new System.Drawing.Point(888, 502);
+            this.exhaustProgBar.Maximum = 10;
+            this.exhaustProgBar.Name = "exhaustProgBar";
+            this.exhaustProgBar.Size = new System.Drawing.Size(275, 23);
+            this.exhaustProgBar.Step = 1;
+            this.exhaustProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.exhaustProgBar.TabIndex = 50;
+            // 
+            // enjymntProgBar
+            // 
+            this.enjymntProgBar.Location = new System.Drawing.Point(888, 441);
+            this.enjymntProgBar.Maximum = 10;
+            this.enjymntProgBar.Name = "enjymntProgBar";
+            this.enjymntProgBar.Size = new System.Drawing.Size(275, 23);
+            this.enjymntProgBar.Step = 1;
+            this.enjymntProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.enjymntProgBar.TabIndex = 49;
             // 
             // playerIcon
             // 
@@ -654,6 +691,7 @@
             // 
             // routeSelectPanel1
             // 
+            this.routeSelectPanel1.Controls.Add(this.routePicBox);
             this.routeSelectPanel1.Controls.Add(this.routeStartBtn1);
             this.routeSelectPanel1.Controls.Add(this.radbtnSelection1);
             this.routeSelectPanel1.Controls.Add(this.radbtnSelection2);
@@ -698,35 +736,42 @@
             this.radbtnSelection2.Text = "Start in New York!";
             this.radbtnSelection2.UseVisualStyleBackColor = true;
             // 
-            // hungerProgBar
+            // routePicBox
             // 
-            this.hungerProgBar.Location = new System.Drawing.Point(888, 560);
-            this.hungerProgBar.Maximum = 10;
-            this.hungerProgBar.Name = "hungerProgBar";
-            this.hungerProgBar.Size = new System.Drawing.Size(275, 23);
-            this.hungerProgBar.Step = 1;
-            this.hungerProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.hungerProgBar.TabIndex = 51;
+            this.routePicBox.Location = new System.Drawing.Point(228, 65);
+            this.routePicBox.Name = "routePicBox";
+            this.routePicBox.Size = new System.Drawing.Size(870, 449);
+            this.routePicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.routePicBox.TabIndex = 8;
+            this.routePicBox.TabStop = false;
             // 
-            // exhaustProgBar
+            // winLosePanel
             // 
-            this.exhaustProgBar.Location = new System.Drawing.Point(888, 502);
-            this.exhaustProgBar.Maximum = 10;
-            this.exhaustProgBar.Name = "exhaustProgBar";
-            this.exhaustProgBar.Size = new System.Drawing.Size(275, 23);
-            this.exhaustProgBar.Step = 1;
-            this.exhaustProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.exhaustProgBar.TabIndex = 50;
+            this.winLosePanel.Controls.Add(this.button1);
+            this.winLosePanel.Controls.Add(this.winLosePicBox);
+            this.winLosePanel.Location = new System.Drawing.Point(12, 12);
+            this.winLosePanel.Name = "winLosePanel";
+            this.winLosePanel.Size = new System.Drawing.Size(1326, 705);
+            this.winLosePanel.TabIndex = 2;
             // 
-            // enjymntProgBar
+            // winLosePicBox
             // 
-            this.enjymntProgBar.Location = new System.Drawing.Point(888, 441);
-            this.enjymntProgBar.Maximum = 10;
-            this.enjymntProgBar.Name = "enjymntProgBar";
-            this.enjymntProgBar.Size = new System.Drawing.Size(275, 23);
-            this.enjymntProgBar.Step = 1;
-            this.enjymntProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.enjymntProgBar.TabIndex = 49;
+            this.winLosePicBox.Location = new System.Drawing.Point(199, 23);
+            this.winLosePicBox.Name = "winLosePicBox";
+            this.winLosePicBox.Size = new System.Drawing.Size(928, 586);
+            this.winLosePicBox.TabIndex = 0;
+            this.winLosePicBox.TabStop = false;
+            // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.button1.Location = new System.Drawing.Point(545, 643);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(236, 40);
+            this.button1.TabIndex = 43;
+            this.button1.Text = "btn does smthg";
+            this.button1.UseVisualStyleBackColor = true;
             // 
             // GameBoardForm
             // 
@@ -736,6 +781,7 @@
             this.ClientSize = new System.Drawing.Size(1350, 729);
             this.Controls.Add(this.gameBoardPanel);
             this.Controls.Add(this.routeSelectPanel1);
+            this.Controls.Add(this.winLosePanel);
             this.Name = "GameBoardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TAT Sim 2014";
@@ -760,6 +806,9 @@
             this.grpbxRandomEvent.PerformLayout();
             this.routeSelectPanel1.ResumeLayout(false);
             this.routeSelectPanel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.routePicBox)).EndInit();
+            this.winLosePanel.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.winLosePicBox)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -821,6 +870,10 @@
         private System.Windows.Forms.ProgressBar hungerProgBar;
         private System.Windows.Forms.ProgressBar exhaustProgBar;
         private System.Windows.Forms.ProgressBar enjymntProgBar;
+        private System.Windows.Forms.PictureBox routePicBox;
+        private System.Windows.Forms.Panel winLosePanel;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.PictureBox winLosePicBox;
 
     }
 }

@@ -51,6 +51,7 @@ namespace TATSim
         private void GameBoardForm_Load(object sender, EventArgs e)
         {
             gameBoardPanel.Visible = false;
+            winLosePanel.Visible = false;
             routeSelectPanel1.Visible = true;
 
             playersMotoObj = originalForm.playersMoto;
@@ -89,17 +90,20 @@ namespace TATSim
 
             if(trailSelectionState == 0)
             {
+                routePicBox.Image = System.Drawing.Image.FromFile(System.Environment.CurrentDirectory + "\\Route1Map.png");
                 selection1 = "Cape Hatteras";
                 selection2 = "New York";
 
             }
             else if (trailSelectionState == 1)
             {
+                routePicBox.Image = System.Drawing.Image.FromFile(System.Environment.CurrentDirectory + "\\Route2Map.png");
                 selection1 = "Southern";
                 selection2 = "Great Plains";
             }
             else if (trailSelectionState == 2)
             {
+                routePicBox.Image = System.Drawing.Image.FromFile(System.Environment.CurrentDirectory + "\\Route3Map.png");
                 selection1 = "Oregon Coast";
                 selection2 = "Los Angeles";
             }
@@ -108,13 +112,18 @@ namespace TATSim
                 if (Convert.ToInt32(dayNumTextBox.Text) <= 28)
                 {
                     //You win!!
-
-                    MessageBox.Show("You win!!!");
+                    routeSelectPanel1.Visible = false;
+                    winLosePanel.Visible = true;
+                    winLosePicBox.Image = System.Drawing.Image.FromFile(System.Environment.CurrentDirectory + "\\winPic.png");
+                    //MessageBox.Show("You win!!!");
                 }
                 else
                 {
                     //You lose!!
-                    MessageBox.Show("You lose!!!");
+                    routeSelectPanel1.Visible = false;
+                    winLosePanel.Visible = true;
+                    winLosePicBox.Image = System.Drawing.Image.FromFile(System.Environment.CurrentDirectory + "\\losePic.png");
+                    //MessageBox.Show("You lose!!!");
                 }
             }
 
@@ -252,7 +261,7 @@ namespace TATSim
             }
             else
             {
-                MessageBox.Show("Error - Please select one sleeping choice and one eating choice.");
+                MessageBox.Show("Please select one sleeping choice and one eating choice.", "Whoa!");
                 return false;
             }
         }
