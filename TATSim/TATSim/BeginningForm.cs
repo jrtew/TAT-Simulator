@@ -32,6 +32,7 @@ namespace TATSim
             startScreenPanel.Visible = true;
             motoSelectPanel.Visible = false;
             gearSelectPanel.Visible = false;
+            drRadBut_CheckedChanged(new object(), new EventArgs());
         }
 
         //to make sure program closes completely if X is used to close program
@@ -249,6 +250,11 @@ namespace TATSim
             performProgBar.Value = playersMoto.Performance + tirePerf + exhPerf;
             weightProgBar.Value = playersMoto.Weight + tireWeight + tankWeight + exhWeight;
             rangeProgBar.Value = playersMoto.Range + tankRange + exhRange;
+        }
+
+        private void TATSimForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

@@ -32,7 +32,11 @@
             this.btnInstructions = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
             this.lblTitle = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.motoSelectPanel = new System.Windows.Forms.Panel();
+            this.rangeProgBar2 = new System.Windows.Forms.ProgressBar();
+            this.weightProgBar2 = new System.Windows.Forms.ProgressBar();
+            this.perfromProgBar2 = new System.Windows.Forms.ProgressBar();
             this.label25 = new System.Windows.Forms.Label();
             this.motoSelectButton = new System.Windows.Forms.Button();
             this.label7 = new System.Windows.Forms.Label();
@@ -45,7 +49,13 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.xlrPicBox = new System.Windows.Forms.PictureBox();
+            this.klrPicBox = new System.Windows.Forms.PictureBox();
+            this.drPicBox = new System.Windows.Forms.PictureBox();
             this.gearSelectPanel = new System.Windows.Forms.Panel();
+            this.rangeProgBar = new System.Windows.Forms.ProgressBar();
+            this.weightProgBar = new System.Windows.Forms.ProgressBar();
+            this.performProgBar = new System.Windows.Forms.ProgressBar();
             this.label26 = new System.Windows.Forms.Label();
             this.gearDoneBtn = new System.Windows.Forms.Button();
             this.walletTB = new System.Windows.Forms.TextBox();
@@ -55,6 +65,7 @@
             this.label22 = new System.Windows.Forms.Label();
             this.label23 = new System.Windows.Forms.Label();
             this.playersCyclePB = new System.Windows.Forms.Label();
+            this.gearSelectMotoPB = new System.Windows.Forms.PictureBox();
             this.exhaustPanel = new System.Windows.Forms.Panel();
             this.yoshiExhaRB = new System.Windows.Forms.RadioButton();
             this.label19 = new System.Windows.Forms.Label();
@@ -62,6 +73,9 @@
             this.label18 = new System.Windows.Forms.Label();
             this.standExhaRB = new System.Windows.Forms.RadioButton();
             this.label17 = new System.Windows.Forms.Label();
+            this.yoshiExhaPB = new System.Windows.Forms.PictureBox();
+            this.nightStalkExhaPB = new System.Windows.Forms.PictureBox();
+            this.standardEditExhPB = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
             this.gasTankPanel = new System.Windows.Forms.Panel();
             this.resinTankRB = new System.Windows.Forms.RadioButton();
@@ -70,6 +84,9 @@
             this.label15 = new System.Windows.Forms.Label();
             this.expdTankRB = new System.Windows.Forms.RadioButton();
             this.label14 = new System.Windows.Forms.Label();
+            this.resinRangerTankPB = new System.Windows.Forms.PictureBox();
+            this.italyTankPB = new System.Windows.Forms.PictureBox();
+            this.expdTankPB = new System.Windows.Forms.PictureBox();
             this.label9 = new System.Windows.Forms.Label();
             this.tirePanel = new System.Windows.Forms.Panel();
             this.explrTireRB = new System.Windows.Forms.RadioButton();
@@ -78,47 +95,30 @@
             this.label12 = new System.Windows.Forms.Label();
             this.scoutTireRB = new System.Windows.Forms.RadioButton();
             this.label11 = new System.Windows.Forms.Label();
-            this.label8 = new System.Windows.Forms.Label();
-            this.performProgBar = new System.Windows.Forms.ProgressBar();
-            this.weightProgBar = new System.Windows.Forms.ProgressBar();
-            this.rangeProgBar = new System.Windows.Forms.ProgressBar();
-            this.rangeProgBar2 = new System.Windows.Forms.ProgressBar();
-            this.weightProgBar2 = new System.Windows.Forms.ProgressBar();
-            this.perfromProgBar2 = new System.Windows.Forms.ProgressBar();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.gearSelectMotoPB = new System.Windows.Forms.PictureBox();
-            this.yoshiExhaPB = new System.Windows.Forms.PictureBox();
-            this.nightStalkExhaPB = new System.Windows.Forms.PictureBox();
-            this.standardEditExhPB = new System.Windows.Forms.PictureBox();
-            this.resinRangerTankPB = new System.Windows.Forms.PictureBox();
-            this.italyTankPB = new System.Windows.Forms.PictureBox();
-            this.expdTankPB = new System.Windows.Forms.PictureBox();
             this.explrTirePB = new System.Windows.Forms.PictureBox();
             this.s244TirePB = new System.Windows.Forms.PictureBox();
             this.scoutTirePB = new System.Windows.Forms.PictureBox();
-            this.xlrPicBox = new System.Windows.Forms.PictureBox();
-            this.klrPicBox = new System.Windows.Forms.PictureBox();
-            this.drPicBox = new System.Windows.Forms.PictureBox();
+            this.label8 = new System.Windows.Forms.Label();
             this.startScreenPanel.SuspendLayout();
-            this.motoSelectPanel.SuspendLayout();
-            this.gearSelectPanel.SuspendLayout();
-            this.exhaustPanel.SuspendLayout();
-            this.gasTankPanel.SuspendLayout();
-            this.tirePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gearSelectMotoPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yoshiExhaPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nightStalkExhaPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.standardEditExhPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resinRangerTankPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.italyTankPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expdTankPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.explrTirePB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.s244TirePB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scoutTirePB)).BeginInit();
+            this.motoSelectPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.xlrPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.klrPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drPicBox)).BeginInit();
+            this.gearSelectPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gearSelectMotoPB)).BeginInit();
+            this.exhaustPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.yoshiExhaPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nightStalkExhaPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.standardEditExhPB)).BeginInit();
+            this.gasTankPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resinRangerTankPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.italyTankPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expdTankPB)).BeginInit();
+            this.tirePanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.explrTirePB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.s244TirePB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scoutTirePB)).BeginInit();
             this.SuspendLayout();
             // 
             // startScreenPanel
@@ -167,6 +167,16 @@
             this.lblTitle.TabIndex = 5;
             this.lblTitle.Text = "TAT Simulator 2014";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::TATSim.Properties.Resources.TATMapIntro;
+            this.pictureBox1.Location = new System.Drawing.Point(56, 100);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(1212, 534);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 4;
+            this.pictureBox1.TabStop = false;
+            // 
             // motoSelectPanel
             // 
             this.motoSelectPanel.Controls.Add(this.rangeProgBar2);
@@ -191,6 +201,36 @@
             this.motoSelectPanel.Name = "motoSelectPanel";
             this.motoSelectPanel.Size = new System.Drawing.Size(1325, 704);
             this.motoSelectPanel.TabIndex = 1;
+            // 
+            // rangeProgBar2
+            // 
+            this.rangeProgBar2.Location = new System.Drawing.Point(513, 631);
+            this.rangeProgBar2.Maximum = 10;
+            this.rangeProgBar2.Name = "rangeProgBar2";
+            this.rangeProgBar2.Size = new System.Drawing.Size(275, 23);
+            this.rangeProgBar2.Step = 1;
+            this.rangeProgBar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.rangeProgBar2.TabIndex = 48;
+            // 
+            // weightProgBar2
+            // 
+            this.weightProgBar2.Location = new System.Drawing.Point(513, 589);
+            this.weightProgBar2.Maximum = 10;
+            this.weightProgBar2.Name = "weightProgBar2";
+            this.weightProgBar2.Size = new System.Drawing.Size(275, 23);
+            this.weightProgBar2.Step = 1;
+            this.weightProgBar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.weightProgBar2.TabIndex = 47;
+            // 
+            // perfromProgBar2
+            // 
+            this.perfromProgBar2.Location = new System.Drawing.Point(513, 544);
+            this.perfromProgBar2.Maximum = 10;
+            this.perfromProgBar2.Name = "perfromProgBar2";
+            this.perfromProgBar2.Size = new System.Drawing.Size(275, 23);
+            this.perfromProgBar2.Step = 1;
+            this.perfromProgBar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.perfromProgBar2.TabIndex = 46;
             // 
             // label25
             // 
@@ -318,6 +358,36 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Dirty Ron";
             // 
+            // xlrPicBox
+            // 
+            this.xlrPicBox.Image = global::TATSim.Properties.Resources.XRLCutOut;
+            this.xlrPicBox.Location = new System.Drawing.Point(918, 140);
+            this.xlrPicBox.Name = "xlrPicBox";
+            this.xlrPicBox.Size = new System.Drawing.Size(300, 250);
+            this.xlrPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.xlrPicBox.TabIndex = 2;
+            this.xlrPicBox.TabStop = false;
+            // 
+            // klrPicBox
+            // 
+            this.klrPicBox.Image = global::TATSim.Properties.Resources.KLRCutOut;
+            this.klrPicBox.Location = new System.Drawing.Point(512, 140);
+            this.klrPicBox.Name = "klrPicBox";
+            this.klrPicBox.Size = new System.Drawing.Size(300, 250);
+            this.klrPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.klrPicBox.TabIndex = 1;
+            this.klrPicBox.TabStop = false;
+            // 
+            // drPicBox
+            // 
+            this.drPicBox.Image = global::TATSim.Properties.Resources.DRCutOut;
+            this.drPicBox.Location = new System.Drawing.Point(106, 140);
+            this.drPicBox.Name = "drPicBox";
+            this.drPicBox.Size = new System.Drawing.Size(300, 250);
+            this.drPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.drPicBox.TabIndex = 0;
+            this.drPicBox.TabStop = false;
+            // 
             // gearSelectPanel
             // 
             this.gearSelectPanel.Controls.Add(this.rangeProgBar);
@@ -340,6 +410,36 @@
             this.gearSelectPanel.Name = "gearSelectPanel";
             this.gearSelectPanel.Size = new System.Drawing.Size(1325, 704);
             this.gearSelectPanel.TabIndex = 2;
+            // 
+            // rangeProgBar
+            // 
+            this.rangeProgBar.Location = new System.Drawing.Point(928, 430);
+            this.rangeProgBar.Maximum = 10;
+            this.rangeProgBar.Name = "rangeProgBar";
+            this.rangeProgBar.Size = new System.Drawing.Size(275, 23);
+            this.rangeProgBar.Step = 1;
+            this.rangeProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.rangeProgBar.TabIndex = 45;
+            // 
+            // weightProgBar
+            // 
+            this.weightProgBar.Location = new System.Drawing.Point(928, 388);
+            this.weightProgBar.Maximum = 10;
+            this.weightProgBar.Name = "weightProgBar";
+            this.weightProgBar.Size = new System.Drawing.Size(275, 23);
+            this.weightProgBar.Step = 1;
+            this.weightProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.weightProgBar.TabIndex = 44;
+            // 
+            // performProgBar
+            // 
+            this.performProgBar.Location = new System.Drawing.Point(928, 343);
+            this.performProgBar.Maximum = 10;
+            this.performProgBar.Name = "performProgBar";
+            this.performProgBar.Size = new System.Drawing.Size(275, 23);
+            this.performProgBar.Step = 1;
+            this.performProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
+            this.performProgBar.TabIndex = 43;
             // 
             // label26
             // 
@@ -436,6 +536,15 @@
             this.playersCyclePB.TabIndex = 34;
             this.playersCyclePB.Text = "Your Motorcycle";
             // 
+            // gearSelectMotoPB
+            // 
+            this.gearSelectMotoPB.Location = new System.Drawing.Point(928, 133);
+            this.gearSelectMotoPB.Name = "gearSelectMotoPB";
+            this.gearSelectMotoPB.Size = new System.Drawing.Size(275, 139);
+            this.gearSelectMotoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.gearSelectMotoPB.TabIndex = 33;
+            this.gearSelectMotoPB.TabStop = false;
+            // 
             // exhaustPanel
             // 
             this.exhaustPanel.Controls.Add(this.yoshiExhaRB);
@@ -516,6 +625,36 @@
             this.label17.Size = new System.Drawing.Size(177, 20);
             this.label17.TabIndex = 24;
             this.label17.Text = "Standard Edition - $150";
+            // 
+            // yoshiExhaPB
+            // 
+            this.yoshiExhaPB.Image = global::TATSim.Properties.Resources.yoshiExh;
+            this.yoshiExhaPB.Location = new System.Drawing.Point(29, 438);
+            this.yoshiExhaPB.Name = "yoshiExhaPB";
+            this.yoshiExhaPB.Size = new System.Drawing.Size(145, 130);
+            this.yoshiExhaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.yoshiExhaPB.TabIndex = 11;
+            this.yoshiExhaPB.TabStop = false;
+            // 
+            // nightStalkExhaPB
+            // 
+            this.nightStalkExhaPB.Image = global::TATSim.Properties.Resources.silentExh;
+            this.nightStalkExhaPB.Location = new System.Drawing.Point(30, 249);
+            this.nightStalkExhaPB.Name = "nightStalkExhaPB";
+            this.nightStalkExhaPB.Size = new System.Drawing.Size(145, 130);
+            this.nightStalkExhaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.nightStalkExhaPB.TabIndex = 10;
+            this.nightStalkExhaPB.TabStop = false;
+            // 
+            // standardEditExhPB
+            // 
+            this.standardEditExhPB.Image = global::TATSim.Properties.Resources.standExh;
+            this.standardEditExhPB.Location = new System.Drawing.Point(29, 55);
+            this.standardEditExhPB.Name = "standardEditExhPB";
+            this.standardEditExhPB.Size = new System.Drawing.Size(145, 130);
+            this.standardEditExhPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.standardEditExhPB.TabIndex = 9;
+            this.standardEditExhPB.TabStop = false;
             // 
             // label10
             // 
@@ -609,6 +748,36 @@
             this.label14.TabIndex = 18;
             this.label14.Text = "Expedition - $350";
             // 
+            // resinRangerTankPB
+            // 
+            this.resinRangerTankPB.Image = global::TATSim.Properties.Resources.resinTank;
+            this.resinRangerTankPB.Location = new System.Drawing.Point(30, 437);
+            this.resinRangerTankPB.Name = "resinRangerTankPB";
+            this.resinRangerTankPB.Size = new System.Drawing.Size(145, 130);
+            this.resinRangerTankPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.resinRangerTankPB.TabIndex = 8;
+            this.resinRangerTankPB.TabStop = false;
+            // 
+            // italyTankPB
+            // 
+            this.italyTankPB.Image = global::TATSim.Properties.Resources.italyTank;
+            this.italyTankPB.Location = new System.Drawing.Point(30, 248);
+            this.italyTankPB.Name = "italyTankPB";
+            this.italyTankPB.Size = new System.Drawing.Size(145, 130);
+            this.italyTankPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.italyTankPB.TabIndex = 7;
+            this.italyTankPB.TabStop = false;
+            // 
+            // expdTankPB
+            // 
+            this.expdTankPB.Image = global::TATSim.Properties.Resources.safariTank;
+            this.expdTankPB.Location = new System.Drawing.Point(30, 55);
+            this.expdTankPB.Name = "expdTankPB";
+            this.expdTankPB.Size = new System.Drawing.Size(145, 130);
+            this.expdTankPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.expdTankPB.TabIndex = 6;
+            this.expdTankPB.TabStop = false;
+            // 
             // label9
             // 
             this.label9.AutoSize = true;
@@ -701,156 +870,6 @@
             this.label11.TabIndex = 12;
             this.label11.Text = "Trail Scouts - $75";
             // 
-            // label8
-            // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label8.Location = new System.Drawing.Point(65, 10);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(74, 29);
-            this.label8.TabIndex = 0;
-            this.label8.Text = "Tires";
-            // 
-            // performProgBar
-            // 
-            this.performProgBar.Location = new System.Drawing.Point(928, 343);
-            this.performProgBar.Maximum = 10;
-            this.performProgBar.Name = "performProgBar";
-            this.performProgBar.Size = new System.Drawing.Size(275, 23);
-            this.performProgBar.Step = 1;
-            this.performProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.performProgBar.TabIndex = 43;
-            // 
-            // weightProgBar
-            // 
-            this.weightProgBar.Location = new System.Drawing.Point(928, 388);
-            this.weightProgBar.Maximum = 10;
-            this.weightProgBar.Name = "weightProgBar";
-            this.weightProgBar.Size = new System.Drawing.Size(275, 23);
-            this.weightProgBar.Step = 1;
-            this.weightProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.weightProgBar.TabIndex = 44;
-            // 
-            // rangeProgBar
-            // 
-            this.rangeProgBar.Location = new System.Drawing.Point(928, 430);
-            this.rangeProgBar.Maximum = 10;
-            this.rangeProgBar.Name = "rangeProgBar";
-            this.rangeProgBar.Size = new System.Drawing.Size(275, 23);
-            this.rangeProgBar.Step = 1;
-            this.rangeProgBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.rangeProgBar.TabIndex = 45;
-            // 
-            // rangeProgBar2
-            // 
-            this.rangeProgBar2.Location = new System.Drawing.Point(513, 631);
-            this.rangeProgBar2.Maximum = 10;
-            this.rangeProgBar2.Name = "rangeProgBar2";
-            this.rangeProgBar2.Size = new System.Drawing.Size(275, 23);
-            this.rangeProgBar2.Step = 1;
-            this.rangeProgBar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.rangeProgBar2.TabIndex = 48;
-            // 
-            // weightProgBar2
-            // 
-            this.weightProgBar2.Location = new System.Drawing.Point(513, 589);
-            this.weightProgBar2.Maximum = 10;
-            this.weightProgBar2.Name = "weightProgBar2";
-            this.weightProgBar2.Size = new System.Drawing.Size(275, 23);
-            this.weightProgBar2.Step = 1;
-            this.weightProgBar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.weightProgBar2.TabIndex = 47;
-            // 
-            // perfromProgBar2
-            // 
-            this.perfromProgBar2.Location = new System.Drawing.Point(513, 544);
-            this.perfromProgBar2.Maximum = 10;
-            this.perfromProgBar2.Name = "perfromProgBar2";
-            this.perfromProgBar2.Size = new System.Drawing.Size(275, 23);
-            this.perfromProgBar2.Step = 1;
-            this.perfromProgBar2.Style = System.Windows.Forms.ProgressBarStyle.Continuous;
-            this.perfromProgBar2.TabIndex = 46;
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.Image = global::TATSim.Properties.Resources.TATMapIntro;
-            this.pictureBox1.Location = new System.Drawing.Point(56, 100);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(1212, 534);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 4;
-            this.pictureBox1.TabStop = false;
-            // 
-            // gearSelectMotoPB
-            // 
-            this.gearSelectMotoPB.Location = new System.Drawing.Point(928, 133);
-            this.gearSelectMotoPB.Name = "gearSelectMotoPB";
-            this.gearSelectMotoPB.Size = new System.Drawing.Size(275, 139);
-            this.gearSelectMotoPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.gearSelectMotoPB.TabIndex = 33;
-            this.gearSelectMotoPB.TabStop = false;
-            // 
-            // yoshiExhaPB
-            // 
-            this.yoshiExhaPB.Image = global::TATSim.Properties.Resources.yoshiExh;
-            this.yoshiExhaPB.Location = new System.Drawing.Point(29, 438);
-            this.yoshiExhaPB.Name = "yoshiExhaPB";
-            this.yoshiExhaPB.Size = new System.Drawing.Size(145, 130);
-            this.yoshiExhaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.yoshiExhaPB.TabIndex = 11;
-            this.yoshiExhaPB.TabStop = false;
-            // 
-            // nightStalkExhaPB
-            // 
-            this.nightStalkExhaPB.Image = global::TATSim.Properties.Resources.silentExh;
-            this.nightStalkExhaPB.Location = new System.Drawing.Point(30, 249);
-            this.nightStalkExhaPB.Name = "nightStalkExhaPB";
-            this.nightStalkExhaPB.Size = new System.Drawing.Size(145, 130);
-            this.nightStalkExhaPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.nightStalkExhaPB.TabIndex = 10;
-            this.nightStalkExhaPB.TabStop = false;
-            // 
-            // standardEditExhPB
-            // 
-            this.standardEditExhPB.Image = global::TATSim.Properties.Resources.standExh;
-            this.standardEditExhPB.Location = new System.Drawing.Point(29, 55);
-            this.standardEditExhPB.Name = "standardEditExhPB";
-            this.standardEditExhPB.Size = new System.Drawing.Size(145, 130);
-            this.standardEditExhPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.standardEditExhPB.TabIndex = 9;
-            this.standardEditExhPB.TabStop = false;
-            // 
-            // resinRangerTankPB
-            // 
-            this.resinRangerTankPB.Image = global::TATSim.Properties.Resources.resinTank;
-            this.resinRangerTankPB.Location = new System.Drawing.Point(30, 437);
-            this.resinRangerTankPB.Name = "resinRangerTankPB";
-            this.resinRangerTankPB.Size = new System.Drawing.Size(145, 130);
-            this.resinRangerTankPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.resinRangerTankPB.TabIndex = 8;
-            this.resinRangerTankPB.TabStop = false;
-            // 
-            // italyTankPB
-            // 
-            this.italyTankPB.Image = global::TATSim.Properties.Resources.italyTank;
-            this.italyTankPB.Location = new System.Drawing.Point(30, 248);
-            this.italyTankPB.Name = "italyTankPB";
-            this.italyTankPB.Size = new System.Drawing.Size(145, 130);
-            this.italyTankPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.italyTankPB.TabIndex = 7;
-            this.italyTankPB.TabStop = false;
-            // 
-            // expdTankPB
-            // 
-            this.expdTankPB.Image = global::TATSim.Properties.Resources.safariTank;
-            this.expdTankPB.Location = new System.Drawing.Point(30, 55);
-            this.expdTankPB.Name = "expdTankPB";
-            this.expdTankPB.Size = new System.Drawing.Size(145, 130);
-            this.expdTankPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.expdTankPB.TabIndex = 6;
-            this.expdTankPB.TabStop = false;
-            // 
             // explrTirePB
             // 
             this.explrTirePB.Image = global::TATSim.Properties.Resources.explorer;
@@ -881,35 +900,16 @@
             this.scoutTirePB.TabIndex = 3;
             this.scoutTirePB.TabStop = false;
             // 
-            // xlrPicBox
+            // label8
             // 
-            this.xlrPicBox.Image = global::TATSim.Properties.Resources.XRLCutOut;
-            this.xlrPicBox.Location = new System.Drawing.Point(918, 140);
-            this.xlrPicBox.Name = "xlrPicBox";
-            this.xlrPicBox.Size = new System.Drawing.Size(300, 250);
-            this.xlrPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.xlrPicBox.TabIndex = 2;
-            this.xlrPicBox.TabStop = false;
-            // 
-            // klrPicBox
-            // 
-            this.klrPicBox.Image = global::TATSim.Properties.Resources.KLRCutOut;
-            this.klrPicBox.Location = new System.Drawing.Point(512, 140);
-            this.klrPicBox.Name = "klrPicBox";
-            this.klrPicBox.Size = new System.Drawing.Size(300, 250);
-            this.klrPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.klrPicBox.TabIndex = 1;
-            this.klrPicBox.TabStop = false;
-            // 
-            // drPicBox
-            // 
-            this.drPicBox.Image = global::TATSim.Properties.Resources.DRCutOut;
-            this.drPicBox.Location = new System.Drawing.Point(106, 140);
-            this.drPicBox.Name = "drPicBox";
-            this.drPicBox.Size = new System.Drawing.Size(300, 250);
-            this.drPicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.drPicBox.TabIndex = 0;
-            this.drPicBox.TabStop = false;
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label8.Location = new System.Drawing.Point(65, 10);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(74, 29);
+            this.label8.TabIndex = 0;
+            this.label8.Text = "Tires";
             // 
             // TATSimForm
             // 
@@ -923,32 +923,33 @@
             this.Name = "TATSimForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TAT Sim 2014";
+            this.Load += new System.EventHandler(this.TATSimForm_Load);
             this.startScreenPanel.ResumeLayout(false);
             this.startScreenPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.motoSelectPanel.ResumeLayout(false);
             this.motoSelectPanel.PerformLayout();
-            this.gearSelectPanel.ResumeLayout(false);
-            this.gearSelectPanel.PerformLayout();
-            this.exhaustPanel.ResumeLayout(false);
-            this.exhaustPanel.PerformLayout();
-            this.gasTankPanel.ResumeLayout(false);
-            this.gasTankPanel.PerformLayout();
-            this.tirePanel.ResumeLayout(false);
-            this.tirePanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.gearSelectMotoPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.yoshiExhaPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.nightStalkExhaPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.standardEditExhPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.resinRangerTankPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.italyTankPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expdTankPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.explrTirePB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.s244TirePB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.scoutTirePB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.xlrPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.klrPicBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.drPicBox)).EndInit();
+            this.gearSelectPanel.ResumeLayout(false);
+            this.gearSelectPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.gearSelectMotoPB)).EndInit();
+            this.exhaustPanel.ResumeLayout(false);
+            this.exhaustPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.yoshiExhaPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nightStalkExhaPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.standardEditExhPB)).EndInit();
+            this.gasTankPanel.ResumeLayout(false);
+            this.gasTankPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resinRangerTankPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.italyTankPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expdTankPB)).EndInit();
+            this.tirePanel.ResumeLayout(false);
+            this.tirePanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.explrTirePB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.s244TirePB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.scoutTirePB)).EndInit();
             this.ResumeLayout(false);
 
         }
