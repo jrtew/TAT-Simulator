@@ -121,6 +121,7 @@
     <Content Include="Images\silentExh.png" />
     <Content Include="Images\standExh.png" />
     <Content Include="Images\steak-dinner.jpg" />
+    <Content Include="Images\TATMapIntro.png" />
     <Content Include="Images\TATMapMultiRoute.png" />
     <Content Include="Images\tent.jpg" />
     <Content Include="Images\XRLCutOut.png" />

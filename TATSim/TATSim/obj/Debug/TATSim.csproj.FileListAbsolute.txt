@@ -41,3 +41,4 @@ D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.Properties.Reso
 D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.csproj.GenerateResource.Cache
 D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.exe
 D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.pdb
+D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.csprojResolveAssemblyReference.cache
