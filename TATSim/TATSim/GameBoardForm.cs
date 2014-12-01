@@ -108,10 +108,13 @@ namespace TATSim
                 if (Convert.ToInt32(dayNumTextBox.Text) <= 28)
                 {
                     //You win!!
+
+                    MessageBox.Show("You win!!!");
                 }
                 else
                 {
                     //You lose!!
+                    MessageBox.Show("You lose!!!");
                 }
             }
 
