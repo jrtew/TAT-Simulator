@@ -248,9 +248,32 @@ namespace TATSim
 
         private void UpdateStatusBars(int tirePerf, int tireWeight, int tankWeight, int tankRange, int exhPerf, int exhWeight, int exhRange)
         {
-            performProgBar.Value = playersMoto.Performance + tirePerf + exhPerf;
-            weightProgBar.Value = playersMoto.Weight + tireWeight + tankWeight + exhWeight;
-            rangeProgBar.Value = playersMoto.Range + tankRange + exhRange;
+            if (playersMoto.Performance + tirePerf + exhPerf > 10)
+            {
+                performProgBar.Value = 10;
+            }
+            else
+            {
+                performProgBar.Value = playersMoto.Performance + tirePerf + exhPerf;
+            }
+
+            if (playersMoto.Weight + tireWeight + tankWeight + exhWeight > 10)
+            {
+                weightProgBar.Value = 10;
+            }
+            else
+            {
+                weightProgBar.Value = playersMoto.Weight + tireWeight + tankWeight + exhWeight;
+            }
+
+            if (playersMoto.Range + tankRange + exhRange > 10)
+            {
+                rangeProgBar.Value = 10;
+            }
+            else
+            {
+                rangeProgBar.Value = playersMoto.Range + tankRange + exhRange;
+            }
         }
     }
 }

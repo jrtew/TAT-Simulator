@@ -203,7 +203,14 @@ namespace TATSim
                     movePlayer();                    
                     double[] array = playersMotoObj.travel(speed, todaysMileage, fuelRange);
                     updateCharacterStats();
-                    fuelRangeTB.Text = array[0].ToString().Substring(0, array[0].ToString().IndexOf("."));
+                    if (array[0].ToString().Contains("."))
+                    {
+                        fuelRangeTB.Text = array[0].ToString().Substring(0, array[0].ToString().IndexOf("."));
+                    }
+                    else
+                    {
+                        fuelRangeTB.Text = array[0].ToString();
+                    }
                     tireStatTB.Text = array[1].ToString();
                     int daysIntoTrip = Convert.ToInt32(dayNumTextBox.Text);
                     daysIntoTrip++;
