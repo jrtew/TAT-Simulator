@@ -129,7 +129,7 @@ namespace TATSim
                     winLosePicBox.Image = System.Drawing.Image.FromFile(System.Environment.CurrentDirectory + "\\losePic.png");
                     //MessageBox.Show("You lose!!!");
                 }
-                Application.Exit();
+                //Application.Exit();
             }
 
             radbtnSelection1.Text = "Take the " + selection1 + " trail";

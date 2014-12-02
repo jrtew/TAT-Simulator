@@ -80,13 +80,13 @@
             this.rtbxRandomEventDescription = new System.Windows.Forms.RichTextBox();
             this.lblRandomEventTitle = new System.Windows.Forms.Label();
             this.routeSelectPanel1 = new System.Windows.Forms.Panel();
+            this.routePicBox = new System.Windows.Forms.PictureBox();
             this.routeStartBtn1 = new System.Windows.Forms.Button();
             this.radbtnSelection1 = new System.Windows.Forms.RadioButton();
             this.radbtnSelection2 = new System.Windows.Forms.RadioButton();
-            this.routePicBox = new System.Windows.Forms.PictureBox();
             this.winLosePanel = new System.Windows.Forms.Panel();
-            this.winLosePicBox = new System.Windows.Forms.PictureBox();
             this.button1 = new System.Windows.Forms.Button();
+            this.winLosePicBox = new System.Windows.Forms.PictureBox();
             this.gameBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerIcon)).BeginInit();
             this.grpbxSpeed.SuspendLayout();
@@ -149,7 +149,7 @@
             // hungerProgBar
             // 
             this.hungerProgBar.Location = new System.Drawing.Point(888, 560);
-            this.hungerProgBar.Maximum = 10;
+            this.hungerProgBar.Maximum = 20;
             this.hungerProgBar.Name = "hungerProgBar";
             this.hungerProgBar.Size = new System.Drawing.Size(275, 23);
             this.hungerProgBar.Step = 1;
@@ -159,7 +159,7 @@
             // exhaustProgBar
             // 
             this.exhaustProgBar.Location = new System.Drawing.Point(888, 502);
-            this.exhaustProgBar.Maximum = 10;
+            this.exhaustProgBar.Maximum = 20;
             this.exhaustProgBar.Name = "exhaustProgBar";
             this.exhaustProgBar.Size = new System.Drawing.Size(275, 23);
             this.exhaustProgBar.Step = 1;
@@ -169,7 +169,7 @@
             // enjymntProgBar
             // 
             this.enjymntProgBar.Location = new System.Drawing.Point(888, 441);
-            this.enjymntProgBar.Maximum = 10;
+            this.enjymntProgBar.Maximum = 20;
             this.enjymntProgBar.Name = "enjymntProgBar";
             this.enjymntProgBar.Size = new System.Drawing.Size(275, 23);
             this.enjymntProgBar.Step = 1;
@@ -700,6 +700,15 @@
             this.routeSelectPanel1.Size = new System.Drawing.Size(1326, 705);
             this.routeSelectPanel1.TabIndex = 1;
             // 
+            // routePicBox
+            // 
+            this.routePicBox.Location = new System.Drawing.Point(228, 65);
+            this.routePicBox.Name = "routePicBox";
+            this.routePicBox.Size = new System.Drawing.Size(870, 449);
+            this.routePicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.routePicBox.TabIndex = 8;
+            this.routePicBox.TabStop = false;
+            // 
             // routeStartBtn1
             // 
             this.routeStartBtn1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -736,15 +745,6 @@
             this.radbtnSelection2.Text = "Start in New York!";
             this.radbtnSelection2.UseVisualStyleBackColor = true;
             // 
-            // routePicBox
-            // 
-            this.routePicBox.Location = new System.Drawing.Point(228, 65);
-            this.routePicBox.Name = "routePicBox";
-            this.routePicBox.Size = new System.Drawing.Size(870, 449);
-            this.routePicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.routePicBox.TabIndex = 8;
-            this.routePicBox.TabStop = false;
-            // 
             // winLosePanel
             // 
             this.winLosePanel.Controls.Add(this.button1);
@@ -753,14 +753,6 @@
             this.winLosePanel.Name = "winLosePanel";
             this.winLosePanel.Size = new System.Drawing.Size(1326, 705);
             this.winLosePanel.TabIndex = 2;
-            // 
-            // winLosePicBox
-            // 
-            this.winLosePicBox.Location = new System.Drawing.Point(199, 23);
-            this.winLosePicBox.Name = "winLosePicBox";
-            this.winLosePicBox.Size = new System.Drawing.Size(928, 586);
-            this.winLosePicBox.TabIndex = 0;
-            this.winLosePicBox.TabStop = false;
             // 
             // button1
             // 
@@ -772,6 +764,14 @@
             this.button1.TabIndex = 43;
             this.button1.Text = "btn does smthg";
             this.button1.UseVisualStyleBackColor = true;
+            // 
+            // winLosePicBox
+            // 
+            this.winLosePicBox.Location = new System.Drawing.Point(199, 23);
+            this.winLosePicBox.Name = "winLosePicBox";
+            this.winLosePicBox.Size = new System.Drawing.Size(928, 586);
+            this.winLosePicBox.TabIndex = 0;
+            this.winLosePicBox.TabStop = false;
             // 
             // GameBoardForm
             // 

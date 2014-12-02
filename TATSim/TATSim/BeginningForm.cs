@@ -31,7 +31,7 @@ namespace TATSim
             startScreenPanel.Visible = true;
             motoSelectPanel.Visible = false;
             gearSelectPanel.Visible = false;
-
+            drRadBut_CheckedChanged(new object(), new EventArgs());
         }
 
         //to make sure program closes completely if X is used to close program
