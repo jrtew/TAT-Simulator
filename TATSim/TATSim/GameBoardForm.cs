@@ -27,6 +27,7 @@ namespace TATSim
         string selection2 = "";
         bool nextStateSelected = false;
         bool needToRunMove = false;
+        bool statAtZero = false;
        
         //Constants
         const double mpg = 50.0;
@@ -57,9 +58,9 @@ namespace TATSim
             playersMotoObj = originalForm.playersMoto;
             playersMotoPB.Image = playersMotoObj.Image;
 
-            player.Enjoyment = 10;
-            player.Exhaustion = 10;
-            player.Hunger = 10;
+            player.Enjoyment = 20;
+            player.Exhaustion = 20;
+            player.Hunger = 20;
 
             cash = originalForm.startCash;
             cashTextBox.Text = "$" + cash.ToString();
@@ -78,9 +79,9 @@ namespace TATSim
             
             //checkMileage();
 
-            enjymntProgBar.Value = 10;
-            exhaustProgBar.Value = 10;
-            hungerProgBar.Value = 10;
+            enjymntProgBar.Value = 20;
+            exhaustProgBar.Value = 20;
+            hungerProgBar.Value = 20;
         }
 
         private void checkTrailState()
@@ -109,7 +110,10 @@ namespace TATSim
             }
             else
             {
-                if (Convert.ToInt32(dayNumTextBox.Text) <= 28)
+                radbtnSelection1.Visible = false;
+                radbtnSelection2.Visible = false;
+                routeStartBtn1.Visible = false;
+                if (Convert.ToInt32(dayNumTextBox.Text) <= 28 && !statAtZero)
                 {
                     //You win!!
                     routeSelectPanel1.Visible = false;
@@ -125,6 +129,7 @@ namespace TATSim
                     winLosePicBox.Image = System.Drawing.Image.FromFile(System.Environment.CurrentDirectory + "\\losePic.png");
                     //MessageBox.Show("You lose!!!");
                 }
+                //Application.Exit();
             }
 
             radbtnSelection1.Text = "Take the " + selection1 + " trail";
@@ -181,9 +186,7 @@ namespace TATSim
 
             //Checks to make sure the random event has been dealt with
             if (!grpbxRandomEvent.Visible && checkMileage() && checkDailyChoices())
-            {
-                int nextDistance = movePlayer();
-                mileageTextBox.Text = nextDistance.ToString();
+            {                
                 if (nextStateSelected)
                 {
                     int todaysMileage = Convert.ToInt32(mileageTextBox.Text);
@@ -197,16 +200,112 @@ namespace TATSim
                             break;
                         }
                     }
+                    movePlayer();                    
                     double[] array = playersMotoObj.travel(speed, todaysMileage, fuelRange);
-                    fuelRangeTB.Text = array[0].ToString().Substring(0, array[0].ToString().IndexOf("."));
+                    updateCharacterStats();
+                    if (array[0].ToString().Contains("."))
+                    {
+                        fuelRangeTB.Text = array[0].ToString().Substring(0, array[0].ToString().IndexOf("."));
+                    }
+                    else
+                    {
+                        fuelRangeTB.Text = array[0].ToString();
+                    }
                     tireStatTB.Text = array[1].ToString();
                     int daysIntoTrip = Convert.ToInt32(dayNumTextBox.Text);
                     daysIntoTrip++;
                     dayNumTextBox.Text = daysIntoTrip.ToString();
                     updateMoneyFromDailyChoices();
                     checkMileage();
+
+                    if (statAtZero)
+                    {
+                        trailSelectionState = 3;
+                        checkTrailState();
+                    }
                     //MessageBox.Show("A day has passed.");
                 }
+            }
+        }
+
+        private void updateCharacterStats()
+        {
+            //Determine sleeping arrangement
+            if (campRadBut.Checked )
+            {
+                if (enjymntProgBar.Value < 20)
+                    enjymntProgBar.Value += 1;
+
+                if (exhaustProgBar.Value > 0)
+                    exhaustProgBar.Value -= 1;
+            }
+            else
+            {
+                if (enjymntProgBar.Value > 0)
+                    enjymntProgBar.Value -= 1;
+
+                if (exhaustProgBar.Value < 19)
+                    exhaustProgBar.Value += 2;
+                else if (exhaustProgBar.Value < 20)
+                    exhaustProgBar.Value += 1;
+            }
+
+            //Determine eating arragnement
+            if (ramenRadBut.Checked)
+            {
+                if (hungerProgBar.Value > 0)
+                    hungerProgBar.Value -= 1;
+            }
+            else
+            {
+                if (hungerProgBar.Value < 20)
+                    hungerProgBar.Value += 1;
+            }
+
+            //Deterime speed
+            if (radbtnSlow.Checked)
+            {
+                if (enjymntProgBar.Value < 19)
+                    enjymntProgBar.Value += 2;
+                else if (enjymntProgBar.Value < 20)
+                    enjymntProgBar.Value += 1;
+
+                if (exhaustProgBar.Value < 20)
+                    exhaustProgBar.Value += 1;
+
+                if (hungerProgBar.Value > 1)
+                    hungerProgBar.Value -= 2;
+                else if (hungerProgBar.Value > 0)
+                    hungerProgBar.Value -= 1;
+            }
+            else if (radbtnMedium.Checked)
+            {
+                if (enjymntProgBar.Value < 20)
+                    enjymntProgBar.Value += 1;
+
+                if (exhaustProgBar.Value > 0)
+                    exhaustProgBar.Value -= 1;
+
+                if (hungerProgBar.Value > 0)
+                    hungerProgBar.Value -= 1;
+            }
+            else
+            {
+                if (enjymntProgBar.Value > 0)
+                    enjymntProgBar.Value -= 1;
+
+                if (exhaustProgBar.Value > 1)
+                    exhaustProgBar.Value -= 2;
+                else if (exhaustProgBar.Value > 0)
+                    exhaustProgBar.Value -= 1;
+
+                if (hungerProgBar.Value < 20)
+                    hungerProgBar.Value += 1;
+            }
+
+            if (enjymntProgBar.Value <= 0 || exhaustProgBar.Value <= 0 || hungerProgBar.Value <= 0)
+            {
+                statAtZero = true;
             }
         }
 
@@ -235,22 +334,21 @@ namespace TATSim
             cashTextBox.Text = "$" + (wallet - (sleep + food));
         }
 
-        private int movePlayer()
+        private void movePlayer()
         {
             int lastDistance = Convert.ToInt32(mileageTextBox.Text);
-            Stop currentStop = currentTrail.NextStop;
+            Stop currentStop = currentTrail.NextStop();
             if (currentStop == null)
             {
                 trails.Remove(currentTrail.Name);
                 trailSelectionState++;
                 checkTrailState();
                 needToRunMove = true;
-                return lastDistance;                
+                return;                
             }
 
-            playerIcon.Location = new Point(currentStop.Point.X - 25, currentStop.Point.Y - 25);            
-
-            return currentStop.Distance;
+            playerIcon.Location = new Point(currentStop.Point.X - 25, currentStop.Point.Y - 25);
+            mileageTextBox.Text = currentStop.Distance.ToString();
         }
 
         private bool checkDailyChoices()

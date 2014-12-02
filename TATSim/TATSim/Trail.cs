@@ -18,28 +18,25 @@ namespace TATSim
 
         private LinkedList<Stop> stops;
 
-        public Stop NextStop
-        {
-            get 
+        public Stop NextStop()
+        {            
+            if (stops.First == null)
             {
-                if (IsEmpty())
-                {
-                    return null;
-                }
-                else
-                {
-                    Stop temp = stops.First.Value;
-                    stops.RemoveFirst();
-                    return temp;
-                }
+                return null;
             }
+            else
+            {
+                Stop temp = stops.First.Value;
+                stops.RemoveFirst();
+                return temp;
+            }            
         }
 
         public Stop ThisStop
         {
             get
             {
-                if (IsEmpty())
+                if (stops.First == null)
                 {
                     return null;
                 }
@@ -50,16 +47,6 @@ namespace TATSim
                 }
             }
         }
-
-        public bool IsEmpty()
-        {
-            if (stops.First == null)
-            {
-                return true;
-            }
-            return false;
-        }
-
 
         public Trail(string newName, LinkedList<Stop> newStops)
         {
@@ -214,7 +201,17 @@ namespace TATSim
             trails.Add(OregCoast.name, OregCoast);
             trails.Add(LA.name, LA);
 
+            Random rand = new Random();
+            foreach (string key in trails.Keys)
+            {
+                foreach (Stop stop in trails[key].stops)
+                {
+                    stop.Distance = rand.Next(150, 199);
+                }
+            }
+
             return trails;
         }
+
     }
 }
