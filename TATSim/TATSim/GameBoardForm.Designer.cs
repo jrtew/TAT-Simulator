@@ -86,7 +86,7 @@
             this.radbtnSelection1 = new System.Windows.Forms.RadioButton();
             this.radbtnSelection2 = new System.Windows.Forms.RadioButton();
             this.winLosePanel = new System.Windows.Forms.Panel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.seeyaBtn = new System.Windows.Forms.Button();
             this.winLosePicBox = new System.Windows.Forms.PictureBox();
             this.gameBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerIcon)).BeginInit();
@@ -255,7 +255,6 @@
             this.btnFillUp.TabIndex = 46;
             this.btnFillUp.Text = "Fill up!";
             this.btnFillUp.UseVisualStyleBackColor = true;
-            this.btnFillUp.Visible = false;
             this.btnFillUp.Click += new System.EventHandler(this.btnFillUp_Click);
             // 
             // mileageTextBox
@@ -755,23 +754,24 @@
             // 
             // winLosePanel
             // 
-            this.winLosePanel.Controls.Add(this.button1);
+            this.winLosePanel.Controls.Add(this.seeyaBtn);
             this.winLosePanel.Controls.Add(this.winLosePicBox);
             this.winLosePanel.Location = new System.Drawing.Point(12, 12);
             this.winLosePanel.Name = "winLosePanel";
             this.winLosePanel.Size = new System.Drawing.Size(1326, 705);
             this.winLosePanel.TabIndex = 2;
             // 
-            // button1
+            // seeyaBtn
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.button1.Location = new System.Drawing.Point(545, 643);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(236, 40);
-            this.button1.TabIndex = 43;
-            this.button1.Text = "btn does smthg";
-            this.button1.UseVisualStyleBackColor = true;
+            this.seeyaBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.seeyaBtn.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.seeyaBtn.Location = new System.Drawing.Point(545, 643);
+            this.seeyaBtn.Name = "seeyaBtn";
+            this.seeyaBtn.Size = new System.Drawing.Size(236, 40);
+            this.seeyaBtn.TabIndex = 43;
+            this.seeyaBtn.Text = "Seeya Next Time!";
+            this.seeyaBtn.UseVisualStyleBackColor = true;
+            this.seeyaBtn.Click += new System.EventHandler(this.seeyaBtn_Click);
             // 
             // winLosePicBox
             // 
@@ -881,7 +881,7 @@
         private System.Windows.Forms.ProgressBar enjymntProgBar;
         private System.Windows.Forms.PictureBox routePicBox;
         private System.Windows.Forms.Panel winLosePanel;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button seeyaBtn;
         private System.Windows.Forms.PictureBox winLosePicBox;
 
     }
