@@ -88,6 +88,7 @@
             this.winLosePanel = new System.Windows.Forms.Panel();
             this.seeyaBtn = new System.Windows.Forms.Button();
             this.winLosePicBox = new System.Windows.Forms.PictureBox();
+            this.quickTipsLabel = new System.Windows.Forms.Label();
             this.gameBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerIcon)).BeginInit();
             this.grpbxSpeed.SuspendLayout();
@@ -109,6 +110,7 @@
             // 
             // gameBoardPanel
             // 
+            this.gameBoardPanel.Controls.Add(this.quickTipsLabel);
             this.gameBoardPanel.Controls.Add(this.hungerProgBar);
             this.gameBoardPanel.Controls.Add(this.exhaustProgBar);
             this.gameBoardPanel.Controls.Add(this.enjymntProgBar);
@@ -380,7 +382,7 @@
             this.hotelRadBut.Size = new System.Drawing.Size(105, 24);
             this.hotelRadBut.TabIndex = 33;
             this.hotelRadBut.TabStop = true;
-            this.hotelRadBut.Text = "Hotel - $30";
+            this.hotelRadBut.Text = "Hotel - $60";
             this.hotelRadBut.UseVisualStyleBackColor = true;
             this.hotelRadBut.CheckedChanged += new System.EventHandler(this.hotelRadBut_CheckedChanged);
             // 
@@ -477,7 +479,7 @@
             this.playerPicPB.Image = global::TATSim.Properties.Resources.Dick;
             this.playerPicPB.Location = new System.Drawing.Point(1189, 373);
             this.playerPicPB.Name = "playerPicPB";
-            this.playerPicPB.Size = new System.Drawing.Size(98, 237);
+            this.playerPicPB.Size = new System.Drawing.Size(122, 294);
             this.playerPicPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.playerPicPB.TabIndex = 20;
             this.playerPicPB.TabStop = false;
@@ -778,8 +780,22 @@
             this.winLosePicBox.Location = new System.Drawing.Point(199, 23);
             this.winLosePicBox.Name = "winLosePicBox";
             this.winLosePicBox.Size = new System.Drawing.Size(928, 586);
+            this.winLosePicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.winLosePicBox.TabIndex = 0;
             this.winLosePicBox.TabStop = false;
+            // 
+            // quickTipsLabel
+            // 
+            this.quickTipsLabel.AutoSize = true;
+            this.quickTipsLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.quickTipsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quickTipsLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.quickTipsLabel.Location = new System.Drawing.Point(1205, 335);
+            this.quickTipsLabel.Name = "quickTipsLabel";
+            this.quickTipsLabel.Size = new System.Drawing.Size(82, 20);
+            this.quickTipsLabel.TabIndex = 52;
+            this.quickTipsLabel.Text = "Quick Tips";
+            this.quickTipsLabel.Click += new System.EventHandler(this.quickTipsLabel_Click);
             // 
             // GameBoardForm
             // 
@@ -883,6 +899,7 @@
         private System.Windows.Forms.Panel winLosePanel;
         private System.Windows.Forms.Button seeyaBtn;
         private System.Windows.Forms.PictureBox winLosePicBox;
+        private System.Windows.Forms.Label quickTipsLabel;
 
     }
 }

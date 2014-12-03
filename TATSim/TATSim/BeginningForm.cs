@@ -16,7 +16,7 @@ namespace TATSim
         private SoundPlayer newSoundPlayer;
 
         public Motorcycle playersMoto = new Motorcycle();
-        public int startCash = 1800;
+        public int startCash = 2000;
         int tireCost = 0;
         int tankCost = 0;
         int exhCost = 0;

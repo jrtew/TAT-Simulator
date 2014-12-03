@@ -356,7 +356,7 @@ namespace TATSim
             }
             else
             {
-                sleep = 30.0;
+                sleep = 60.0;
             }
             if (ramenRadBut.Checked)
             {
@@ -898,6 +898,18 @@ namespace TATSim
         private void seeyaBtn_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+        
+        private void quickTipsLabel_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("\n- Choose your speed wisely:\n" +
+                "\n\t-The different speeds have different pros and cons\n" +
+                "\n\t-They may impact your character's enjoyment, exhaustion, and hunger\n" +
+                "\n- Pay attention to where you sleep and what you eat:\n" +
+                "\n\t-Where you sleep can impact your enjoyment and exhaustion\n" +
+                "\n\t-What you eat can impact your hunger\n" +
+                "\n- Strategize with different combinations!" +
+                "\n\nPS: Be careful with flat tires!", "Quick Tips", MessageBoxButtons.OK);
         }
         
     }
