@@ -223,7 +223,7 @@ namespace TATSim
                     dayNumTextBox.Text = daysIntoTrip.ToString();
                     updateMoneyFromDailyChoices();
                     
-                    enableChoices();
+                    
 
                     if (statAtZero)
                     {
@@ -404,6 +404,7 @@ namespace TATSim
             }
 
             lblRandomEventTitle.Text = currentEvent.Name;
+            lblRandomEventTitle.Location = new Point((grpbxRandomEvent.Width / 2) - (lblRandomEventTitle.Width / 2), lblRandomEventTitle.Location.Y);
             rtbxRandomEventDescription.Text = currentEvent.Description;
 
         }
@@ -418,9 +419,10 @@ namespace TATSim
             RandomEvent eventToReturn = null;
             Random rand = new Random();
             double chance = 0.0;
+            //int chanceToIncrease = 0;
             for (int i = 0; i < 100; i++)
             {
-                chance += (double) rand.Next(0, 101);
+                chance += (double) rand.Next(45, 100);
             }
             chance /= 100;
 
@@ -435,7 +437,7 @@ namespace TATSim
                 }
                 else
                 {
-                    randomEvents[key].increaseChance((double) rand.Next(16));
+                    randomEvents[key].increaseChance((double) rand.Next(10));
                 }
             }
 
@@ -578,6 +580,8 @@ namespace TATSim
             }
             tatMapPB.Visible = true;
             grpbxRandomEvent.Visible = false;
+            enableChoices();
+            currentEvent.resetChance();           
         }
 
         private void btnLowPricedFix_Click(object sender, EventArgs e)
@@ -678,6 +682,8 @@ namespace TATSim
             }
             tatMapPB.Visible = true;
             grpbxRandomEvent.Visible = false;
+            enableChoices();
+            currentEvent.resetChance();   
         }
 
 
@@ -776,6 +782,8 @@ namespace TATSim
             }
             tatMapPB.Visible = true;
             grpbxRandomEvent.Visible = false;
+            enableChoices();
+            currentEvent.resetChance();   
         }
 
         public void takeoutMoney(double amount)
