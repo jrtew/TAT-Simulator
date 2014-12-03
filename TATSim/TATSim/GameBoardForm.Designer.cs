@@ -72,13 +72,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.lblTitle = new System.Windows.Forms.Label();
-            this.tatMapPB = new System.Windows.Forms.PictureBox();
             this.grpbxRandomEvent = new System.Windows.Forms.GroupBox();
             this.btnIgnore = new System.Windows.Forms.Button();
             this.btnLowPricedFix = new System.Windows.Forms.Button();
             this.btnHighPriceFix = new System.Windows.Forms.Button();
             this.rtbxRandomEventDescription = new System.Windows.Forms.RichTextBox();
             this.lblRandomEventTitle = new System.Windows.Forms.Label();
+            this.tatMapPB = new System.Windows.Forms.PictureBox();
             this.routeSelectPanel1 = new System.Windows.Forms.Panel();
             this.routePicBox = new System.Windows.Forms.PictureBox();
             this.routeStartBtn1 = new System.Windows.Forms.Button();
@@ -98,8 +98,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.campingPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersMotoPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tatMapPB)).BeginInit();
             this.grpbxRandomEvent.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tatMapPB)).BeginInit();
             this.routeSelectPanel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.routePicBox)).BeginInit();
             this.winLosePanel.SuspendLayout();
@@ -138,8 +138,8 @@
             this.gameBoardPanel.Controls.Add(this.label2);
             this.gameBoardPanel.Controls.Add(this.label1);
             this.gameBoardPanel.Controls.Add(this.lblTitle);
-            this.gameBoardPanel.Controls.Add(this.tatMapPB);
             this.gameBoardPanel.Controls.Add(this.grpbxRandomEvent);
+            this.gameBoardPanel.Controls.Add(this.tatMapPB);
             this.gameBoardPanel.Location = new System.Drawing.Point(12, 12);
             this.gameBoardPanel.Name = "gameBoardPanel";
             this.gameBoardPanel.Size = new System.Drawing.Size(1326, 705);
@@ -616,16 +616,6 @@
             this.lblTitle.TabIndex = 6;
             this.lblTitle.Text = "TAT Progress";
             // 
-            // tatMapPB
-            // 
-            this.tatMapPB.Image = global::TATSim.Properties.Resources.TATMapMultiRoute1;
-            this.tatMapPB.Location = new System.Drawing.Point(42, 48);
-            this.tatMapPB.Name = "tatMapPB";
-            this.tatMapPB.Size = new System.Drawing.Size(741, 395);
-            this.tatMapPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.tatMapPB.TabIndex = 7;
-            this.tatMapPB.TabStop = false;
-            // 
             // grpbxRandomEvent
             // 
             this.grpbxRandomEvent.Controls.Add(this.btnIgnore);
@@ -650,6 +640,7 @@
             this.btnIgnore.TabIndex = 4;
             this.btnIgnore.Text = "Ignore";
             this.btnIgnore.UseVisualStyleBackColor = true;
+            this.btnIgnore.Click += new System.EventHandler(this.btnIgnore_Click);
             // 
             // btnLowPricedFix
             // 
@@ -659,7 +650,7 @@
             this.btnLowPricedFix.TabIndex = 3;
             this.btnLowPricedFix.Text = "Low Priced Fix";
             this.btnLowPricedFix.UseVisualStyleBackColor = true;
-            this.btnLowPricedFix.Click += new System.EventHandler(this.button1_Click);
+            this.btnLowPricedFix.Click += new System.EventHandler(this.btnLowPricedFix_Click);
             // 
             // btnHighPriceFix
             // 
@@ -669,11 +660,13 @@
             this.btnHighPriceFix.TabIndex = 2;
             this.btnHighPriceFix.Text = "High Priced Fix";
             this.btnHighPriceFix.UseVisualStyleBackColor = true;
+            this.btnHighPriceFix.Click += new System.EventHandler(this.btnHighPriceFix_Click);
             // 
             // rtbxRandomEventDescription
             // 
             this.rtbxRandomEventDescription.Location = new System.Drawing.Point(29, 73);
             this.rtbxRandomEventDescription.Name = "rtbxRandomEventDescription";
+            this.rtbxRandomEventDescription.ReadOnly = true;
             this.rtbxRandomEventDescription.Size = new System.Drawing.Size(685, 143);
             this.rtbxRandomEventDescription.TabIndex = 1;
             this.rtbxRandomEventDescription.Text = "";
@@ -685,9 +678,19 @@
             this.lblRandomEventTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRandomEventTitle.Location = new System.Drawing.Point(325, 20);
             this.lblRandomEventTitle.Name = "lblRandomEventTitle";
-            this.lblRandomEventTitle.Size = new System.Drawing.Size(92, 29);
+            this.lblRandomEventTitle.Size = new System.Drawing.Size(127, 29);
             this.lblRandomEventTitle.TabIndex = 0;
-            this.lblRandomEventTitle.Text = "label15";
+            this.lblRandomEventTitle.Text = "Event Title";
+            // 
+            // tatMapPB
+            // 
+            this.tatMapPB.Image = global::TATSim.Properties.Resources.TATMapMultiRoute1;
+            this.tatMapPB.Location = new System.Drawing.Point(42, 48);
+            this.tatMapPB.Name = "tatMapPB";
+            this.tatMapPB.Size = new System.Drawing.Size(741, 395);
+            this.tatMapPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.tatMapPB.TabIndex = 7;
+            this.tatMapPB.TabStop = false;
             // 
             // routeSelectPanel1
             // 
@@ -801,9 +804,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.campingPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playerPicPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.playersMotoPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.tatMapPB)).EndInit();
             this.grpbxRandomEvent.ResumeLayout(false);
             this.grpbxRandomEvent.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.tatMapPB)).EndInit();
             this.routeSelectPanel1.ResumeLayout(false);
             this.routeSelectPanel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.routePicBox)).EndInit();
