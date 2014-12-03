@@ -178,96 +178,44 @@ namespace TATSim
 
        
         private void nextDayBtn_Click(object sender, EventArgs e)
-        {
-            switch(currentTrail.Name)
-            {
-                case "Cape Hatteras":
-                    foreach (string key in randomEvents.Keys)
-                    {
-                        randomEvents[key].increaseChance(5.0);
-                    }
-                    if (enjymntProgBar.Value < 20)
-                        enjymntProgBar.Value += 1;
-                    break;
-                case "New York":
-                    foreach (string key in randomEvents.Keys)
-                    {
-                        randomEvents[key].increaseChance(-5.0);
-                    }
-                    if (enjymntProgBar.Value > 0)
-                        enjymntProgBar.Value -= 1;
-                    break;
-                case "Great Plains":
-                    foreach (string key in randomEvents.Keys)
-                    {
-                        randomEvents[key].increaseChance(-5.0);
-                    }
-
-                    if (enjymntProgBar.Value > 0)
-                        enjymntProgBar.Value -= 1;
-                    if (hungerProgBar.Value > 0)
-                        hungerProgBar.Value -= 1;
-                    break;
-                case "Southern":
-                    foreach (string key in randomEvents.Keys)
-                    {
-                        randomEvents[key].increaseChance(5.0);
-                    }
-                    if (enjymntProgBar.Value < 20)
-                        enjymntProgBar.Value += 1;
-                    if (exhaustProgBar.Value > 0)
-                        exhaustProgBar.Value -= 1;
-                    break;
-                case "Oregon Coast":
-                    if (enjymntProgBar.Value < 20)
-                        enjymntProgBar.Value += 1;
-                    if (hungerProgBar.Value > 0)
-                        hungerProgBar.Value -= 1;
-                    break;
-                case "Los Angeles":
-                    if (enjymntProgBar.Value > 0)
-                        enjymntProgBar.Value -= 1;
-                    if (exhaustProgBar.Value < 20)
-                        exhaustProgBar.Value += 1;
-                    break;
-                default:
-                    break;
-            }
-            
+        {                      
+            bool mileageAGo = checkMileage();
             //Get a possible random event
-            currentEvent = getRandomEvent();
-            if (currentEvent != null)
+            if (mileageAGo)
             {
-                if (currentEvent.Name.Equals("Flat Tire"))
+                currentEvent = getRandomEvent();
+                if (currentEvent != null)
                 {
-                    newSoundPlayer = new SoundPlayer("tireDeflateSound.wav");
-                    newSoundPlayer.Play();
+                    if (currentEvent.Name.Equals("Flat Tire"))
+                    {
+                        newSoundPlayer = new SoundPlayer("tireDeflateSound.wav");
+                        newSoundPlayer.Play();
+                    }
+                    else if (currentEvent.Name.Equals("Severe Weather"))
+                    {
+                        newSoundPlayer = new SoundPlayer("tstormSound.wav");
+                        newSoundPlayer.Play();
+                    }
+                    else if (currentEvent.Name.Equals("Big Wreck"))
+                    {
+                        newSoundPlayer = new SoundPlayer("crashSound.wav");
+                        newSoundPlayer.Play();
+                    }
+                    else if (currentEvent.Name.Equals("Ticket"))
+                    {
+                        newSoundPlayer = new SoundPlayer("sirenSound.wav");
+                        newSoundPlayer.Play();
+                    }
+                    //Display the Random Event screen so the player can determine what to do
+                    changeToRandomEventScreen(currentEvent);
                 }
-                else if (currentEvent.Name.Equals("Severe Weather"))
-                {
-                    newSoundPlayer = new SoundPlayer("tstormSound.wav");
-                    newSoundPlayer.Play();
-                }
-                else if (currentEvent.Name.Equals("Big Wreck"))
-                {
-                    newSoundPlayer = new SoundPlayer("crashSound.wav");
-                    newSoundPlayer.Play();
-                }
-                else if (currentEvent.Name.Equals("Ticket"))
-                {
-                    newSoundPlayer = new SoundPlayer("sirenSound.wav");
-                    newSoundPlayer.Play();
-                }
-                //Display the Random Event screen so the player can determine what to do
-                changeToRandomEventScreen(currentEvent);                
             }
 
             //Checks to make sure the random event has been dealt with
-            if (!grpbxRandomEvent.Visible && checkMileage() && checkDailyChoices())
+            if (!grpbxRandomEvent.Visible && mileageAGo && checkDailyChoices())
             {                
                 if (nextStateSelected)
-                {
-                    checkMileage();
+                {                    
                     int todaysMileage = Convert.ToInt32(mileageTextBox.Text);
                     int fuelRange = Convert.ToInt32(fuelRangeTB.Text);
                     int speed = 0;
@@ -294,9 +242,7 @@ namespace TATSim
                     int daysIntoTrip = Convert.ToInt32(dayNumTextBox.Text);
                     daysIntoTrip++;
                     dayNumTextBox.Text = daysIntoTrip.ToString();
-                    updateMoneyFromDailyChoices();
-                    
-                    
+                    updateMoneyFromDailyChoices();     
 
                     if (statAtZero)
                     {
@@ -436,6 +382,60 @@ namespace TATSim
                 checkTrailState();
                 needToRunMove = true;
                 return;                
+            }
+            switch (currentTrail.Name)
+            {
+                case "Cape Hatteras":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        randomEvents[key].increaseChance(5.0);
+                    }
+                    if (enjymntProgBar.Value < 20)
+                        enjymntProgBar.Value += 1;
+                    break;
+                case "New York":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        randomEvents[key].increaseChance(-5.0);
+                    }
+                    if (enjymntProgBar.Value > 0)
+                        enjymntProgBar.Value -= 1;
+                    break;
+                case "Great Plains":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        randomEvents[key].increaseChance(-5.0);
+                    }
+
+                    if (enjymntProgBar.Value > 0)
+                        enjymntProgBar.Value -= 1;
+                    if (hungerProgBar.Value > 0)
+                        hungerProgBar.Value -= 1;
+                    break;
+                case "Southern":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        randomEvents[key].increaseChance(5.0);
+                    }
+                    if (enjymntProgBar.Value < 20)
+                        enjymntProgBar.Value += 1;
+                    if (exhaustProgBar.Value > 0)
+                        exhaustProgBar.Value -= 1;
+                    break;
+                case "Oregon Coast":
+                    if (enjymntProgBar.Value < 20)
+                        enjymntProgBar.Value += 1;
+                    if (hungerProgBar.Value > 0)
+                        hungerProgBar.Value -= 1;
+                    break;
+                case "Los Angeles":
+                    if (enjymntProgBar.Value > 0)
+                        enjymntProgBar.Value -= 1;
+                    if (exhaustProgBar.Value < 20)
+                        exhaustProgBar.Value += 1;
+                    break;
+                default:
+                    break;
             }
             newSoundPlayer = new SoundPlayer("motoDriveOffSound.wav");
             newSoundPlayer.Play();
@@ -656,7 +656,14 @@ namespace TATSim
             tatMapPB.Visible = true;
             grpbxRandomEvent.Visible = false;
             enableChoices();
-            currentEvent.resetChance();           
+            currentEvent.resetChance();     
+            foreach (string key in randomEvents.Keys)
+            {
+                if (!key.Equals(currentEvent.Name))
+                {
+                    randomEvents[key].increaseChance(-10.0);
+                }
+            }
         }
 
         private void btnLowPricedFix_Click(object sender, EventArgs e)
@@ -758,7 +765,14 @@ namespace TATSim
             tatMapPB.Visible = true;
             grpbxRandomEvent.Visible = false;
             enableChoices();
-            currentEvent.resetChance();   
+            currentEvent.resetChance();
+            foreach (string key in randomEvents.Keys)
+            {
+                if (!key.Equals(currentEvent.Name))
+                {
+                    randomEvents[key].increaseChance(-10.0);
+                }
+            }
         }
 
 
@@ -858,7 +872,14 @@ namespace TATSim
             tatMapPB.Visible = true;
             grpbxRandomEvent.Visible = false;
             enableChoices();
-            currentEvent.resetChance();   
+            currentEvent.resetChance();
+            foreach (string key in randomEvents.Keys)
+            {
+                if (!key.Equals(currentEvent.Name))
+                {
+                    randomEvents[key].increaseChance(-10.0);
+                }
+            }
         }
 
         public void takeoutMoney(double amount)

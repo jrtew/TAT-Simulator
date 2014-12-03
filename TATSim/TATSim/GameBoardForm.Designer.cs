@@ -30,6 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameBoardForm));
             this.gameBoardPanel = new System.Windows.Forms.Panel();
+            this.quickTipsLabel = new System.Windows.Forms.Label();
             this.hungerProgBar = new System.Windows.Forms.ProgressBar();
             this.exhaustProgBar = new System.Windows.Forms.ProgressBar();
             this.enjymntProgBar = new System.Windows.Forms.ProgressBar();
@@ -88,7 +89,6 @@
             this.winLosePanel = new System.Windows.Forms.Panel();
             this.seeyaBtn = new System.Windows.Forms.Button();
             this.winLosePicBox = new System.Windows.Forms.PictureBox();
-            this.quickTipsLabel = new System.Windows.Forms.Label();
             this.gameBoardPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.playerIcon)).BeginInit();
             this.grpbxSpeed.SuspendLayout();
@@ -141,13 +141,26 @@
             this.gameBoardPanel.Controls.Add(this.label2);
             this.gameBoardPanel.Controls.Add(this.label1);
             this.gameBoardPanel.Controls.Add(this.lblTitle);
-            this.gameBoardPanel.Controls.Add(this.grpbxRandomEvent);
             this.gameBoardPanel.Controls.Add(this.tatMapPB);
+            this.gameBoardPanel.Controls.Add(this.grpbxRandomEvent);
             this.gameBoardPanel.Location = new System.Drawing.Point(12, 12);
             this.gameBoardPanel.Name = "gameBoardPanel";
             this.gameBoardPanel.Size = new System.Drawing.Size(1326, 705);
             this.gameBoardPanel.TabIndex = 0;
             this.gameBoardPanel.Visible = false;
+            // 
+            // quickTipsLabel
+            // 
+            this.quickTipsLabel.AutoSize = true;
+            this.quickTipsLabel.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.quickTipsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.quickTipsLabel.ForeColor = System.Drawing.Color.Maroon;
+            this.quickTipsLabel.Location = new System.Drawing.Point(1205, 335);
+            this.quickTipsLabel.Name = "quickTipsLabel";
+            this.quickTipsLabel.Size = new System.Drawing.Size(82, 20);
+            this.quickTipsLabel.TabIndex = 52;
+            this.quickTipsLabel.Text = "Quick Tips";
+            this.quickTipsLabel.Click += new System.EventHandler(this.quickTipsLabel_Click);
             // 
             // hungerProgBar
             // 
@@ -733,12 +746,14 @@
             // radbtnSelection1
             // 
             this.radbtnSelection1.AutoSize = true;
+            this.radbtnSelection1.Checked = true;
             this.radbtnSelection1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.radbtnSelection1.ForeColor = System.Drawing.SystemColors.HotTrack;
             this.radbtnSelection1.Location = new System.Drawing.Point(194, 564);
             this.radbtnSelection1.Name = "radbtnSelection1";
             this.radbtnSelection1.Size = new System.Drawing.Size(270, 33);
             this.radbtnSelection1.TabIndex = 1;
+            this.radbtnSelection1.TabStop = true;
             this.radbtnSelection1.Text = "Start in Cape Hatteras!";
             this.radbtnSelection1.UseVisualStyleBackColor = true;
             // 
@@ -783,19 +798,6 @@
             this.winLosePicBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.winLosePicBox.TabIndex = 0;
             this.winLosePicBox.TabStop = false;
-            // 
-            // quickTipsLabel
-            // 
-            this.quickTipsLabel.AutoSize = true;
-            this.quickTipsLabel.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.quickTipsLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.quickTipsLabel.ForeColor = System.Drawing.Color.Maroon;
-            this.quickTipsLabel.Location = new System.Drawing.Point(1205, 335);
-            this.quickTipsLabel.Name = "quickTipsLabel";
-            this.quickTipsLabel.Size = new System.Drawing.Size(82, 20);
-            this.quickTipsLabel.TabIndex = 52;
-            this.quickTipsLabel.Text = "Quick Tips";
-            this.quickTipsLabel.Click += new System.EventHandler(this.quickTipsLabel_Click);
             // 
             // GameBoardForm
             // 
