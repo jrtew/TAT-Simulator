@@ -31,6 +31,7 @@ C:\Users\Jordon\Source\Repos\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.GameBo
 C:\Users\Jordon\Source\Repos\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.InstructionsForm.resources
 C:\Users\Jordon\Source\Repos\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.Properties.Resources.resources
 C:\Users\Jordon\Source\Repos\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.csproj.GenerateResource.Cache
+D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.exe
 D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\bin\Debug\TATSim.exe.config
 D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\bin\Debug\TATSim.exe
 D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\bin\Debug\TATSim.pdb
@@ -40,5 +41,4 @@ D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.GameBoardForm.r
 D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.InstructionsForm.resources
 D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.Properties.Resources.resources
 D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.csproj.GenerateResource.Cache
-D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.exe
 D:\Desktop\TATSimV2\TAT-Simulator\TATSim\TATSim\obj\Debug\TATSim.pdb

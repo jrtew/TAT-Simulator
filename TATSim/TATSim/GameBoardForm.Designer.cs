@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(GameBoardForm));
             this.gameBoardPanel = new System.Windows.Forms.Panel();
             this.hungerProgBar = new System.Windows.Forms.ProgressBar();
             this.exhaustProgBar = new System.Windows.Forms.ProgressBar();
@@ -313,6 +314,7 @@
             this.steakRadBut.TabStop = true;
             this.steakRadBut.Text = "Steak Dinner - $15";
             this.steakRadBut.UseVisualStyleBackColor = true;
+            this.steakRadBut.CheckedChanged += new System.EventHandler(this.steakRadBut_CheckedChanged);
             // 
             // ramenRadBut
             // 
@@ -325,6 +327,7 @@
             this.ramenRadBut.TabStop = true;
             this.ramenRadBut.Text = "Soup - $1";
             this.ramenRadBut.UseVisualStyleBackColor = true;
+            this.ramenRadBut.CheckedChanged += new System.EventHandler(this.ramenRadBut_CheckedChanged);
             // 
             // steakPB
             // 
@@ -380,6 +383,7 @@
             this.hotelRadBut.TabStop = true;
             this.hotelRadBut.Text = "Hotel - $30";
             this.hotelRadBut.UseVisualStyleBackColor = true;
+            this.hotelRadBut.CheckedChanged += new System.EventHandler(this.hotelRadBut_CheckedChanged);
             // 
             // campRadBut
             // 
@@ -392,6 +396,7 @@
             this.campRadBut.TabStop = true;
             this.campRadBut.Text = "Camping - $5";
             this.campRadBut.UseVisualStyleBackColor = true;
+            this.campRadBut.CheckedChanged += new System.EventHandler(this.campRadBut_CheckedChanged);
             // 
             // hotelPB
             // 
@@ -782,6 +787,7 @@
             this.Controls.Add(this.gameBoardPanel);
             this.Controls.Add(this.routeSelectPanel1);
             this.Controls.Add(this.winLosePanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "GameBoardForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TAT Sim 2014";

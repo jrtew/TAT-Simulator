@@ -7,11 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace TATSim
 {
     public partial class TATSimForm : Form
     {
+        private SoundPlayer newSoundPlayer;
+
         public Motorcycle playersMoto = new Motorcycle();
         public int startCash = 1800;
         int tireCost = 0;
@@ -70,6 +73,9 @@ namespace TATSim
                     motoName = "xr";
 
                 playersMoto = CreateMoto.CreateMotoObj(motoName);
+
+                newSoundPlayer = new SoundPlayer("motoStartSound.wav");
+                newSoundPlayer.Play();
 
                 motoSelectPanel.Visible = false;
                 gearSelectPanel.Visible = true;
@@ -274,6 +280,15 @@ namespace TATSim
             {
                 rangeProgBar.Value = playersMoto.Range + tankRange + exhRange;
             }
+        }
+
+        private void label27_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("\n- Each item has different pros and cons\n" +
+                "\n- Check out how the item impacts your motorcycle's stats by selecting the item\n" +
+                "\n- Your available money will update as you select different items, watch out how much you spend!\n" +
+                "\n- If you choose the most expensive item in each category, you will most likely not be able to finish the trip!\n" +
+                "\n- Choose your items wisely!", "Quick Tips", MessageBoxButtons.OK);
         }
     }
 }

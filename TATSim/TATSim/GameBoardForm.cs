@@ -8,11 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Drawing.Imaging;
+using System.Media;
 
 namespace TATSim
 {
     public partial class GameBoardForm : Form
     {
+        private SoundPlayer newSoundPlayer;
         TATSimForm originalForm;
         public Motorcycle playersMotoObj;
         public Player player = new Player();
@@ -176,6 +178,8 @@ namespace TATSim
        
         private void nextDayBtn_Click(object sender, EventArgs e)
         {
+            newSoundPlayer = new SoundPlayer("motoDriveOffSound.wav");
+            newSoundPlayer.Play();
             //Get a possible random event
             RandomEvent currentEvent = getRandomEvent();
             if (currentEvent != null)
@@ -442,6 +446,30 @@ namespace TATSim
             double wallet = Convert.ToDouble(cashTextBox.Text.ToString().Substring(1));
             cashTextBox.Text = "$" + (wallet - cost);
             fuelRangeTB.Text = playersMotoObj.Range.ToString();
+        }
+
+        private void campRadBut_CheckedChanged(object sender, EventArgs e)
+        {
+            newSoundPlayer = new SoundPlayer("owlSound.wav");
+            newSoundPlayer.Play();
+        }
+
+        private void hotelRadBut_CheckedChanged(object sender, EventArgs e)
+        {
+            newSoundPlayer = new SoundPlayer("bellSound.wav");
+            newSoundPlayer.Play();
+        }
+
+        private void ramenRadBut_CheckedChanged(object sender, EventArgs e)
+        {
+            newSoundPlayer = new SoundPlayer("waterPourSound.wav");
+            newSoundPlayer.Play();
+        }
+
+        private void steakRadBut_CheckedChanged(object sender, EventArgs e)
+        {
+            newSoundPlayer = new SoundPlayer("cowSound.wav");
+            newSoundPlayer.Play();
         }
 
         //private void tatMapPB_MouseClick(object sender, MouseEventArgs e)

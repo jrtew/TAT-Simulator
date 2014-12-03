@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(TATSimForm));
             this.startScreenPanel = new System.Windows.Forms.Panel();
             this.btnInstructions = new System.Windows.Forms.Button();
             this.btnStart = new System.Windows.Forms.Button();
@@ -53,6 +54,17 @@
             this.klrPicBox = new System.Windows.Forms.PictureBox();
             this.drPicBox = new System.Windows.Forms.PictureBox();
             this.gearSelectPanel = new System.Windows.Forms.Panel();
+            this.gasTankPanel = new System.Windows.Forms.Panel();
+            this.resinTankRB = new System.Windows.Forms.RadioButton();
+            this.label16 = new System.Windows.Forms.Label();
+            this.italTankRB = new System.Windows.Forms.RadioButton();
+            this.label15 = new System.Windows.Forms.Label();
+            this.expdTankRB = new System.Windows.Forms.RadioButton();
+            this.label14 = new System.Windows.Forms.Label();
+            this.resinRangerTankPB = new System.Windows.Forms.PictureBox();
+            this.italyTankPB = new System.Windows.Forms.PictureBox();
+            this.expdTankPB = new System.Windows.Forms.PictureBox();
+            this.label9 = new System.Windows.Forms.Label();
             this.rangeProgBar = new System.Windows.Forms.ProgressBar();
             this.weightProgBar = new System.Windows.Forms.ProgressBar();
             this.performProgBar = new System.Windows.Forms.ProgressBar();
@@ -77,17 +89,6 @@
             this.nightStalkExhaPB = new System.Windows.Forms.PictureBox();
             this.standardEditExhPB = new System.Windows.Forms.PictureBox();
             this.label10 = new System.Windows.Forms.Label();
-            this.gasTankPanel = new System.Windows.Forms.Panel();
-            this.resinTankRB = new System.Windows.Forms.RadioButton();
-            this.label16 = new System.Windows.Forms.Label();
-            this.italTankRB = new System.Windows.Forms.RadioButton();
-            this.label15 = new System.Windows.Forms.Label();
-            this.expdTankRB = new System.Windows.Forms.RadioButton();
-            this.label14 = new System.Windows.Forms.Label();
-            this.resinRangerTankPB = new System.Windows.Forms.PictureBox();
-            this.italyTankPB = new System.Windows.Forms.PictureBox();
-            this.expdTankPB = new System.Windows.Forms.PictureBox();
-            this.label9 = new System.Windows.Forms.Label();
             this.tirePanel = new System.Windows.Forms.Panel();
             this.explrTireRB = new System.Windows.Forms.RadioButton();
             this.label13 = new System.Windows.Forms.Label();
@@ -99,6 +100,7 @@
             this.s244TirePB = new System.Windows.Forms.PictureBox();
             this.scoutTirePB = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
             this.startScreenPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.motoSelectPanel.SuspendLayout();
@@ -106,15 +108,15 @@
             ((System.ComponentModel.ISupportInitialize)(this.klrPicBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.drPicBox)).BeginInit();
             this.gearSelectPanel.SuspendLayout();
+            this.gasTankPanel.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resinRangerTankPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.italyTankPB)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expdTankPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.gearSelectMotoPB)).BeginInit();
             this.exhaustPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.yoshiExhaPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.nightStalkExhaPB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.standardEditExhPB)).BeginInit();
-            this.gasTankPanel.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resinRangerTankPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.italyTankPB)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expdTankPB)).BeginInit();
             this.tirePanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.explrTirePB)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.s244TirePB)).BeginInit();
@@ -390,6 +392,7 @@
             // 
             // gearSelectPanel
             // 
+            this.gearSelectPanel.Controls.Add(this.label27);
             this.gearSelectPanel.Controls.Add(this.gasTankPanel);
             this.gearSelectPanel.Controls.Add(this.rangeProgBar);
             this.gearSelectPanel.Controls.Add(this.weightProgBar);
@@ -410,6 +413,126 @@
             this.gearSelectPanel.Name = "gearSelectPanel";
             this.gearSelectPanel.Size = new System.Drawing.Size(1325, 704);
             this.gearSelectPanel.TabIndex = 2;
+            // 
+            // gasTankPanel
+            // 
+            this.gasTankPanel.Controls.Add(this.resinTankRB);
+            this.gasTankPanel.Controls.Add(this.label16);
+            this.gasTankPanel.Controls.Add(this.italTankRB);
+            this.gasTankPanel.Controls.Add(this.label15);
+            this.gasTankPanel.Controls.Add(this.expdTankRB);
+            this.gasTankPanel.Controls.Add(this.label14);
+            this.gasTankPanel.Controls.Add(this.resinRangerTankPB);
+            this.gasTankPanel.Controls.Add(this.italyTankPB);
+            this.gasTankPanel.Controls.Add(this.expdTankPB);
+            this.gasTankPanel.Controls.Add(this.label9);
+            this.gasTankPanel.Location = new System.Drawing.Point(282, 75);
+            this.gasTankPanel.Name = "gasTankPanel";
+            this.gasTankPanel.Size = new System.Drawing.Size(205, 620);
+            this.gasTankPanel.TabIndex = 31;
+            // 
+            // resinTankRB
+            // 
+            this.resinTankRB.AutoSize = true;
+            this.resinTankRB.Checked = true;
+            this.resinTankRB.Location = new System.Drawing.Point(95, 188);
+            this.resinTankRB.Name = "resinTankRB";
+            this.resinTankRB.Size = new System.Drawing.Size(14, 13);
+            this.resinTankRB.TabIndex = 23;
+            this.resinTankRB.TabStop = true;
+            this.resinTankRB.UseVisualStyleBackColor = true;
+            this.resinTankRB.CheckedChanged += new System.EventHandler(this.resinTankRB_CheckedChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.Location = new System.Drawing.Point(24, 200);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(156, 20);
+            this.label16.TabIndex = 22;
+            this.label16.Text = "Resin Ranger - $250";
+            // 
+            // italTankRB
+            // 
+            this.italTankRB.AutoSize = true;
+            this.italTankRB.Location = new System.Drawing.Point(95, 382);
+            this.italTankRB.Name = "italTankRB";
+            this.italTankRB.Size = new System.Drawing.Size(14, 13);
+            this.italTankRB.TabIndex = 21;
+            this.italTankRB.UseVisualStyleBackColor = true;
+            this.italTankRB.CheckedChanged += new System.EventHandler(this.italTankRB_CheckedChanged);
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label15.Location = new System.Drawing.Point(23, 396);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(157, 20);
+            this.label15.TabIndex = 20;
+            this.label15.Text = "Italian Special - $300";
+            // 
+            // expdTankRB
+            // 
+            this.expdTankRB.AutoSize = true;
+            this.expdTankRB.Location = new System.Drawing.Point(95, 571);
+            this.expdTankRB.Name = "expdTankRB";
+            this.expdTankRB.Size = new System.Drawing.Size(14, 13);
+            this.expdTankRB.TabIndex = 19;
+            this.expdTankRB.UseVisualStyleBackColor = true;
+            this.expdTankRB.CheckedChanged += new System.EventHandler(this.expdTankRB_CheckedChanged);
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label14.Location = new System.Drawing.Point(36, 585);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(132, 20);
+            this.label14.TabIndex = 18;
+            this.label14.Text = "Expedition - $350";
+            // 
+            // resinRangerTankPB
+            // 
+            this.resinRangerTankPB.Image = global::TATSim.Properties.Resources.resinTank;
+            this.resinRangerTankPB.Location = new System.Drawing.Point(30, 55);
+            this.resinRangerTankPB.Name = "resinRangerTankPB";
+            this.resinRangerTankPB.Size = new System.Drawing.Size(145, 130);
+            this.resinRangerTankPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.resinRangerTankPB.TabIndex = 8;
+            this.resinRangerTankPB.TabStop = false;
+            // 
+            // italyTankPB
+            // 
+            this.italyTankPB.Image = global::TATSim.Properties.Resources.italyTank;
+            this.italyTankPB.Location = new System.Drawing.Point(30, 248);
+            this.italyTankPB.Name = "italyTankPB";
+            this.italyTankPB.Size = new System.Drawing.Size(145, 130);
+            this.italyTankPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.italyTankPB.TabIndex = 7;
+            this.italyTankPB.TabStop = false;
+            // 
+            // expdTankPB
+            // 
+            this.expdTankPB.Image = global::TATSim.Properties.Resources.safariTank;
+            this.expdTankPB.Location = new System.Drawing.Point(30, 437);
+            this.expdTankPB.Name = "expdTankPB";
+            this.expdTankPB.Size = new System.Drawing.Size(145, 130);
+            this.expdTankPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.expdTankPB.TabIndex = 6;
+            this.expdTankPB.TabStop = false;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
+            this.label9.Location = new System.Drawing.Point(40, 10);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(124, 29);
+            this.label9.TabIndex = 1;
+            this.label9.Text = "Gas Tank";
             // 
             // rangeProgBar
             // 
@@ -667,126 +790,6 @@
             this.label10.TabIndex = 2;
             this.label10.Text = "Exhaust";
             // 
-            // gasTankPanel
-            // 
-            this.gasTankPanel.Controls.Add(this.resinTankRB);
-            this.gasTankPanel.Controls.Add(this.label16);
-            this.gasTankPanel.Controls.Add(this.italTankRB);
-            this.gasTankPanel.Controls.Add(this.label15);
-            this.gasTankPanel.Controls.Add(this.expdTankRB);
-            this.gasTankPanel.Controls.Add(this.label14);
-            this.gasTankPanel.Controls.Add(this.resinRangerTankPB);
-            this.gasTankPanel.Controls.Add(this.italyTankPB);
-            this.gasTankPanel.Controls.Add(this.expdTankPB);
-            this.gasTankPanel.Controls.Add(this.label9);
-            this.gasTankPanel.Location = new System.Drawing.Point(282, 75);
-            this.gasTankPanel.Name = "gasTankPanel";
-            this.gasTankPanel.Size = new System.Drawing.Size(205, 620);
-            this.gasTankPanel.TabIndex = 31;
-            // 
-            // resinTankRB
-            // 
-            this.resinTankRB.AutoSize = true;
-            this.resinTankRB.Checked = true;
-            this.resinTankRB.Location = new System.Drawing.Point(95, 188);
-            this.resinTankRB.Name = "resinTankRB";
-            this.resinTankRB.Size = new System.Drawing.Size(14, 13);
-            this.resinTankRB.TabIndex = 23;
-            this.resinTankRB.TabStop = true;
-            this.resinTankRB.UseVisualStyleBackColor = true;
-            this.resinTankRB.CheckedChanged += new System.EventHandler(this.resinTankRB_CheckedChanged);
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.Location = new System.Drawing.Point(24, 200);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(156, 20);
-            this.label16.TabIndex = 22;
-            this.label16.Text = "Resin Ranger - $250";
-            // 
-            // italTankRB
-            // 
-            this.italTankRB.AutoSize = true;
-            this.italTankRB.Location = new System.Drawing.Point(95, 382);
-            this.italTankRB.Name = "italTankRB";
-            this.italTankRB.Size = new System.Drawing.Size(14, 13);
-            this.italTankRB.TabIndex = 21;
-            this.italTankRB.UseVisualStyleBackColor = true;
-            this.italTankRB.CheckedChanged += new System.EventHandler(this.italTankRB_CheckedChanged);
-            // 
-            // label15
-            // 
-            this.label15.AutoSize = true;
-            this.label15.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label15.Location = new System.Drawing.Point(23, 396);
-            this.label15.Name = "label15";
-            this.label15.Size = new System.Drawing.Size(157, 20);
-            this.label15.TabIndex = 20;
-            this.label15.Text = "Italian Special - $300";
-            // 
-            // expdTankRB
-            // 
-            this.expdTankRB.AutoSize = true;
-            this.expdTankRB.Location = new System.Drawing.Point(95, 571);
-            this.expdTankRB.Name = "expdTankRB";
-            this.expdTankRB.Size = new System.Drawing.Size(14, 13);
-            this.expdTankRB.TabIndex = 19;
-            this.expdTankRB.UseVisualStyleBackColor = true;
-            this.expdTankRB.CheckedChanged += new System.EventHandler(this.expdTankRB_CheckedChanged);
-            // 
-            // label14
-            // 
-            this.label14.AutoSize = true;
-            this.label14.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label14.Location = new System.Drawing.Point(36, 585);
-            this.label14.Name = "label14";
-            this.label14.Size = new System.Drawing.Size(132, 20);
-            this.label14.TabIndex = 18;
-            this.label14.Text = "Expedition - $350";
-            // 
-            // resinRangerTankPB
-            // 
-            this.resinRangerTankPB.Image = global::TATSim.Properties.Resources.resinTank;
-            this.resinRangerTankPB.Location = new System.Drawing.Point(30, 55);
-            this.resinRangerTankPB.Name = "resinRangerTankPB";
-            this.resinRangerTankPB.Size = new System.Drawing.Size(145, 130);
-            this.resinRangerTankPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.resinRangerTankPB.TabIndex = 8;
-            this.resinRangerTankPB.TabStop = false;
-            // 
-            // italyTankPB
-            // 
-            this.italyTankPB.Image = global::TATSim.Properties.Resources.italyTank;
-            this.italyTankPB.Location = new System.Drawing.Point(30, 248);
-            this.italyTankPB.Name = "italyTankPB";
-            this.italyTankPB.Size = new System.Drawing.Size(145, 130);
-            this.italyTankPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.italyTankPB.TabIndex = 7;
-            this.italyTankPB.TabStop = false;
-            // 
-            // expdTankPB
-            // 
-            this.expdTankPB.Image = global::TATSim.Properties.Resources.safariTank;
-            this.expdTankPB.Location = new System.Drawing.Point(30, 437);
-            this.expdTankPB.Name = "expdTankPB";
-            this.expdTankPB.Size = new System.Drawing.Size(145, 130);
-            this.expdTankPB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.expdTankPB.TabIndex = 6;
-            this.expdTankPB.TabStop = false;
-            // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Underline))), System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.label9.Location = new System.Drawing.Point(40, 10);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(124, 29);
-            this.label9.TabIndex = 1;
-            this.label9.Text = "Gas Tank";
-            // 
             // tirePanel
             // 
             this.tirePanel.Controls.Add(this.explrTireRB);
@@ -909,6 +912,19 @@
             this.label8.TabIndex = 0;
             this.label8.Text = "Tires";
             // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Maroon;
+            this.label27.Location = new System.Drawing.Point(1025, 621);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(82, 20);
+            this.label27.TabIndex = 46;
+            this.label27.Text = "Quick Tips";
+            this.label27.Click += new System.EventHandler(this.label27_Click);
+            // 
             // TATSimForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -918,6 +934,7 @@
             this.Controls.Add(this.gearSelectPanel);
             this.Controls.Add(this.motoSelectPanel);
             this.Controls.Add(this.startScreenPanel);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "TATSimForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TAT Sim 2014";
@@ -931,17 +948,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.drPicBox)).EndInit();
             this.gearSelectPanel.ResumeLayout(false);
             this.gearSelectPanel.PerformLayout();
+            this.gasTankPanel.ResumeLayout(false);
+            this.gasTankPanel.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.resinRangerTankPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.italyTankPB)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.expdTankPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.gearSelectMotoPB)).EndInit();
             this.exhaustPanel.ResumeLayout(false);
             this.exhaustPanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.yoshiExhaPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nightStalkExhaPB)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.standardEditExhPB)).EndInit();
-            this.gasTankPanel.ResumeLayout(false);
-            this.gasTankPanel.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.resinRangerTankPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.italyTankPB)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.expdTankPB)).EndInit();
             this.tirePanel.ResumeLayout(false);
             this.tirePanel.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.explrTirePB)).EndInit();
@@ -1024,6 +1041,7 @@
         private System.Windows.Forms.ProgressBar rangeProgBar2;
         private System.Windows.Forms.ProgressBar weightProgBar2;
         private System.Windows.Forms.ProgressBar perfromProgBar2;
+        private System.Windows.Forms.Label label27;
 
     }
 }
