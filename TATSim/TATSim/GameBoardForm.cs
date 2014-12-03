@@ -22,6 +22,7 @@ namespace TATSim
         public int cash;
         public int miles;
         Dictionary<string, RandomEvent> randomEvents;
+        RandomEvent currentEvent;
         Dictionary<string, Trail> trails;
         Trail currentTrail;
         int trailSelectionState = 0;
@@ -29,7 +30,7 @@ namespace TATSim
         string selection2 = "";
         bool nextStateSelected = false;
         bool needToRunMove = false;
-        bool statAtZero = false;
+        static bool statAtZero = false;
        
         //Constants
         const double mpg = 50.0;
@@ -74,7 +75,7 @@ namespace TATSim
 
             mileageTextBox.Text = miles.ToString();
 
-            randomEvents = RandomEvent.createEvents();
+            randomEvents = RandomEvent.createEvents(playersMotoObj);
             trails = Trail.createTrials();
             checkTrailState();
 
@@ -181,11 +182,11 @@ namespace TATSim
             newSoundPlayer = new SoundPlayer("motoDriveOffSound.wav");
             newSoundPlayer.Play();
             //Get a possible random event
-            RandomEvent currentEvent = getRandomEvent();
+            currentEvent = getRandomEvent();
             if (currentEvent != null)
             {
                 //Display the Random Event screen so the player can determine what to do
-                changeToRandomEventScreen();
+                changeToRandomEventScreen(currentEvent);                
             }
 
             //Checks to make sure the random event has been dealt with
@@ -193,6 +194,7 @@ namespace TATSim
             {                
                 if (nextStateSelected)
                 {
+                    checkMileage();
                     int todaysMileage = Convert.ToInt32(mileageTextBox.Text);
                     int fuelRange = Convert.ToInt32(fuelRangeTB.Text);
                     int speed = 0;
@@ -220,7 +222,8 @@ namespace TATSim
                     daysIntoTrip++;
                     dayNumTextBox.Text = daysIntoTrip.ToString();
                     updateMoneyFromDailyChoices();
-                    checkMileage();
+                    
+                    enableChoices();
 
                     if (statAtZero)
                     {
@@ -230,6 +233,17 @@ namespace TATSim
                     //MessageBox.Show("A day has passed.");
                 }
             }
+        }
+
+        private void enableChoices()
+        {
+            campRadBut.Enabled = true;
+            hotelRadBut.Enabled = true;
+            ramenRadBut.Enabled = true;
+            steakRadBut.Enabled = true;
+            btnHighPriceFix.Enabled = true;
+            btnLowPricedFix.Enabled = true;
+            btnIgnore.Enabled = true;
         }
 
         private void updateCharacterStats()
@@ -368,11 +382,30 @@ namespace TATSim
             }
         }
 
-        private void changeToRandomEventScreen()
+        private void changeToRandomEventScreen(RandomEvent currentEvent)
         {
             //Change the map to the Random Event groupbox
             tatMapPB.Visible = false;
             grpbxRandomEvent.Visible = true;
+
+            if (currentEvent.Name.Equals("Broken Chain") || currentEvent.Name.Equals("Gas Leak") || currentEvent.Name.Equals("Ticket"))
+            {
+                btnIgnore.Enabled = false;
+            }
+
+            if (currentEvent.Name.Equals("Ticket") || currentEvent.Name.Equals("Lost"))
+            {
+                btnLowPricedFix.Enabled = false;
+            }
+
+            if (currentEvent.Name.Equals("Lost"))
+            {
+                btnHighPriceFix.Enabled = false;
+            }
+
+            lblRandomEventTitle.Text = currentEvent.Name;
+            rtbxRandomEventDescription.Text = currentEvent.Description;
+
         }
 
         /**
@@ -381,30 +414,28 @@ namespace TATSim
          * 
          **/
         private RandomEvent getRandomEvent()
-        {
-            bool eventSelected = false;
+        {            
             RandomEvent eventToReturn = null;
+            Random rand = new Random();
             double chance = 0.0;
             for (int i = 0; i < 100; i++)
             {
-                chance += (double) new Random().Next(60, 101);
+                chance += (double) rand.Next(0, 101);
             }
             chance /= 100;
 
+            double highest = 0.0;
+
             foreach (string key in randomEvents.Keys)
             {
-                if (randomEvents[key].ChanceToHappen >= chance)
-                {
-                    if (!eventSelected)
-                    {
-                        eventToReturn = randomEvents[key];
-                        eventSelected = true;
-                        eventToReturn.resetChance();
-                    }
+                if (randomEvents[key].ChanceToHappen >= chance && randomEvents[key].ChanceToHappen > highest)
+                {                    
+                    eventToReturn = randomEvents[key];
+                    highest = randomEvents[key].ChanceToHappen;
                 }
                 else
                 {
-                    randomEvents[key].increaseChance();
+                    randomEvents[key].increaseChance((double) rand.Next(16));
                 }
             }
 
@@ -419,6 +450,7 @@ namespace TATSim
             if (fuelRange < todaysMileage)
             {
                 btnFillUp.Visible = true;
+                MessageBox.Show("You need to fill up!");
                 return false;
             }
             else
@@ -428,24 +460,22 @@ namespace TATSim
             }
         }
 
-        private void button1_Click(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnFillUp_Click(object sender, EventArgs e)
         {
             int rangeDiff = playersMotoObj.Range - Convert.ToInt32(fuelRangeTB.Text);
-            double cost = 0.0;
-            while ((rangeDiff - 50) > 0)
+            
+            if (rangeDiff > 0)
             {
-                cost += Math.Round((50 / 2.8), 2);
-                rangeDiff -= 50;
+                double cost = Math.Round(((rangeDiff / 50) * 2.8), 2);
+                takeoutMoney(cost);
+                fuelRangeTB.Text = playersMotoObj.Range.ToString();
             }
-            cost += Math.Round((rangeDiff / 2.8), 2);
-            double wallet = Convert.ToDouble(cashTextBox.Text.ToString().Substring(1));
-            cashTextBox.Text = "$" + (wallet - cost);
-            fuelRangeTB.Text = playersMotoObj.Range.ToString();
+            else
+            {
+                takeoutMoney(Math.Round(((playersMotoObj.Range / 50) * 2.8), 2));
+                fuelRangeTB.Text = playersMotoObj.Range.ToString();
+            }
         }
 
         private void campRadBut_CheckedChanged(object sender, EventArgs e)
@@ -481,5 +511,285 @@ namespace TATSim
 
         //    MessageBox.Show(position, "Mouse Position", MessageBoxButtons.OK, MessageBoxIcon.Information);
         //}
+
+        
+        private void btnHighPriceFix_Click(object sender, EventArgs e)
+        {
+            double wallet;
+            currentEvent.resetChance();
+            switch(currentEvent.Name)
+            {                    
+                case "Flat Tire":
+                    takeoutMoney(currentEvent.HighCost);
+                    playersMotoObj.Tires.Wear = 0.0;
+                    break;
+                case "Severe Weather":
+                    campRadBut.Enabled = false;
+                    hotelRadBut.Checked = true;
+                    break;
+                case "Small Wreck":
+                    takeoutMoney(currentEvent.HighCost);
+                    break;
+                case "Big Wreck":
+                    takeoutMoney(currentEvent.HighCost);
+                    break;
+                case "Broken Chain":
+                    takeoutMoney(currentEvent.HighCost);
+                    break;
+                case "Sick":
+                    takeoutMoney(currentEvent.HighCost);
+                    break;
+                case "Gas Leak":
+                    takeoutMoney(20.0);
+                    btnFillUp_Click(sender, e);
+                    btnFillUp.Visible = false;
+                    break;
+                case "Busted Taillight":
+                    takeoutMoney(30.0);
+                    break;
+                case "Ticket":
+                    takeoutMoney(currentEvent.HighCost);
+                    currentEvent.HighCost = currentEvent.HighCost * 1.5;
+                    break;
+                case "Holey Gloves":
+                    if (enjymntProgBar.Value > 2)
+                        enjymntProgBar.Value -= 3;
+                    else if (enjymntProgBar.Value > 1)
+                        enjymntProgBar.Value -= 2;
+                    else
+                        enjymntProgBar.Value -= 1;
+
+                    if (exhaustProgBar.Value > 1)
+                        exhaustProgBar.Value -= 2;
+                    else
+                        exhaustProgBar.Value -= 1;
+
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        if (key.Equals("Small Wreck"))
+                        {
+                            randomEvents[key].increaseChance(25.0);
+                        }
+                    }
+                    break;
+                //Nothing for Lost
+                default:
+                    break;                    
+            }
+            tatMapPB.Visible = true;
+            grpbxRandomEvent.Visible = false;
+        }
+
+        private void btnLowPricedFix_Click(object sender, EventArgs e)
+        {
+            double wallet;
+
+            switch (currentEvent.Name)
+            {
+                case "Flat Tire":
+                    takeoutMoney(currentEvent.LowCost);
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        if (key.Equals("Small Wreck"))
+                        {
+                            randomEvents[key].increaseChance(10.0);
+                        }
+                    }
+                    break;
+                case "Severe Weather":
+                    takeoutMoney(currentEvent.LowCost);
+                    campRadBut.Checked = true;
+                    hotelRadBut.Enabled = true;
+
+                    if (enjymntProgBar.Value > 2)
+                        enjymntProgBar.Value -= 3;
+                    else if (enjymntProgBar.Value > 1)
+                        enjymntProgBar.Value -= 2;
+                    else
+                        enjymntProgBar.Value -= 1;
+                    break;
+                case "Small Wreck":
+                    takeoutMoney(currentEvent.LowCost);
+
+                    if (exhaustProgBar.Value > 2)
+                        exhaustProgBar.Value -= 3;
+                    else if (exhaustProgBar.Value > 1)
+                        exhaustProgBar.Value -= 2;
+                    else
+                        exhaustProgBar.Value -= 1;
+                    break;
+                case "Big Wreck":
+                    takeoutMoney(currentEvent.LowCost);
+
+                    if (enjymntProgBar.Value > 2)
+                        enjymntProgBar.Value -= 3;
+                    else if (enjymntProgBar.Value > 1)
+                        enjymntProgBar.Value -= 2;
+                    else
+                        enjymntProgBar.Value -= 1;
+
+                    if (exhaustProgBar.Value > 1)
+                        exhaustProgBar.Value -= 2;
+                    else
+                        exhaustProgBar.Value -= 1;
+                    break;
+                case "Broken Chain":
+                    takeoutMoney(currentEvent.LowCost);
+
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        if (key.Equals("Small Wreck"))
+                        {
+                            randomEvents[key].increaseChance(10.0);
+                        }
+                    }
+                    break;
+                case "Sick":
+                    takeoutMoney(currentEvent.LowCost);
+
+                    if (exhaustProgBar.Value > 2)
+                        exhaustProgBar.Value -= 3;
+                    else if (exhaustProgBar.Value > 1)
+                        exhaustProgBar.Value -= 2;
+                    else
+                        exhaustProgBar.Value -= 1;
+                    break;
+                case "Gas Leak":
+                    takeoutMoney(currentEvent.LowCost);
+                    currentEvent.increaseChance(15.0);
+                    break;
+                case "Busted Taillight":
+                    takeoutMoney(currentEvent.LowCost);
+                    currentEvent.increaseChance(10.0);
+                    break;
+                    //No ticket here
+                case "Holey Gloves":
+                     if (enjymntProgBar.Value > 1)
+                        enjymntProgBar.Value -= 2;
+                    else
+                        enjymntProgBar.Value -= 1;
+
+                    if (exhaustProgBar.Value > 0)
+                        exhaustProgBar.Value -= 1;
+                    break;
+                //Nothing for Lost
+                default:
+                    break;
+            }
+            tatMapPB.Visible = true;
+            grpbxRandomEvent.Visible = false;
+        }
+
+
+        private void btnIgnore_Click(object sender, EventArgs e)
+        {
+            switch (currentEvent.Name)
+            {
+                case "Flat Tire":
+                    statAtZero = true;
+                    break;
+                case "Severe Weather":
+                    if (enjymntProgBar.Value > 4)
+                        enjymntProgBar.Value -= 5;
+                    else if (enjymntProgBar.Value > 3)
+                        enjymntProgBar.Value -= 4;
+                    else if (enjymntProgBar.Value > 2)
+                        enjymntProgBar.Value -= 3;
+                    else if (enjymntProgBar.Value > 1)
+                        enjymntProgBar.Value -= 2;
+                    else
+                        enjymntProgBar.Value -= 1;
+                    break;
+                case "Small Wreck":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        if (key.Equals("Big Wreck") || key.Equals("Flat Tire"))
+                        {
+                            randomEvents[key].increaseChance(5.0);
+                        }
+                    }
+                    break;
+                case "Big Wreck":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        if (key.Equals("Big Wreck") || key.Equals("Flat Tire"))
+                        {
+                            randomEvents[key].increaseChance(25.0);
+                        }
+                    }
+
+                    dayNumTextBox.Text = Convert.ToInt32(dayNumTextBox.Text) + 1 + "";
+                    break;
+                case "Sick":
+                    if (enjymntProgBar.Value > 2)
+                        enjymntProgBar.Value -= 3;
+                    else if (enjymntProgBar.Value > 1)
+                        enjymntProgBar.Value -= 2;
+                    else
+                        enjymntProgBar.Value -= 1;
+
+                    if (exhaustProgBar.Value > 2)
+                        exhaustProgBar.Value -= 3;
+                    else if (exhaustProgBar.Value > 1)
+                        exhaustProgBar.Value -= 2;
+                    else
+                        exhaustProgBar.Value -= 1;
+
+                    dayNumTextBox.Text = Convert.ToInt32(dayNumTextBox.Text) + 1 + "";
+                    break;
+                case "Busted Taillight":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        if (key.Equals("Ticket"))
+                        {
+                            randomEvents[key].increaseChance(25.0);
+                        }
+                    }
+                    break;
+                    //No ticket here
+                case "Holey Gloves":
+                    if (enjymntProgBar.Value > 2)
+                        enjymntProgBar.Value -= 3;
+                    else if (enjymntProgBar.Value > 1)
+                        enjymntProgBar.Value -= 2;
+                    else
+                        enjymntProgBar.Value -= 1;
+
+                    if (exhaustProgBar.Value > 1)
+                        exhaustProgBar.Value -= 2;
+                    else
+                        exhaustProgBar.Value -= 1;
+
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        if (key.Equals("Small Wreck"))
+                        {
+                            randomEvents[key].increaseChance(15.0);
+                        }
+                    }
+                    break;
+                case "Lost":
+                    dayNumTextBox.Text = Convert.ToInt32(dayNumTextBox.Text) + 1 + "";
+                    break;
+                default:
+                    break;
+            }
+            tatMapPB.Visible = true;
+            grpbxRandomEvent.Visible = false;
+        }
+
+        public void takeoutMoney(double amount)
+        {
+            double wallet = Convert.ToDouble(cashTextBox.Text.ToString().Substring(1));                   
+            if ((wallet - amount) > 0.0)
+            {
+                cashTextBox.Text = "$" + (wallet - amount);
+            }
+            else
+            {
+                statAtZero = true;
+            }
+        }
+        
     }
 }
