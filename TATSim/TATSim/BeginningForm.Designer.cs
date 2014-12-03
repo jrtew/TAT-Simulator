@@ -54,6 +54,7 @@
             this.klrPicBox = new System.Windows.Forms.PictureBox();
             this.drPicBox = new System.Windows.Forms.PictureBox();
             this.gearSelectPanel = new System.Windows.Forms.Panel();
+            this.label27 = new System.Windows.Forms.Label();
             this.gasTankPanel = new System.Windows.Forms.Panel();
             this.resinTankRB = new System.Windows.Forms.RadioButton();
             this.label16 = new System.Windows.Forms.Label();
@@ -100,7 +101,6 @@
             this.s244TirePB = new System.Windows.Forms.PictureBox();
             this.scoutTirePB = new System.Windows.Forms.PictureBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.label27 = new System.Windows.Forms.Label();
             this.startScreenPanel.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.motoSelectPanel.SuspendLayout();
@@ -392,6 +392,7 @@
             // 
             // gearSelectPanel
             // 
+            this.gearSelectPanel.Controls.Add(this.tirePanel);
             this.gearSelectPanel.Controls.Add(this.label27);
             this.gearSelectPanel.Controls.Add(this.gasTankPanel);
             this.gearSelectPanel.Controls.Add(this.rangeProgBar);
@@ -408,11 +409,23 @@
             this.gearSelectPanel.Controls.Add(this.playersCyclePB);
             this.gearSelectPanel.Controls.Add(this.gearSelectMotoPB);
             this.gearSelectPanel.Controls.Add(this.exhaustPanel);
-            this.gearSelectPanel.Controls.Add(this.tirePanel);
             this.gearSelectPanel.Location = new System.Drawing.Point(13, 13);
             this.gearSelectPanel.Name = "gearSelectPanel";
             this.gearSelectPanel.Size = new System.Drawing.Size(1325, 704);
             this.gearSelectPanel.TabIndex = 2;
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label27.ForeColor = System.Drawing.Color.Maroon;
+            this.label27.Location = new System.Drawing.Point(1025, 621);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(82, 20);
+            this.label27.TabIndex = 46;
+            this.label27.Text = "Quick Tips";
+            this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
             // gasTankPanel
             // 
@@ -814,7 +827,6 @@
             this.explrTireRB.Name = "explrTireRB";
             this.explrTireRB.Size = new System.Drawing.Size(14, 13);
             this.explrTireRB.TabIndex = 17;
-            this.explrTireRB.TabStop = true;
             this.explrTireRB.UseVisualStyleBackColor = true;
             this.explrTireRB.CheckedChanged += new System.EventHandler(this.explrTireRB_CheckedChanged);
             // 
@@ -831,7 +843,8 @@
             // s244TireRB
             // 
             this.s244TireRB.AutoSize = true;
-            this.s244TireRB.Location = new System.Drawing.Point(95, 382);
+            this.s244TireRB.Checked = true;
+            this.s244TireRB.Location = new System.Drawing.Point(95, 188);
             this.s244TireRB.Name = "s244TireRB";
             this.s244TireRB.Size = new System.Drawing.Size(14, 13);
             this.s244TireRB.TabIndex = 15;
@@ -843,7 +856,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label12.Location = new System.Drawing.Point(59, 396);
+            this.label12.Location = new System.Drawing.Point(58, 202);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(87, 20);
             this.label12.TabIndex = 14;
@@ -852,12 +865,10 @@
             // scoutTireRB
             // 
             this.scoutTireRB.AutoSize = true;
-            this.scoutTireRB.Checked = true;
-            this.scoutTireRB.Location = new System.Drawing.Point(95, 188);
+            this.scoutTireRB.Location = new System.Drawing.Point(95, 381);
             this.scoutTireRB.Name = "scoutTireRB";
             this.scoutTireRB.Size = new System.Drawing.Size(14, 13);
             this.scoutTireRB.TabIndex = 13;
-            this.scoutTireRB.TabStop = true;
             this.scoutTireRB.UseVisualStyleBackColor = true;
             this.scoutTireRB.CheckedChanged += new System.EventHandler(this.scoutTireRB_CheckedChanged);
             // 
@@ -865,7 +876,7 @@
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(36, 200);
+            this.label11.Location = new System.Drawing.Point(35, 393);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(132, 20);
             this.label11.TabIndex = 12;
@@ -884,7 +895,7 @@
             // s244TirePB
             // 
             this.s244TirePB.Image = global::TATSim.Properties.Resources.s244;
-            this.s244TirePB.Location = new System.Drawing.Point(30, 248);
+            this.s244TirePB.Location = new System.Drawing.Point(29, 54);
             this.s244TirePB.Name = "s244TirePB";
             this.s244TirePB.Size = new System.Drawing.Size(145, 130);
             this.s244TirePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -894,7 +905,7 @@
             // scoutTirePB
             // 
             this.scoutTirePB.Image = global::TATSim.Properties.Resources.scoutTires;
-            this.scoutTirePB.Location = new System.Drawing.Point(30, 55);
+            this.scoutTirePB.Location = new System.Drawing.Point(29, 248);
             this.scoutTirePB.Name = "scoutTirePB";
             this.scoutTirePB.Size = new System.Drawing.Size(145, 130);
             this.scoutTirePB.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -911,19 +922,6 @@
             this.label8.Size = new System.Drawing.Size(74, 29);
             this.label8.TabIndex = 0;
             this.label8.Text = "Tires";
-            // 
-            // label27
-            // 
-            this.label27.AutoSize = true;
-            this.label27.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label27.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label27.ForeColor = System.Drawing.Color.Maroon;
-            this.label27.Location = new System.Drawing.Point(1025, 621);
-            this.label27.Name = "label27";
-            this.label27.Size = new System.Drawing.Size(82, 20);
-            this.label27.TabIndex = 46;
-            this.label27.Text = "Quick Tips";
-            this.label27.Click += new System.EventHandler(this.label27_Click);
             // 
             // TATSimForm
             // 

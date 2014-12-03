@@ -84,7 +84,7 @@ namespace TATSim
                 performProgBar.Value = playersMoto.Performance;
                 weightProgBar.Value = playersMoto.Weight;
                 rangeProgBar.Value = playersMoto.Range;
-                scoutTireRB_CheckedChanged(new object(), new EventArgs());
+                s244TireRB_CheckedChanged(new object(), new EventArgs());
                 resinTankRB_CheckedChanged(new object(), new EventArgs());
                 standExhaRB_CheckedChanged(new object(), new EventArgs());
                 //walletTB.Text = "$1800";
