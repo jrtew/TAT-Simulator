@@ -179,6 +179,61 @@ namespace TATSim
        
         private void nextDayBtn_Click(object sender, EventArgs e)
         {
+            switch(currentTrail.Name)
+            {
+                case "Cape Hatteras":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        randomEvents[key].increaseChance(5.0);
+                    }
+                    if (enjymntProgBar.Value < 20)
+                        enjymntProgBar.Value += 1;
+                    break;
+                case "New York":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        randomEvents[key].increaseChance(-5.0);
+                    }
+                    if (enjymntProgBar.Value > 0)
+                        enjymntProgBar.Value -= 1;
+                    break;
+                case "Great Plains":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        randomEvents[key].increaseChance(-5.0);
+                    }
+
+                    if (enjymntProgBar.Value > 0)
+                        enjymntProgBar.Value -= 1;
+                    if (hungerProgBar.Value > 0)
+                        hungerProgBar.Value -= 1;
+                    break;
+                case "Southern":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        randomEvents[key].increaseChance(5.0);
+                    }
+                    if (enjymntProgBar.Value < 20)
+                        enjymntProgBar.Value += 1;
+                    if (exhaustProgBar.Value > 0)
+                        exhaustProgBar.Value -= 1;
+                    break;
+                case "Oregon Coast":
+                    if (enjymntProgBar.Value < 20)
+                        enjymntProgBar.Value += 1;
+                    if (hungerProgBar.Value > 0)
+                        hungerProgBar.Value -= 1;
+                    break;
+                case "Los Angeles":
+                    if (enjymntProgBar.Value > 0)
+                        enjymntProgBar.Value -= 1;
+                    if (exhaustProgBar.Value < 20)
+                        exhaustProgBar.Value += 1;
+                    break;
+                default:
+                    break;
+            }
+            
             //Get a possible random event
             currentEvent = getRandomEvent();
             if (currentEvent != null)
