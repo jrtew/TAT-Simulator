@@ -179,6 +179,61 @@ namespace TATSim
        
         private void nextDayBtn_Click(object sender, EventArgs e)
         {
+            switch(currentTrail.Name)
+            {
+                case "Cape Hatteras":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        randomEvents[key].increaseChance(5.0);
+                    }
+                    if (enjymntProgBar.Value < 20)
+                        enjymntProgBar.Value += 1;
+                    break;
+                case "New York":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        randomEvents[key].increaseChance(-5.0);
+                    }
+                    if (enjymntProgBar.Value > 0)
+                        enjymntProgBar.Value -= 1;
+                    break;
+                case "Great Plains":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        randomEvents[key].increaseChance(-5.0);
+                    }
+
+                    if (enjymntProgBar.Value > 0)
+                        enjymntProgBar.Value -= 1;
+                    if (hungerProgBar.Value > 0)
+                        hungerProgBar.Value -= 1;
+                    break;
+                case "Southern":
+                    foreach (string key in randomEvents.Keys)
+                    {
+                        randomEvents[key].increaseChance(5.0);
+                    }
+                    if (enjymntProgBar.Value < 20)
+                        enjymntProgBar.Value += 1;
+                    if (exhaustProgBar.Value > 0)
+                        exhaustProgBar.Value -= 1;
+                    break;
+                case "Oregon Coast":
+                    if (enjymntProgBar.Value < 20)
+                        enjymntProgBar.Value += 1;
+                    if (hungerProgBar.Value > 0)
+                        hungerProgBar.Value -= 1;
+                    break;
+                case "Los Angeles":
+                    if (enjymntProgBar.Value > 0)
+                        enjymntProgBar.Value -= 1;
+                    if (exhaustProgBar.Value < 20)
+                        exhaustProgBar.Value += 1;
+                    break;
+                default:
+                    break;
+            }
+            
             //Get a possible random event
             currentEvent = getRandomEvent();
             if (currentEvent != null)
@@ -213,8 +268,6 @@ namespace TATSim
                 if (nextStateSelected)
                 {
                     checkMileage();
-                    newSoundPlayer = new SoundPlayer("motoDriveOffSound.wav");
-                    newSoundPlayer.Play();
                     int todaysMileage = Convert.ToInt32(mileageTextBox.Text);
                     int fuelRange = Convert.ToInt32(fuelRangeTB.Text);
                     int speed = 0;
@@ -384,7 +437,8 @@ namespace TATSim
                 needToRunMove = true;
                 return;                
             }
-
+            newSoundPlayer = new SoundPlayer("motoDriveOffSound.wav");
+            newSoundPlayer.Play();
             playerIcon.Location = new Point(currentStop.Point.X - 25, currentStop.Point.Y - 25);
             mileageTextBox.Text = currentStop.Distance.ToString();
         }
@@ -477,7 +531,6 @@ namespace TATSim
             }
             else
             {
-                //btnFillUp.Visible = false;
                 return true;
             }
         }
@@ -486,7 +539,7 @@ namespace TATSim
         private void btnFillUp_Click(object sender, EventArgs e)
         {
             int rangeDiff = playersMotoObj.Range - Convert.ToInt32(fuelRangeTB.Text);
-            Console.WriteLine(rangeDiff);
+            
             if (rangeDiff > 0)
             {
                 double cost = Math.Round(((rangeDiff / 50) * 2.8), 2);
@@ -825,7 +878,7 @@ namespace TATSim
         {
             Application.Exit();
         }
-
+        
         private void quickTipsLabel_Click(object sender, EventArgs e)
         {
             MessageBox.Show("\n- Choose your speed wisely:\n" +
