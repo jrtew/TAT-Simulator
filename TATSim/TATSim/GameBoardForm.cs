@@ -178,9 +178,7 @@ namespace TATSim
 
        
         private void nextDayBtn_Click(object sender, EventArgs e)
-        {
-            newSoundPlayer = new SoundPlayer("motoDriveOffSound.wav");
-            newSoundPlayer.Play();
+        {            
             //Get a possible random event
             currentEvent = getRandomEvent();
             if (currentEvent != null)
@@ -364,7 +362,8 @@ namespace TATSim
                 needToRunMove = true;
                 return;                
             }
-
+            newSoundPlayer = new SoundPlayer("motoDriveOffSound.wav");
+            newSoundPlayer.Play();
             playerIcon.Location = new Point(currentStop.Point.X - 25, currentStop.Point.Y - 25);
             mileageTextBox.Text = currentStop.Distance.ToString();
         }
@@ -457,7 +456,6 @@ namespace TATSim
             }
             else
             {
-                btnFillUp.Visible = false;
                 return true;
             }
         }
@@ -473,11 +471,7 @@ namespace TATSim
                 takeoutMoney(cost);
                 fuelRangeTB.Text = playersMotoObj.Range.ToString();
             }
-            else
-            {
-                takeoutMoney(Math.Round(((playersMotoObj.Range / 50) * 2.8), 2));
-                fuelRangeTB.Text = playersMotoObj.Range.ToString();
-            }
+            
         }
 
         private void campRadBut_CheckedChanged(object sender, EventArgs e)
