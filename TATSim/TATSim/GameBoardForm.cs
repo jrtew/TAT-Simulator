@@ -179,12 +179,30 @@ namespace TATSim
        
         private void nextDayBtn_Click(object sender, EventArgs e)
         {
-            newSoundPlayer = new SoundPlayer("motoDriveOffSound.wav");
-            newSoundPlayer.Play();
             //Get a possible random event
             currentEvent = getRandomEvent();
             if (currentEvent != null)
             {
+                if (currentEvent.Name.Equals("Flat Tire"))
+                {
+                    newSoundPlayer = new SoundPlayer("tireDeflateSound.wav");
+                    newSoundPlayer.Play();
+                }
+                else if (currentEvent.Name.Equals("Severe Weather"))
+                {
+                    newSoundPlayer = new SoundPlayer("tstormSound.wav");
+                    newSoundPlayer.Play();
+                }
+                else if (currentEvent.Name.Equals("Big Wreck"))
+                {
+                    newSoundPlayer = new SoundPlayer("crashSound.wav");
+                    newSoundPlayer.Play();
+                }
+                else if (currentEvent.Name.Equals("Ticket"))
+                {
+                    newSoundPlayer = new SoundPlayer("sirenSound.wav");
+                    newSoundPlayer.Play();
+                }
                 //Display the Random Event screen so the player can determine what to do
                 changeToRandomEventScreen(currentEvent);                
             }
@@ -194,6 +212,8 @@ namespace TATSim
             {                
                 if (nextStateSelected)
                 {
+                    newSoundPlayer = new SoundPlayer("motoDriveOffSound.wav");
+                    newSoundPlayer.Play();
                     checkMileage();
                     int todaysMileage = Convert.ToInt32(mileageTextBox.Text);
                     int fuelRange = Convert.ToInt32(fuelRangeTB.Text);
@@ -449,13 +469,13 @@ namespace TATSim
 
             if (fuelRange < todaysMileage)
             {
-                btnFillUp.Visible = true;
+                //btnFillUp.Visible = true;
                 MessageBox.Show("You need to fill up!");
                 return false;
             }
             else
             {
-                btnFillUp.Visible = false;
+                //btnFillUp.Visible = false;
                 return true;
             }
         }
@@ -464,18 +484,20 @@ namespace TATSim
         private void btnFillUp_Click(object sender, EventArgs e)
         {
             int rangeDiff = playersMotoObj.Range - Convert.ToInt32(fuelRangeTB.Text);
-            
+            Console.WriteLine(rangeDiff);
             if (rangeDiff > 0)
             {
                 double cost = Math.Round(((rangeDiff / 50) * 2.8), 2);
                 takeoutMoney(cost);
                 fuelRangeTB.Text = playersMotoObj.Range.ToString();
             }
+            //else if (rangeDiff == 0)
+            //{
+            //    takeoutMoney(Math.Round(((playersMotoObj.Range / 50) * 2.8), 2));
+            //    fuelRangeTB.Text = playersMotoObj.Range.ToString();
+            //}
             else
-            {
-                takeoutMoney(Math.Round(((playersMotoObj.Range / 50) * 2.8), 2));
-                fuelRangeTB.Text = playersMotoObj.Range.ToString();
-            }
+                MessageBox.Show("Your tank is already full!", "Duh");
         }
 
         private void campRadBut_CheckedChanged(object sender, EventArgs e)
@@ -542,7 +564,7 @@ namespace TATSim
                 case "Gas Leak":
                     takeoutMoney(20.0);
                     btnFillUp_Click(sender, e);
-                    btnFillUp.Visible = false;
+                    //btnFillUp.Visible = false;
                     break;
                 case "Busted Taillight":
                     takeoutMoney(30.0);
@@ -789,6 +811,11 @@ namespace TATSim
             {
                 statAtZero = true;
             }
+        }
+
+        private void seeyaBtn_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
         
     }
